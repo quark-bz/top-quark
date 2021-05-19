@@ -7,12 +7,17 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import DashboardIcon from '@material-ui/icons/Dashboard';
+//import InboxIcon from '@material-ui/icons/MoveToInbox';
+//import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
-import './App.css';
-import { withStyles } from '@material-ui/styles';
+import HomeIcon from '@material-ui/icons/Home';
+import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
+import ButtonSideNav from './buttonLink.js';
+import '../App.css';
+
+
 const useStyles = makeStyles({
   list: {
     width: 250,
@@ -38,7 +43,7 @@ export default function TemporaryDrawer() {
 
 
 
-
+//Try to use map and optimise later. also add on more buttons when functionality increases  
   const list = (anchor) => (
     <div style={{
       background:'white',
@@ -52,14 +57,11 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-
+          <ButtonSideNav name='Home' dir='/main' icon={<HomeIcon/>}/>
+          <ButtonSideNav name='About' dir='/about' icon={<EmojiObjectsIcon/>}/>
+          <ButtonSideNav name='Dashboard' dir='/dashboard' icon={<DashboardIcon/>}/>
       </List>
+      
     </div>
   );
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import card from './SubCard';
+import card from './components/SubCard.js';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
 
