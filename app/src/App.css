@@ -110,3 +110,46 @@
 .manageSubText{
   width:140px;
 }
+.header{
+  width:100%;
+  height:fit-content;
+  background:purple;
+  text-align:center;
+}
+
+.MainPage{
+  width:100%;
+  height:fit-content;
+  background:purple;
+  text-align:center;
+}
+.drawer{
+
+}
+.navMenu{
+
+background:purple;
+}
+
+#header{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height: fit-content;
+  text-align:center
+
+}
+#header h1{
+
+  margin-top:10px;
+  width:100%;
+  height:fit-content;
+  font-family: 'Poppins';
+
+}
+
+#header a{
+  text-decoration: none;
+  color:inherit;
+}
