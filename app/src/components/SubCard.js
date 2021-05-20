@@ -3,7 +3,7 @@ import '../App.css';
 
 
 
-function card(props) {
+function Card(props) {
   let iconSubList ={
     "economics":["economicsCard","econsButton"],
     "physics":["physicsCard","physicsButton"],
@@ -33,4 +33,4 @@ function card(props) {
   );
 }
 
-export default card;
+export default Card;
