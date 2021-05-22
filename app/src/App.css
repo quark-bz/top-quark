@@ -1,115 +1,4 @@
-/*.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-*/
-
-.blurCover{
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  position: relative;
-  top:0px;
-  left:0px;
-  width:100%;
-  height:100%;
-  padding-top:10px;
-  border-radius: 20px;
-  
-  backdrop-filter: blur(1px);
-}
-.cardMain{
-  border:0.4px solid rgba(160,160,160,0.3);
-  background:whitesmoke;
-  /*
-  background-image: url('image/download.jpeg');
-  background-repeat: no-repeat;
-  background-size:cover;*/
-  margin:10px;
-  border-radius:20px;
-  backdrop-filter: blur(3px);
-  width:200px;
-  height:300px;
-  overflow: hidden;
-  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.19);
-  transition-duration: 0.3s;
-}
-.cardMain:hover{
-  transition-duration: 0.3s;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.1);
-
-}
-.economicsCard{
-  background:linear-gradient(45deg, rgba(233,212,255,0.9) 20%,rgba(239,232,247,0.6) 50%, rgba(230,230,230,0.2) 90%);
-  -webkit-background:-webkit-linear-gradient(45deg, rgba(233,212,255,0.9) 20%,rgba(239,232,247,0.6) 50%, rgba(230,230,230,0.2) 90%);
-
-}
-.sub-icon-econs{
-  background-image: url("line-chart.svg");
-  width:20px;
-  height:20px;
-}
-.cardButton{
-  border:none;
-  width:50px;
-  height:50px;
-  border-radius: 50%;
- 
-  color:rgba(80,80,80,0.5);
-  position: absolute;
-  top:230px;
-  left:130px;
-  transition-duration: 0.3s;
-  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.13), 0 6px 10px 0 rgba(0,0,0,0.14);
-}
-.econsButton{
-  background:radial-gradient(ellipse at bottom left,rgb(184, 131, 241),rgb(233, 212, 255));
-  -webkit-background:-webkit-radial-gradient(ellipse at bottom left,rgb(184, 131, 241),rgb(233, 212, 255));
-}
-.econsButton:hover{
-  transition-duration: 0.3s;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.1);
-}
-
-.cardInnerText{
-  margin-left:20px;
-  margin-top:30px;
-}
-.manageSubText{
-  width:140px;
-}
 .header{
   width:100%;
   height:fit-content;
@@ -145,13 +34,15 @@ background:purple;
   margin-top:10px;
   width:100%;
   height:fit-content;
-  font-family: 'Poppins';
+  font-family: 'poppins';
+  color:#6d65ff;
 
 }
 
 #header a{
   text-decoration: none;
   color:inherit;
+
 }
 
 #mainContainer{
@@ -159,12 +50,18 @@ background:purple;
   margin-right:auto;
   margin-top:100px;
   position: relative;
-  width:85vw;
+  width:80vw;
   height:fit-content;
-  background:red; 
-  border-radius:40px;
+  background:rgba(255,255,255,0.8); 
+  backdrop-filter:blur(30px);
+  border-radius:20px;
   padding:20px;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.13), 0 5px 7px 0 rgba(0,0,0,0.14);
 
+}
+
+hr{
+border-top:0.5px solid whitesmoke;
 }
 .flexwrap{
   display: flex;
@@ -178,15 +75,120 @@ background:purple;
 }
 .itemcontainer{
   position: relative;
-  width:40vw;
+  min-width:30vw;
   /*change to height:fit-content later*/
-  min-height:300px;
+  min-height:100px;
   height:fit-content;
   /*background:transparent*/
-  background:black;
+  background:transparent;
   margin:10px;
+  margin-top:20px;
+  padding-bottom:15px;
   justify-content: center;
 
+}
+
+
+.newCard{
+  font-family: 'Nunito';
+  position: relative;
+  margin:10px;
+  width:160px;
+  height:180px;
+  background:white;
+  padding:15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.13), 0 5px 7px 0 rgba(0,0,0,0.14);
+
+}
+.newCard h3{
+  margin-top:-2px;
+  color:#6d65ff;
+}
+.newCard p{
+  color:#6d65ff;
+  margin-left:15px;
+  padding-top:5px;
+}
+.newCard button{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  position: absolute;
+  top:-25px;
+  right:17px;
+  outline:none;
+  border:none;
+  background:#6d65ff;
+  transition-duration: 0.3s;
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.13), 0 6px 10px 0 rgba(0,0,0,0.14);
+}
+.newDescription{
+  width:130px;
+}
+.newDescription p{
+  font-size:14px;
+}
+.subCardCover{
+
+  position: absolute;
+  bottom:0px;
+  left:0px;
+  width:100%;
+  height:78%;
+  border-radius:0 0 10px 10px;
+}
+
+.subCardCover i{
+  position:relative;
+  top:15px;
+  margin-left:15px;
+  color:#6d65ff;
+}
+.cardButtonNew i{
+  color:white;
+  position:relative;
+  top:0;
+  left:-7px;
+}
+.cardButtonNew:hover{
+  transition-duration:0.5s;
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.3), 0 6px 15px 0 rgba(0,0,0,0.19);
+}
+.overflowWrapper{
+  width:100px;
+  height:fit-content;
+  overflow:hidden;
+}
+
+#backgroundStyling{
+  position: fixed;
+  z-index:-1;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-image:url('./avocadoWavetwo.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.titleSubjectTextStyle{
+  margin-top:60px;
+}
+
+.titleSubjectTextStyle h1{
+  font-family:'Poppins';
+  color:#6d65ff;
+  /*color:#413bb5;*/
+
+}
+
+.titleSubjectTextStyle p{
+  font-family:'Nunito';
+  color:#6d65ff;
+  /*color:#413bb5;*/
+  
 }
 
 @media all and (max-width:960px){
@@ -196,4 +198,17 @@ background:purple;
   .flexwrapcard{
     flex-wrap:wrap;
   }
+  .titleSubjectTextStyle{
+    margin-top:10px;
+  }
+  
+  .titleSubjectTextStyle h1{
+  text-align:center;
+  }
+  .titleSubjectTextStyle p{
+    text-align:center;
+    }
+    #chemistryContainer{
+      flex-wrap:wrap-reverse;
+    }
 }

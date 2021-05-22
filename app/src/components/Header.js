@@ -72,7 +72,7 @@ export default function TemporaryDrawer() {
     <div id='header'>
       {['left'/*, 'right', 'top', 'bottom'*/].map((anchor) => (
         <React.Fragment key={anchor}>
-          <IconButton style={{margin:'8px',position:'absolute',top:'0',left:'0'}} onClick={toggleDrawer(anchor, true)}><MenuIcon/></IconButton>
+          <IconButton style={{margin:'8px',position:'absolute',top:'0',left:'0',color:'#6d65ff'}} onClick={toggleDrawer(anchor, true)}><MenuIcon/></IconButton>
           <Drawer  anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
             {list(anchor)}
           </Drawer>

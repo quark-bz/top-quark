@@ -5,16 +5,31 @@ import '../App.css';
 
 function Card(props) {
   let iconSubList ={
-    "economics":["economicsCard","econsButton"],
-    "physics":["physicsCard","physicsButton"],
-    "chemistry":["chemistryCard","chemistryButton"]
+    "economics":["fas fa-chart-line",'rgb(255, 218, 184)'],
+    "chemistry":["fas fa-flask",'rgb(184, 255, 214)']
   }
 
-  let str1  = `blurCover ${iconSubList[props.subject][0]}`
-  let str2 = `cardButton ${iconSubList[props.subject][1]}`
+  let FAIcon  = iconSubList[props.subject][0]
+  let backgroundColor = iconSubList[props.subject][1];
   return (
+            
+      <div class="newCard">
+      <div class="overflowWrapper"><h3>{props.toolName}</h3></div>
+      <div class="subCardCover" style={{background:backgroundColor}}>
+          <i class={FAIcon}></i>
+          <div class="newDescription">
+              <p>{props.description}</p>
+          </div>
+          <a href={props.link}><button class="cardButtonNew"><i class="fas fa-play fa-sm"></i></button></a>
+      </div>
+    </div>
+            
 
-        <div class = "cardMain">
+  );
+}
+
+export default Card;
+/*<div class = "cardMain">
             <div class = {str1}>
             <div class="cardInnerText">
                 <div class="sub-icon-econs"></div>
@@ -27,10 +42,4 @@ function Card(props) {
         </div>
     </div>
         </div>
-    
-  
-
-  );
-}
-
-export default Card;
+  */

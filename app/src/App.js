@@ -6,14 +6,17 @@ import TwoItemSubIcon from './components/TwoItemSubContainer'
 import SubFlexContainerCard from './components/SubContainerFlex'
 import Card from './components/SubCard';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-
+import './avocadoPastel.jpg'
+import TitleSubjectText from './components/MainTitleText'
 function App(){
     return(
         <Router>
+             
             <TemporaryDrawer/>
-
+            
             <Switch>
-            <Route exact path='/'>
+            <Route exact path='/main'>
+                <div id="backgroundStyling"></div>
                 <Container>
                     <TwoItemSubIcon 
                     oneItem={
@@ -21,16 +24,39 @@ function App(){
                             <Card 
                             subject='economics'
                             toolName='Econsgraph'
-                            description='Create & Export Economic Graphs quickly'/>
-
-                            <Card 
-                            subject='economics'
-                            toolName='Econsgraph'
-                            description='Create & Export Economic Graphs quickly'/>
+                            description='Create & Export Economic graphs quickly'/>
                         </SubFlexContainerCard>
                     }
+                    twoItem={
+                        <TitleSubjectText
+                        subject="Economics"
+                        description="Take your Economics homework to the next level"
+                        lean='LEFT'
+                        />
+
+                    }
                     />
-                    <TwoItemSubIcon/>
+                    <hr></hr>
+                    <TwoItemSubIcon 
+                    id='chemistryContainer'
+                    twoItem={
+                        <SubFlexContainerCard>
+                            <Card 
+                            subject='chemistry'
+                            toolName='ChemBuild'
+                            description='Build & export Chemical structures quickly'/>
+                        </SubFlexContainerCard>
+                    }
+                    oneItem={
+                        <TitleSubjectText
+                        subject="Chemistry"
+                        description="Spice up your Chemistry notes"
+                        lean='RIGHT'
+                        />
+
+                    }
+                    />
+
                 </Container>        
 
             </Route>
