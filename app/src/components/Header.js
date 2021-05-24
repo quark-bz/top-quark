@@ -78,7 +78,7 @@ export default function TemporaryDrawer() {
           </Drawer>
         </React.Fragment>
       ))}
-      <a  href='/main'><h1>Avocado</h1></a>
+      <a  href='/main'><h1>Quark</h1></a>
     </div>
   
   );

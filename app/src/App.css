@@ -26,7 +26,7 @@ background:purple;
   left:0;
   width:100%;
   height: fit-content;
-  text-align:center
+  text-align:center;
 
 }
 #header h1{
@@ -48,9 +48,10 @@ background:purple;
 #mainContainer{
   margin-left:auto;
   margin-right:auto;
-  margin-top:100px;
+  margin-top:500px;
   position: relative;
-  width:80vw;
+  min-width:70vw;
+  width:fit-content;
   height:fit-content;
   background:rgba(255,255,255,0.8); 
   backdrop-filter:blur(30px);
@@ -99,7 +100,11 @@ border-top:0.5px solid whitesmoke;
   padding:15px;
   border-radius: 10px;
   box-shadow: 0 3px 6px 0 rgba(0,0,0,0.13), 0 5px 7px 0 rgba(0,0,0,0.14);
-
+  transition-duration: 0.6s;
+}
+.newCard:hover{
+  transition-duration: 0.6s;
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.3), 0 6px 15px 0 rgba(0,0,0,0.19);  
 }
 .newCard h3{
   margin-top:-2px;
@@ -164,7 +169,7 @@ border-top:0.5px solid whitesmoke;
 #backgroundStyling{
   position: fixed;
   z-index:-1;
-  top:0;
+  top:150px;
   left:0;
   width:100%;
   height:100%;
@@ -186,6 +191,7 @@ border-top:0.5px solid whitesmoke;
 
 .titleSubjectTextStyle p{
   font-family:'Nunito';
+  font-size:20px;
   color:#6d65ff;
   /*color:#413bb5;*/
   
@@ -201,7 +207,9 @@ border-top:0.5px solid whitesmoke;
   .titleSubjectTextStyle{
     margin-top:10px;
   }
-  
+  #mainContainer{
+    width:80vw;
+  }
   .titleSubjectTextStyle h1{
   text-align:center;
   }

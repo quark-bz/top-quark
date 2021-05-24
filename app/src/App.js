@@ -13,10 +13,10 @@ function App(){
         <Router>
              
             <TemporaryDrawer/>
-            
+            <div id="backgroundStyling"></div>
             <Switch>
             <Route exact path='/main'>
-                <div id="backgroundStyling"></div>
+                
                 <Container>
                     <TwoItemSubIcon 
                     oneItem={
@@ -25,12 +25,13 @@ function App(){
                             subject='economics'
                             toolName='Econsgraph'
                             description='Create & Export Economic graphs quickly'/>
+                                          
                         </SubFlexContainerCard>
                     }
                     twoItem={
                         <TitleSubjectText
                         subject="Economics"
-                        description="Take your Economics homework to the next level"
+                        description="Level up your Economics notes"
                         lean='LEFT'
                         />
 
