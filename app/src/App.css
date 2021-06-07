@@ -35,7 +35,7 @@ background:purple;
   width:100%;
   height:fit-content;
   font-family: 'poppins';
-  color:#6d65ff;
+  color:#7482FD;
 
 }
 
@@ -45,7 +45,7 @@ background:purple;
 
 }
 
-#mainContainer{
+.mainContainer{
   margin-left:auto;
   margin-right:auto;
   margin-top:500px;
@@ -53,12 +53,48 @@ background:purple;
   min-width:70vw;
   width:fit-content;
   height:fit-content;
-  background:rgba(255,255,255,0.8); 
+  background:rgba(255,255,255,0.5); 
   backdrop-filter:blur(30px);
   border-radius:20px;
   padding:20px;
   box-shadow: 0 3px 6px 0 rgba(0,0,0,0.13), 0 5px 7px 0 rgba(0,0,0,0.14);
 
+}
+
+#imageStudent{
+  margin-left:60px;
+  width:100%;
+  height:350px;
+  background-image: url('./TheStudentAboutTwo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#imageToolsMan{
+  margin-top:90px;
+  margin-right:50px;
+  width:100%;
+  height:180px;
+  background-image: url('./Handydandytools.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#imageFeedback{
+  margin-left:100px;
+  width:100%;
+  height:280px;
+  background-image: url('./feedbackIcon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#imageDeveloper{
+  
+  margin-right:50px;
+  width:100%;
+  height:380px;
+  background-image: url('./developwithus.png');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 hr{
@@ -85,8 +121,7 @@ border-top:0.5px solid whitesmoke;
   margin:10px;
   margin-top:20px;
   padding-bottom:15px;
-  justify-content: center;
-
+  
 }
 
 
@@ -108,10 +143,10 @@ border-top:0.5px solid whitesmoke;
 }
 .newCard h3{
   margin-top:-2px;
-  color:#6d65ff;
+  color:#7482FD;
 }
 .newCard p{
-  color:#6d65ff;
+  color:#7482FD;
   margin-left:15px;
   padding-top:5px;
 }
@@ -124,7 +159,7 @@ border-top:0.5px solid whitesmoke;
   right:17px;
   outline:none;
   border:none;
-  background:#6d65ff;
+  background:#7482FD;
   transition-duration: 0.3s;
   box-shadow: 0 5px 8px 0 rgba(0,0,0,0.13), 0 6px 10px 0 rgba(0,0,0,0.14);
 }
@@ -148,7 +183,7 @@ border-top:0.5px solid whitesmoke;
   position:relative;
   top:15px;
   margin-left:15px;
-  color:#6d65ff;
+  color:#7482FD;
 }
 .cardButtonNew i{
   color:white;
@@ -166,14 +201,26 @@ border-top:0.5px solid whitesmoke;
   overflow:hidden;
 }
 
-#backgroundStyling{
+#aboutBackgroundStyling{
   position: fixed;
   z-index:-1;
   top:150px;
   left:0;
   width:100%;
+  height: 100%;
+  background-image:url('./permWP.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+#backgroundStyling{
+  position: fixed;
+  z-index:-1;
+  top:10px;
+  left:0;
+  width:100%;
   height:100%;
-  background-image:url('./avocadoWavetwo.png');
+  background-image:url('./testthreemainPageWP.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -184,7 +231,7 @@ border-top:0.5px solid whitesmoke;
 
 .titleSubjectTextStyle h1{
   font-family:'Poppins';
-  color:#6d65ff;
+  color:#7482FD;
   /*color:#413bb5;*/
 
 }
@@ -192,12 +239,47 @@ border-top:0.5px solid whitesmoke;
 .titleSubjectTextStyle p{
   font-family:'Nunito';
   font-size:20px;
-  color:#6d65ff;
+  color:#7482FD;
   /*color:#413bb5;*/
   
 }
 
+.aboutpagestuff{
+
+}
+
+#aboutPageContainer{
+  margin-top:120px;
+  justify-content: center;
+  box-shadow: none;
+  background:transparent;
+  backdrop-filter: none;
+  min-width: 90vw;
+}
+
+#aboutone{
+  backdrop-filter: blur(15px);
+  border-radius:20px;
+}
+
+#aboutone p{
+  max-width: 430px;
+  text-align:justify;
+}
+
 @media all and (max-width:960px){
+  #aboutBackgroundStyling{
+    background-size: cover;
+  }
+  #backgroundStyling{
+    background-size: cover;
+  }
+  #abouttextone{
+    flex-wrap: wrap-reverse;
+  }
+  #abouttextthree{
+    flex-wrap: wrap-reverse;
+  }
   .itemcontainer{
     width:80vw;
   }
@@ -207,7 +289,19 @@ border-top:0.5px solid whitesmoke;
   .titleSubjectTextStyle{
     margin-top:10px;
   }
-  #mainContainer{
+
+.aboutimage{
+  margin-left: auto;
+  margin-right:auto;
+}
+
+#aboutone p{
+  text-align: center;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+  .mainContainer{
     width:80vw;
   }
   .titleSubjectTextStyle h1{

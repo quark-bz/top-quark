@@ -56,10 +56,10 @@ export default function TemporaryDrawer() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
-          <ButtonSideNav name='Home' dir='/main' icon={<HomeIcon/>}/>
-          <ButtonSideNav name='About' dir='/about' icon={<EmojiObjectsIcon/>}/>
-          <ButtonSideNav name='Dashboard' dir='/dashboard' icon={<DashboardIcon/>}/>
+      <List style={{color:'#7482FD'}}>
+          <ButtonSideNav name='Home' dir='/' icon={<HomeIcon style={{color:'#7482FD'}}/>}/>
+          <ButtonSideNav name='About' dir='/about' icon={<EmojiObjectsIcon style={{color:'#7482FD'}}/>}/>
+          <ButtonSideNav name='Dashboard' dir='/dashboard' icon={<DashboardIcon style={{color:'#7482FD'}}/>}/>
       </List>
       
     </div>
@@ -72,13 +72,13 @@ export default function TemporaryDrawer() {
     <div id='header'>
       {['left'/*, 'right', 'top', 'bottom'*/].map((anchor) => (
         <React.Fragment key={anchor}>
-          <IconButton style={{margin:'8px',position:'absolute',top:'0',left:'0',color:'#6d65ff'}} onClick={toggleDrawer(anchor, true)}><MenuIcon/></IconButton>
+          <IconButton style={{margin:'8px',position:'absolute',top:'0',left:'0',color:'#7482FD'}} onClick={toggleDrawer(anchor, true)}><MenuIcon/></IconButton>
           <Drawer  anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
             {list(anchor)}
           </Drawer>
         </React.Fragment>
       ))}
-      <a  href='/main'><h1>Quark</h1></a>
+      <a  href='/'><h1>Quark</h1></a>
     </div>
   
   );

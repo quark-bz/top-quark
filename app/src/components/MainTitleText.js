@@ -10,11 +10,11 @@ export default function TitleSubjectText(props){
     }
     return(
 
-        <div class='titleSubjectTextStyle' style={leanDirection}>
+        <div class='titleSubjectTextStyle' style={leanDirection} id={props.id}>
             <h1>
                 {props.subject}
             </h1>
-            <p>
+            <p >
                 {props.description}
             </p>
         </div>
