@@ -12,7 +12,7 @@ import TitleSubjectText from "./components/MainTitleText";
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <TemporaryDrawer />
       <Switch>
         <Route exact path="/">
