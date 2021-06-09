@@ -1,3 +1,10 @@
-# TOP QUARK
-client for Quark.bz
+# Top Quark
 
+Client for Quark.bz
+
+# Installation
+
+```
+yarn install
+yarn start
+```
