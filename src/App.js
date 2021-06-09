@@ -12,7 +12,7 @@ import TitleSubjectText from "./components/MainTitleText";
 
 function App() {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <HashRouter>
       <TemporaryDrawer />
       <Switch>
         <Route exact path="/">
@@ -118,7 +118,7 @@ function App() {
           </Container>
         </Route>
       </Switch>
-    </Router>
+    </HashRouter>
   );
 }
 export default App;
