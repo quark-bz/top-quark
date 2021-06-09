@@ -12,7 +12,7 @@ import TitleSubjectText from "./components/MainTitleText";
 
 function App() {
   return (
-    <HashRouter>
+    <Router>
       <TemporaryDrawer />
       <Switch>
         <Route exact path="/">
@@ -118,7 +118,7 @@ function App() {
           </Container>
         </Route>
       </Switch>
-    </HashRouter>
+    </Router>
   );
 }
 export default App;
