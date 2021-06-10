@@ -30,7 +30,7 @@
   width: 100%;
   height: fit-content;
   font-family: "poppins";
-  color: #7482fd;
+  color: #5a5aff;
 }
 
 #header a {
@@ -132,10 +132,10 @@ hr {
 }
 .newCard h3 {
   margin-top: -2px;
-  color: #7482fd;
+  color: #5a5aff;
 }
 .newCard p {
-  color: #7482fd;
+  color: #5a5aff;
   margin-left: 15px;
   padding-top: 5px;
 }
@@ -148,7 +148,7 @@ hr {
   right: 17px;
   outline: none;
   border: none;
-  background: #7482fd;
+  background: #5a5aff;
   transition-duration: 0.3s;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.13), 0 6px 10px 0 rgba(0, 0, 0, 0.14);
 }
@@ -171,7 +171,7 @@ hr {
   position: relative;
   top: 15px;
   margin-left: 15px;
-  color: #7482fd;
+  color: #5a5aff;
 }
 .cardButtonNew i {
   color: white;
@@ -219,14 +219,14 @@ hr {
 
 .titleSubjectTextStyle h1 {
   font-family: "Poppins";
-  color: #7482fd;
+  color: #6464ff;
   /*color:#413bb5;*/
 }
 
 .titleSubjectTextStyle p {
   font-family: "Nunito";
   font-size: 20px;
-  color: #7482fd;
+  color: #5a5aff;
   /*color:#413bb5;*/
 }
 
