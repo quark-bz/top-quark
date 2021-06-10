@@ -1,9 +1,6 @@
 import TemporaryDrawer from "./components/Header.js";
-import MainPage from "./components/MainPage.js";
-import Button from "@material-ui/core/Button";
 import Container from "./components/HomeContainer.js";
 import TwoItemSubIcon from "./components/TwoItemSubContainer";
-import { faChartLine } from "@fortawesome/fontawesome-svg-core";
 import SubFlexContainerCard from "./components/SubContainerFlex";
 import Card from "./components/SubCard";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
