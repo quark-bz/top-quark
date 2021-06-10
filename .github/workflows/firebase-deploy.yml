@@ -27,4 +27,5 @@ jobs:
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_QUARK_6D7C5 }}"
+          channelId: live
           projectId: quark-6d7c5
