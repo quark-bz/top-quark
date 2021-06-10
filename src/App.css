@@ -1,0 +1,301 @@
+.header {
+  width: 100%;
+  height: fit-content;
+  background: purple;
+  text-align: center;
+}
+
+.MainPage {
+  width: 100%;
+  height: fit-content;
+  background: purple;
+  text-align: center;
+}
+.drawer {
+}
+.navMenu {
+  background: purple;
+}
+
+#header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: fit-content;
+  text-align: center;
+}
+#header h1 {
+  margin-top: 10px;
+  width: 100%;
+  height: fit-content;
+  font-family: "poppins";
+  color: #7482fd;
+}
+
+#header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mainContainer {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 500px;
+  position: relative;
+  min-width: 70vw;
+  width: fit-content;
+  height: fit-content;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(30px);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.13), 0 5px 7px 0 rgba(0, 0, 0, 0.14);
+}
+
+#imageStudent {
+  margin-left: 60px;
+  width: 100%;
+  height: 350px;
+  background-image: url("./assets/TheStudentAboutTwo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#imageToolsMan {
+  margin-top: 90px;
+  margin-right: 50px;
+  width: 100%;
+  height: 180px;
+  background-image: url("./assets/Handydandytools.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#imageFeedback {
+  margin-left: 100px;
+  width: 100%;
+  height: 280px;
+  background-image: url("./assets/feedbackIcon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#imageDeveloper {
+  margin-right: 50px;
+  width: 100%;
+  height: 380px;
+  background-image: url("./assets/developwithus.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+hr {
+  border-top: 0.5px solid whitesmoke;
+}
+.flexwrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.flexwrapcard {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+.itemcontainer {
+  position: relative;
+  min-width: 30vw;
+  /*change to height:fit-content later*/
+  min-height: 100px;
+  height: fit-content;
+  /*background:transparent*/
+  background: transparent;
+  margin: 10px;
+  margin-top: 20px;
+  padding-bottom: 15px;
+}
+
+.newCard {
+  font-family: "Nunito";
+  position: relative;
+  margin: 10px;
+  width: 160px;
+  height: 180px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.13), 0 5px 7px 0 rgba(0, 0, 0, 0.14);
+  transition-duration: 0.6s;
+}
+.newCard:hover {
+  transition-duration: 0.6s;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 15px 0 rgba(0, 0, 0, 0.19);
+}
+.newCard h3 {
+  margin-top: -2px;
+  color: #7482fd;
+}
+.newCard p {
+  color: #7482fd;
+  margin-left: 15px;
+  padding-top: 5px;
+}
+.newCard button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: -25px;
+  right: 17px;
+  outline: none;
+  border: none;
+  background: #7482fd;
+  transition-duration: 0.3s;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.13), 0 6px 10px 0 rgba(0, 0, 0, 0.14);
+}
+.newDescription {
+  width: 130px;
+}
+.newDescription p {
+  font-size: 14px;
+}
+.subCardCover {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 78%;
+  border-radius: 0 0 10px 10px;
+}
+
+.subCardCover i {
+  position: relative;
+  top: 15px;
+  margin-left: 15px;
+  color: #7482fd;
+}
+.cardButtonNew i {
+  color: white;
+  position: relative;
+  top: 0;
+  left: -7px;
+}
+.cardButtonNew:hover {
+  transition-duration: 0.5s;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 15px 0 rgba(0, 0, 0, 0.19);
+}
+.overflowWrapper {
+  width: 100px;
+  height: fit-content;
+  overflow: hidden;
+}
+
+#aboutBackgroundStyling {
+  position: fixed;
+  z-index: -1;
+  top: 150px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./assets/permWP.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+#backgroundStyling {
+  position: fixed;
+  z-index: -1;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./assets/testthreemainPageWP.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.titleSubjectTextStyle {
+  margin-top: 60px;
+}
+
+.titleSubjectTextStyle h1 {
+  font-family: "Poppins";
+  color: #7482fd;
+  /*color:#413bb5;*/
+}
+
+.titleSubjectTextStyle p {
+  font-family: "Nunito";
+  font-size: 20px;
+  color: #7482fd;
+  /*color:#413bb5;*/
+}
+
+.aboutpagestuff {
+}
+
+#aboutPageContainer {
+  margin-top: 120px;
+  justify-content: center;
+  box-shadow: none;
+  background: transparent;
+  backdrop-filter: none;
+  min-width: 90vw;
+}
+
+#aboutone {
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+}
+
+#aboutone p {
+  max-width: 430px;
+  text-align: justify;
+}
+
+@media all and (max-width: 960px) {
+  #aboutBackgroundStyling {
+    background-size: cover;
+  }
+  #backgroundStyling {
+    background-size: cover;
+  }
+  #abouttextone {
+    flex-wrap: wrap-reverse;
+  }
+  #abouttextthree {
+    flex-wrap: wrap-reverse;
+  }
+  .itemcontainer {
+    width: 80vw;
+  }
+  .flexwrapcard {
+    flex-wrap: wrap;
+  }
+  .titleSubjectTextStyle {
+    margin-top: 10px;
+  }
+
+  .aboutimage {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #aboutone p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mainContainer {
+    width: 80vw;
+  }
+  .titleSubjectTextStyle h1 {
+    text-align: center;
+  }
+  .titleSubjectTextStyle p {
+    text-align: center;
+  }
+  #chemistryContainer {
+    flex-wrap: wrap-reverse;
+  }
+}
