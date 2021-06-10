@@ -6,7 +6,7 @@ import '../App.css';
 function Card(props) {
   let iconSubList ={
     "economics":["fas fa-chart-line",'rgb(255, 218, 184)'],
-    "chemistry":["fas fa-flask",'rgb(184, 255, 214)']
+    "chemistry":["fas fa-flask",'rgb(210, 184, 255)']
   }
 
   let FAIcon  = iconSubList[props.subject][0]
