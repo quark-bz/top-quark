@@ -6,19 +6,23 @@ import Card from "./components/SubCard";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./assets/avocadoPastel.jpg";
 import TitleSubjectText from "./components/MainTitleText";
+import ToolsPage from "./components/toolPage";
+
 
 function App() {
   return (
     <Router>
-      <TemporaryDrawer />
+      
       <Switch>
         <Route exact path="/">
+        <TemporaryDrawer />
           <div id="backgroundStyling"></div>
           <Container>
             <TwoItemSubIcon
               oneItem={
                 <SubFlexContainerCard>
                   <Card
+                    link='/EconsBuild'
                     subject="economics"
                     toolName="Econsgraph"
                     description="Create & Export Economic graphs quickly"
@@ -27,6 +31,7 @@ function App() {
               }
               twoItem={
                 <TitleSubjectText
+
                   subject="Economics"
                   description="Level up your Economics notes"
                   lean="LEFT"
@@ -39,6 +44,7 @@ function App() {
               twoItem={
                 <SubFlexContainerCard>
                   <Card
+                  link='/ChemBuild'
                     subject="chemistry"
                     toolName="ChemBuild"
                     description="Build & export Chemical structures quickly"
@@ -56,6 +62,7 @@ function App() {
           </Container>
         </Route>
         <Route path="/about">
+        <TemporaryDrawer />
           <div id="aboutBackgroundStyling"></div>
           <Container id="aboutPageContainer">
             <TwoItemSubIcon
@@ -113,6 +120,19 @@ function App() {
               oneItem={<div class="aboutimage" id="imageDeveloper"></div>}
             />
           </Container>
+        </Route>
+        <Route path="/ChemBuild">
+          <ToolsPage
+          subj='chemistry'
+          ToolURL = 'https://joentze.github.io/ChemicalStructureConstructor/ChemicalStructureConstructor/index.html'
+          ></ToolsPage>
+
+        </Route>
+        <Route path="/EconsBuild">
+        <ToolsPage
+          subj='economics'
+          ToolURL = 'https://joentze.github.io/econsgraphs-redesign/econsgraphsweb/index.html'
+          ></ToolsPage>
         </Route>
       </Switch>
     </Router>
