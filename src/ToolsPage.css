@@ -1,0 +1,132 @@
+.iframeFit{
+    position: absolute;
+    top:0;
+    left:0;
+    padding:none;
+    border:none;
+    outline:none;
+    width:100%;
+    height:100%;
+    border-radius: 30px;  
+  
+  }
+  
+  #isPage{
+  border-radius: 30px;
+  position: absolute;
+  margin-left:100px;
+  margin-top:70px;
+  min-width:1000px;
+  width:85vw;
+  height:88vh;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.13), 0 5px 7px 0 rgba(0,0,0,0.14);
+  
+  }
+  
+  #dirButtonContainer{
+  float:left;
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction: column;
+  position: fixed;
+  top:10%;
+  }
+  #dirButtonContainer button{
+  position: relative;
+  width:45px;
+  height:45px;
+  margin-left:25px;
+  margin-top:50px;
+  border-radius:50%;
+  background:rgba(200,200,200,0.0);
+  border:none
+  }
+
+#dirButtonContainer button:hover{
+    transition-duration:0.5s;
+    background:rgba(200,200,200,0.3);
+}
+
+  #textInputTitle{
+  position: fixed;
+  margin-left:100px;
+  margin-top:15px;
+  
+  }
+
+  #titleInputMain{
+  z-index: 1000;
+  padding:8px;
+  border-radius:20px;
+  outline:none;
+  border:none;
+  background:rgba(230,230,230,0.3);
+  font-size: 12pt;
+  font-family:'Nunito';
+  }
+  
+  #titleInputMain:hover{
+  transition-duration: 0.5s;
+  background:rgba(230,230,230,0.8)
+  }
+  
+  
+  
+  #funcButtonContainer{
+  float:right;
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction: column;
+  position: fixed;
+  margin-top:10%;
+  right:0.7%;
+  border-radius:40px;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.13), 0 5px 7px 0 rgba(0,0,0,0.14);
+  }
+  #funcButtonContainer button{
+  position: relative;
+  width:40px;
+  height:40px;
+    margin:20px;
+    border-radius:50%;
+    background:rgba(200,200,200,0.0);
+    border:none;
+  }
+  
+#funcButtonContainer button:hover{
+    transition-duration:0.5s;
+    background:rgba(200,200,200,0.5);
+}
+
+  .buttonPreset{
+    z-index: 2;
+    border:none;
+    position: fixed;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+  
+  }
+  #horizontal{
+  position: absolute;
+  top:0;left:0;
+  width:100%;
+  height:100%;
+  }
+
+  #headerTool h1{
+      font-family:'Poppins';
+        margin-top:10px;
+  }
+  #headerTool{
+      position:fixed;
+      top:0;
+      left:0;
+    width:100%;
+    height:fit-content;
+    text-align: center;
+  }
+  a{
+      text-decoration:none;
+      color:inherit;
+  }
