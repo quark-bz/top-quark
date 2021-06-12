@@ -1,12 +1,19 @@
 import '../ToolsPage.css';
 import HomeIcon from '@material-ui/icons/Home';
+import React from 'react';
+import ReactDOM from 'react-dom'
 import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import DescriptionIcon from '@material-ui/icons/Description';
 import CameraAltIcon from '@material-ui/icons/CameraAlt';
 import FullscreenIcon from '@material-ui/icons/Fullscreen';
 import SaveAltIcon from '@material-ui/icons/SaveAlt';
+
+
 export default function ToolsPage(props){
+
+
+    
     const colorPaletteSubj = {
         'chemistry':[{color:'rgb(67,40,102)'},{background:'rgb(214,198,248)'}],
         'economics':[{color:'rgb(183,115,53)'},{background:'rgb(247,230,211'}],
@@ -35,7 +42,7 @@ export default function ToolsPage(props){
                 <button style={currPalette}>
                 <FullscreenIcon></FullscreenIcon>
                 </button>
-                <button style={currPalette}>
+                <button style={currPalette} onClick={API_downloadPNG}>
                     <SaveAltIcon></SaveAltIcon>
                 </button>
             </div>
@@ -44,3 +51,39 @@ export default function ToolsPage(props){
 
     )
 }
+
+
+function API_downloadPNG(e){
+    e.preventDefault();
+    let iframeEl = document.getElementById('iframeFit');
+     iframeEl.contentWindow.postMessage('downloadPNG',iframeEl.src);
+     console.log('sent')
+   }
+   
+   window.addEventListener('message',event=>{
+
+       console.log('response received')
+        let API_obj = event.data;
+        
+           if(API_obj['type'] == 'downloadPNG'){
+               console.log('hello there')
+               downloadPNG(API_obj['uri'],'hellothere')                   
+           }
+
+       else{
+           return
+       }
+           },false)
+   
+   function downloadPNG (href, name) {
+           var link = document.createElement('a');
+           link.download = name;
+           link.style.opacity = "0";
+           link.href = href;
+           link.click();
+           link.remove();
+       }
+
+
+
+
