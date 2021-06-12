@@ -1,30 +1,30 @@
-import logo from '../logo.svg';
-import '../App.css';
-
-
+import "../App.css";
 
 function Card(props) {
-  let iconSubList ={
-    "economics":["fas fa-chart-line",'rgb(255, 218, 184)'],
-    "chemistry":["fas fa-flask",'rgb(210, 184, 255)']
-  }
+  let iconSubList = {
+    economics: ["fas fa-chart-line", "rgb(255, 218, 184)"],
+    chemistry: ["fas fa-flask", "rgb(210, 184, 255)"],
+  };
 
-  let FAIcon  = iconSubList[props.subject][0]
+  let FAIcon = iconSubList[props.subject][0];
   let backgroundColor = iconSubList[props.subject][1];
   return (
-            
-      <div class="newCard">
-      <div class="overflowWrapper"><h3>{props.toolName}</h3></div>
-      <div class="subCardCover" style={{background:backgroundColor}}>
-          <i class={FAIcon}></i>
-          <div class="newDescription">
-              <p>{props.description}</p>
-          </div>
-          <a href={props.link}><button class="cardButtonNew"><i class="fas fa-play fa-sm"></i></button></a>
+    <div class="newCard">
+      <div class="overflowWrapper">
+        <h3>{props.toolName}</h3>
+      </div>
+      <div class="subCardCover" style={{ background: backgroundColor }}>
+        <i class={FAIcon}></i>
+        <div class="newDescription">
+          <p>{props.description}</p>
+        </div>
+        <a href={props.link}>
+          <button class="cardButtonNew">
+            <i class="fas fa-play fa-sm"></i>
+          </button>
+        </a>
       </div>
     </div>
-            
-
   );
 }
 

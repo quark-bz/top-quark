@@ -1,13 +1,11 @@
-import '../App.css'
-import TwoItemSubCont from './TwoItemSubContainer'
+import "../App.css";
 
-
-export default function Container(props){
-    return(
-        <div>
-        <div class="mainContainer" id={props.id}>
-        {props.children}    
-        </div>
-        </div>
-    )
+export default function Container(props) {
+  return (
+    <div>
+      <div className="mainContainer" id={props.id}>
+        {props.children}
+      </div>
+    </div>
+  );
 }
