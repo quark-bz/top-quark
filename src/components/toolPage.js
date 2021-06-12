@@ -1,4 +1,4 @@
-import "../ToolsPage.css";
+import "../css/ToolsPage.css";
 import HomeIcon from "@material-ui/icons/Home";
 import EmojiObjectsIcon from "@material-ui/icons/EmojiObjects";
 import DashboardIcon from "@material-ui/icons/Dashboard";
