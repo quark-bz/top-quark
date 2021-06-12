@@ -104,9 +104,9 @@ export default function Header() {
           </Drawer>
         </React.Fragment>
       ))}
-      <a href="/">
-        <h1>Quark</h1>
-      </a>
+
+      <h1><a  href='/'>Quark</a></h1>
+
     </div>
   );
 }
