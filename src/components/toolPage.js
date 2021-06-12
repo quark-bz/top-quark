@@ -2,7 +2,6 @@ import "../css/ToolsPage.css";
 import HomeIcon from "@material-ui/icons/Home";
 import EmojiObjectsIcon from "@material-ui/icons/EmojiObjects";
 import DashboardIcon from "@material-ui/icons/Dashboard";
-import DescriptionIcon from "@material-ui/icons/Description";
 import CameraAltIcon from "@material-ui/icons/CameraAlt";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
 import SaveAltIcon from "@material-ui/icons/SaveAlt";
