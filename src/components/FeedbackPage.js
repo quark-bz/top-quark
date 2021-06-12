@@ -14,6 +14,7 @@ export const FeedbackPage = () => {
     watch,
     formState: { errors },
   } = useForm();
+  console.log(watch("message"), errors);
   const onSubmit = (data) => {
     db.collection("feedback")
       .add({
