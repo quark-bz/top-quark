@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import DashboardIcon from "@material-ui/icons/Dashboard";
+import FeedbackIcon from "@material-ui/icons/Feedback";
 //import InboxIcon from '@material-ui/icons/MoveToInbox';
 //import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from "@material-ui/icons/Menu";
@@ -68,6 +69,11 @@ export default function Header() {
           name="Dashboard"
           dir="/dashboard"
           icon={<DashboardIcon style={{ color: "#6464ff" }} />}
+        />
+        <ButtonSideNav
+          name="Feedback"
+          dir="/feedback"
+          icon={<FeedbackIcon style={{ color: "#6464ff" }} />}
         />
       </List>
     </div>
