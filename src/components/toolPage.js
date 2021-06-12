@@ -22,7 +22,7 @@ export default function ToolsPage(props){
     let currBodyBG = colorPaletteSubj[props.subj][1]
     return(
         <div id="horizontal">
-            <div id='headerTool' style={currPalette}><a href='/'><h1>Quark</h1></a></div>
+            <div id='headerTool' style={currPalette}><h1><a href='/'>Quark</a></h1></div>
             <span id='textInputTitle'>
                 <input id="titleInputMain"type="text" placeholder="Untitled Drawing"></input>
                 
@@ -66,8 +66,9 @@ function API_downloadPNG(e){
         let API_obj = event.data;
         
            if(API_obj['type'] == 'downloadPNG'){
+               let titleOfDrawing = document.getElementById('titleInputMain').value
                console.log('hello there')
-               downloadPNG(API_obj['uri'],'hellothere')                   
+               downloadPNG(API_obj['uri'],titleOfDrawing)                   
            }
 
        else{
