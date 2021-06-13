@@ -17,7 +17,7 @@ export const HomePage = () => {
           oneItem={
             <SubFlexContainerCard>
               <Card
-                link="/EconsBuild"
+                link="/t/EconsBuild"
                 subject="economics"
                 toolName="Econsgraph"
                 description="Create & Export Economic graphs quickly"
@@ -38,7 +38,7 @@ export const HomePage = () => {
           twoItem={
             <SubFlexContainerCard>
               <Card
-                link="/ChemBuild"
+                link="/t/ChemBuild"
                 subject="chemistry"
                 toolName="ChemBuild"
                 description="Build & export Chemical structures quickly"

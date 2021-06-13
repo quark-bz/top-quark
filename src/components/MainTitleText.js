@@ -8,7 +8,7 @@ export default function TitleSubjectText(props) {
     leanDirection = { textAlign: "right" };
   }
   return (
-    <div class="titleSubjectTextStyle" style={leanDirection} id={props.id}>
+    <div className="titleSubjectTextStyle" style={leanDirection} id={props.id}>
       <h1>{props.subject}</h1>
       <p>{props.description}</p>
     </div>
