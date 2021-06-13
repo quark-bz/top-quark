@@ -6,6 +6,7 @@ import DashboardIcon from "@material-ui/icons/Dashboard";
 import CameraAltIcon from "@material-ui/icons/CameraAlt";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
 import SaveAltIcon from "@material-ui/icons/SaveAlt";
+import Header from './Header'
 
 export default function ToolsPage(props) {
   const colorPaletteSubj = {
@@ -21,44 +22,25 @@ export default function ToolsPage(props) {
   let currPalette = colorPaletteSubj[props.subj][0];
   let currBodyBG = colorPaletteSubj[props.subj][1];
   return (
+<><Header subj={props.subj}/>
+
     <div id="horizontal">
       <div id="headerTool" style={currPalette}>
-        <h1>
-          <a href="/">Quark</a>
-        </h1>
       </div>
-      <span id="textInputTitle">
+
+      <span id="dirButton">
+   
+      </span>
+      <span id='inputBar'>
+        <div id="isPage">
+        <span id="textInputTitle">
         <input
           id="titleInputMain"
           type="text"
           placeholder="Untitled Drawing"
         ></input>
-      </span>
-      <span id="dirButton">
-        <div id="dirButtonContainer">
-          <button style={currPalette}>
-            <HomeIcon></HomeIcon>
-          </button>
-          <button style={currPalette}>
-            <EmojiObjectsIcon></EmojiObjectsIcon>
-          </button>
-          <button style={currPalette}>
-            <DashboardIcon></DashboardIcon>
-          </button>
-        </div>
-      </span>
-      <span>
-        <div id="isPage">
-          <iframe
-            class="iframeFit"
-            id="iframeFit"
-            title="tool"
-            src={props.ToolURL}
-          ></iframe>
-        </div>
-      </span>
-      <span id="funcButton">
-        <div id="funcButtonContainer" style={currBodyBG}>
+         <div id="funcButton">
+        <div id="funcButtonContainer">
           <button style={currPalette}>
             {" "}
             <CameraAltIcon></CameraAltIcon>
@@ -70,8 +52,19 @@ export default function ToolsPage(props) {
             <SaveAltIcon></SaveAltIcon>
           </button>
         </div>
+      </div>
       </span>
+          <iframe
+            class="iframeFit"
+            id="iframeFit"
+            title="tool"
+            src={props.ToolURL}
+          ></iframe>
+        </div>
+      </span>
+     
     </div>
+    </>
   );
 }
 

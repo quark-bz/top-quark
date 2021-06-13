@@ -8,7 +8,7 @@ import TitleSubjectText from "./MainTitleText";
 export const AboutPage = () => {
   return (
     <>
-      <Header />
+      <Header subj='none'/>
       <div id="aboutBackgroundStyling"></div>
       <Container id="aboutPageContainer">
         <TwoItemSubIcon

@@ -5,7 +5,7 @@ import Container from "./HomeContainer";
 export const NotFoundPage = () => {
   return (
     <>
-      <Header />
+      <Header subj='none' />
       <div id="aboutBackgroundStyling"></div>
       <Container>404 Page Not Found</Container>
     </>
