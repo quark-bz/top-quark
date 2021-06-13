@@ -1,7 +1,6 @@
 # Top Quark
 
 Client for Quark.bz
-hello there!
 
 # Installation
 
