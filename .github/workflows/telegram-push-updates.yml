@@ -2,8 +2,8 @@ name: Telegram Push Updates
 on: [push]
 
 jobs:
-  build:
-    name: push
+  push_update:
+    name: push_update
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
