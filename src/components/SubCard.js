@@ -9,18 +9,18 @@ function Card(props) {
   let FAIcon = iconSubList[props.subject][0];
   let backgroundColor = iconSubList[props.subject][1];
   return (
-    <div class="newCard">
-      <div class="overflowWrapper">
+    <div className="newCard">
+      <div className="overflowWrapper">
         <h3>{props.toolName}</h3>
       </div>
-      <div class="subCardCover" style={{ background: backgroundColor }}>
-        <i class={FAIcon}></i>
-        <div class="newDescription">
+      <div className="subCardCover" style={{ background: backgroundColor }}>
+        <i className={FAIcon}></i>
+        <div className="newDescription">
           <p>{props.description}</p>
         </div>
         <a href={props.link}>
-          <button class="cardButtonNew">
-            <i class="fas fa-play fa-sm"></i>
+          <button className="cardButtonNew">
+            <i className="fas fa-play fa-sm"></i>
           </button>
         </a>
       </div>

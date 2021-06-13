@@ -49,7 +49,12 @@ export default function ToolsPage(props) {
       </span>
       <span>
         <div id="isPage">
-          <iframe class="iframeFit" id="iframeFit" src={props.ToolURL}></iframe>
+          <iframe
+            class="iframeFit"
+            id="iframeFit"
+            title="tool"
+            src={props.ToolURL}
+          ></iframe>
         </div>
       </span>
       <span id="funcButton">
