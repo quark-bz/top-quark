@@ -78,7 +78,7 @@ export const FeedbackPage = () => {
               rows="10"
               {...register("message")}
             />
-            <Button type="submit" fullwidth variant="contained" color="primary">
+            <Button type="submit" style={{fontFamily:'Nunito'}} fullwidth variant="contained" color="primary">
               Send Feedback
             </Button>
           </form>
