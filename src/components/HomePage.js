@@ -10,7 +10,7 @@ import TitleSubjectText from "./MainTitleText";
 export const HomePage = () => {
   return (
     <>
-      <Header />
+      <Header subj ='none'/>
       <div id="backgroundStyling"></div>
       <Container>
         <TwoItemSubIcon

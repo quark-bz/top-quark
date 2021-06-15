@@ -8,7 +8,7 @@ import TitleSubjectText from "./MainTitleText";
 export const AboutPage = () => {
   return (
     <>
-      <Header />
+      <Header subj='none'/>
       <div id="aboutBackgroundStyling"></div>
       <Container id="aboutPageContainer">
         <TwoItemSubIcon
@@ -46,7 +46,7 @@ export const AboutPage = () => {
             <TitleSubjectText
               id="aboutone"
               subject="We Can't Do This Alone"
-              description="Quark wants to meet your homework needs as best as we can, but we can’t do it alone. Can’t find a feature that you want? Leave us feedback here."
+              description={<p>Quark wants to meet your homework needs as best as we can, but we can’t do it alone. Can’t find a feature that you want? Leave us feedback <u><a href='/feedback'>here</a></u>.</p>}
               lean="LEFT"
             />
           }
@@ -59,7 +59,7 @@ export const AboutPage = () => {
             <TitleSubjectText
               id="aboutone"
               subject="Develop with Us"
-              description="Calling all web app magicians, Quark wants you. Help build this online learning community by developing tools with us. Create a tool and upload it here at Quark."
+              description={<p>Calling all web app magicians, Quark wants you. Help build this online learning community by developing tools with us. Create a tool and upload it <u><a href='/developwithus'>here</a></u> at Quark.</p>}
               lean="LEFT"
             />
           }

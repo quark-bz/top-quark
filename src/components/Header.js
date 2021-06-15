@@ -12,6 +12,7 @@ import IconButton from "@material-ui/core/IconButton";
 import HomeIcon from "@material-ui/icons/Home";
 import EmojiObjectsIcon from "@material-ui/icons/EmojiObjects";
 import ButtonSideNav from "./buttonLink.js";
+import CodeIcon from '@material-ui/icons/Code';
 import "../App.css";
 
 const useStyles = makeStyles({
@@ -23,7 +24,26 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Header() {
+const colorPaletteSubj = {
+  chemistry: [
+    { color: "rgb(67,40,102)" },
+    { background: "rgb(214,198,248)" },
+  ],
+  economics: [
+    { color: "rgb(183,115,53)" },
+    { background: "rgb(247,230,211" },
+  ],
+  none:[
+    { color: "#5a5aff" },
+    { background: "#5a5aff" },
+  ]
+};
+
+export default function Header(props) {
+  
+  let currPalette = colorPaletteSubj[props.subj][0];
+  let currBodyBG = colorPaletteSubj[props.subj][1];
+
   const classes = useStyles();
   const [state, setState] = React.useState({
     left: false,
@@ -54,26 +74,26 @@ export default function Header() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List style={{ color: "#6464ff" }}>
+      <List style={currPalette}>
         <ButtonSideNav
           name="Home"
           dir="/"
-          icon={<HomeIcon style={{ color: "#6464ff" }} />}
+          icon={<HomeIcon style={currPalette} />}
         />
         <ButtonSideNav
           name="About"
           dir="/about"
-          icon={<EmojiObjectsIcon style={{ color: "#6464ff" }} />}
+          icon={<EmojiObjectsIcon style={currPalette} />}
         />
         <ButtonSideNav
-          name="Dashboard"
-          dir="/dashboard"
-          icon={<DashboardIcon style={{ color: "#6464ff" }} />}
+          name="Develop with Us"
+          dir="/developwithus"
+          icon={<CodeIcon style={currPalette} />}
         />
         <ButtonSideNav
           name="Feedback"
           dir="/feedback"
-          icon={<FeedbackIcon style={{ color: "#6464ff" }} />}
+          icon={<FeedbackIcon style={currPalette} />}
         />
       </List>
     </div>
@@ -93,7 +113,7 @@ export default function Header() {
             }}
             onClick={toggleDrawer(anchor, true)}
           >
-            <MenuIcon />
+            <MenuIcon style={currPalette} />
           </IconButton>
           <Drawer
             anchor={anchor}
@@ -105,7 +125,7 @@ export default function Header() {
         </React.Fragment>
       ))}
 
-      <h1><a  href='/'>Quark</a></h1>
+      <h1><a  href='/' style={currPalette}>Quark</a></h1>
 
     </div>
   );

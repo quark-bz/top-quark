@@ -37,7 +37,7 @@ export const FeedbackPage = () => {
 
   return (
     <>
-      <Header />
+      <Header subj='none' />
       <div id="aboutBackgroundStyling"></div>
       <Container id="feedbackPageContainer">
         {sent ? (
