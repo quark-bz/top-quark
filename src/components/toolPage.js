@@ -1,14 +1,15 @@
 import "../css/ToolsPage.css";
-import HomeIcon from "@material-ui/icons/Home";
 import React from "react";
-import EmojiObjectsIcon from "@material-ui/icons/EmojiObjects";
-import DashboardIcon from "@material-ui/icons/Dashboard";
 import CameraAltIcon from "@material-ui/icons/CameraAlt";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
 import SaveAltIcon from "@material-ui/icons/SaveAlt";
 import Header from './Header'
 
 export default function ToolsPage(props) {
+
+  window.onbeforeunload = function(){
+    return 'Are you sure you want to leave?';
+  };
   const colorPaletteSubj = {
     chemistry: [
       { color: "rgb(67,40,102)" },

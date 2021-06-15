@@ -12,6 +12,7 @@ import IconButton from "@material-ui/core/IconButton";
 import HomeIcon from "@material-ui/icons/Home";
 import EmojiObjectsIcon from "@material-ui/icons/EmojiObjects";
 import ButtonSideNav from "./buttonLink.js";
+import CodeIcon from '@material-ui/icons/Code';
 import "../App.css";
 
 const useStyles = makeStyles({
@@ -85,9 +86,9 @@ export default function Header(props) {
           icon={<EmojiObjectsIcon style={currPalette} />}
         />
         <ButtonSideNav
-          name="Dashboard"
-          dir="/dashboard"
-          icon={<DashboardIcon style={currPalette} />}
+          name="Develop with Us"
+          dir="/developwithus"
+          icon={<CodeIcon style={currPalette} />}
         />
         <ButtonSideNav
           name="Feedback"
