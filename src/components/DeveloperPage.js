@@ -19,7 +19,6 @@ form = {
 
 */
 
-
 export const DeveloperPage = () => {
   const [sent, setSent] = useState(false);
   const {
@@ -37,21 +36,21 @@ export const DeveloperPage = () => {
         name: data.name,
         email: data.email,
         toolName: data.toolName,
-        toolSubject:data.toolSubject,
-        url:data.url
+        toolSubject: data.toolSubject,
+        url: data.url,
       })
       .then(() => {
-        console.log("feedback sent!");
+        console.log("dev request sent!");
         setSent(true);
       })
       .catch((error) => {
-        console.error("error sending feedback: ", error);
+        console.error("error sending dev request: ", error);
       });
   };
 
   return (
     <>
-      <Header subj='none' />
+      <Header subj="none" />
       <div id="aboutBackgroundStyling"></div>
       <Container id="feedbackPageContainer">
         {sent ? (
@@ -93,16 +92,16 @@ export const DeveloperPage = () => {
               {...register("toolName")}
             />
             <TextField
-            id="toolSubject"
-            label="Tool Subject"
-            autoComplete="Tool Subject"
-            type="toolSubject"
-            autoFocus
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            {...register("toolSubject")}
+              id="toolSubject"
+              label="Tool Subject"
+              autoComplete="Tool Subject"
+              type="toolSubject"
+              autoFocus
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              {...register("toolSubject")}
             />
             <TextField
               id="url"
@@ -116,8 +115,14 @@ export const DeveloperPage = () => {
               fullWidth
               {...register("url")}
             />
-            <Button type="submit" style={{fontFamily:'Nunito'}} fullwidth variant="contained" color="primary">
-              Send Feedback
+            <Button
+              type="submit"
+              style={{ fontFamily: "Nunito" }}
+              fullwidth
+              variant="contained"
+              color="primary"
+            >
+              Send Developer Request
             </Button>
           </form>
         )}

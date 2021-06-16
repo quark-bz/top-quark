@@ -1,79 +1,74 @@
 import "../css/ToolsPage.css";
 import React from "react";
-import CameraAltIcon from "@material-ui/icons/CameraAlt";
+// import CameraAltIcon from "@material-ui/icons/CameraAlt";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
 import SaveAltIcon from "@material-ui/icons/SaveAlt";
-import Header from './Header'
+import Header from "./Header";
 
 export default function ToolsPage(props) {
-
-  window.onbeforeunload = function(){
-    return 'Are you sure you want to leave?';
+  window.onbeforeunload = function () {
+    return "Are you sure you want to leave?";
   };
   const colorPaletteSubj = {
     chemistry: [
       { color: "rgb(67,40,102)" },
       { background: "rgb(214,198,248)" },
-
     ],
     economics: [
       { color: "rgb(183,115,53)" },
       { background: "rgb(247,230,211" },
     ],
-    icons:{
-      economics:'fas fa-chart-line',
-      chemistry:'fas fa-flask'
-    }
+    icons: {
+      economics: "fas fa-chart-line",
+      chemistry: "fas fa-flask",
+    },
   };
 
-
   let currPalette = colorPaletteSubj[props.subj][0];
-  let currBodyBG = colorPaletteSubj[props.subj][1];
-  let currIcon = colorPaletteSubj['icons'][props.subj];
+  //   let currBodyBG = colorPaletteSubj[props.subj][1];
+  let currIcon = colorPaletteSubj["icons"][props.subj];
 
   return (
-<><Header subj={props.subj}/>
+    <>
+      <Header subj={props.subj} />
 
-    <div id="horizontal">
-      <div id="headerTool" style={currPalette}>
-      </div>
+      <div id="horizontal">
+        <div id="headerTool" style={currPalette}></div>
 
-      <span id="dirButton">
-   
-      </span>
-      <span id='inputBar'>
-        <div id="isPage">
-        <span id="textInputTitle">
-        <input
-          id="titleInputMain"
-          type="text"
-          placeholder="Untitled Drawing"
-        ></input>
-         <div id="funcButton">
-        <div id="funcButtonContainer">
-          <button style={currPalette} onClick={API_downloadPNG}>
-            <SaveAltIcon></SaveAltIcon>
-          </button>
-          <button style={currPalette} onClick={openFull}>
-            <FullscreenIcon></FullscreenIcon>
-          </button>
-        </div>
-      </div>
-          <div id='toolTitleText' style={currPalette}>
-            <h1>{props.ToolName}   <i class = {currIcon}></i></h1>
-            
+        <span id="dirButton"></span>
+        <span id="inputBar">
+          <div id="isPage">
+            <span id="textInputTitle">
+              <input
+                id="titleInputMain"
+                type="text"
+                placeholder="Untitled Drawing"
+              ></input>
+              <div id="funcButton">
+                <div id="funcButtonContainer">
+                  <button style={currPalette} onClick={API_downloadPNG}>
+                    <SaveAltIcon></SaveAltIcon>
+                  </button>
+                  <button style={currPalette} onClick={openFull}>
+                    <FullscreenIcon></FullscreenIcon>
+                  </button>
+                </div>
+              </div>
+              <div id="toolTitleText" style={currPalette}>
+                <h1>
+                  {props.ToolName} <i class={currIcon}></i>
+                </h1>
+              </div>
+            </span>
+            <iframe
+              class="iframeFit"
+              id="iframeFit"
+              title="tool"
+              src={props.ToolURL}
+            ></iframe>
           </div>
-      </span>
-          <iframe
-            class="iframeFit"
-            id="iframeFit"
-            title="tool"
-            src={props.ToolURL}
-          ></iframe>
-        </div>
-      </span>
-     
-    </div>
+        </span>
+      </div>
     </>
   );
 }
@@ -111,16 +106,17 @@ function downloadPNG(href, name) {
   link.remove();
 }
 
-
-function openFull(){
-  let frameElem = document.getElementById('isPage');
+function openFull() {
+  let frameElem = document.getElementById("isPage");
   if (frameElem.requestFullscreen) {
-      frameElem.requestFullscreen();
-    } else if (frameElem.webkitRequestFullscreen) { /* Safari */
-      frameElem.webkitRequestFullscreen();
-    } else if (frameElem.msRequestFullscreen) { /* IE11 */
-      frameElem.msRequestFullscreen();
-    }
+    frameElem.requestFullscreen();
+  } else if (frameElem.webkitRequestFullscreen) {
+    /* Safari */
+    frameElem.webkitRequestFullscreen();
+  } else if (frameElem.msRequestFullscreen) {
+    /* IE11 */
+    frameElem.msRequestFullscreen();
+  }
 }
 /*
 function takeScreenshot(){

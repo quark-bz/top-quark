@@ -59,7 +59,7 @@ export const AboutPage = () => {
             <TitleSubjectText
               id="aboutone"
               subject="Develop with Us"
-              description={<p>Calling all web app magicians, Quark wants you. Help build this online learning community by developing tools with us. Create a tool and upload it <u><a href='/developwithus'>here</a></u> at Quark.</p>}
+              description={<p>Calling all web app magicians, Quark wants you. Help build this online learning community by developing tools with us. Create a tool and upload it <u><a href='/develop'>here</a></u> at Quark.</p>}
               lean="LEFT"
             />
           }

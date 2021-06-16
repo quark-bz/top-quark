@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
-import DashboardIcon from "@material-ui/icons/Dashboard";
+// import DashboardIcon from "@material-ui/icons/Dashboard";
 import FeedbackIcon from "@material-ui/icons/Feedback";
 //import InboxIcon from '@material-ui/icons/MoveToInbox';
 //import MailIcon from '@material-ui/icons/Mail';
@@ -12,7 +12,7 @@ import IconButton from "@material-ui/core/IconButton";
 import HomeIcon from "@material-ui/icons/Home";
 import EmojiObjectsIcon from "@material-ui/icons/EmojiObjects";
 import ButtonSideNav from "./buttonLink.js";
-import CodeIcon from '@material-ui/icons/Code';
+import CodeIcon from "@material-ui/icons/Code";
 import "../App.css";
 
 const useStyles = makeStyles({
@@ -25,24 +25,14 @@ const useStyles = makeStyles({
 });
 
 const colorPaletteSubj = {
-  chemistry: [
-    { color: "rgb(67,40,102)" },
-    { background: "rgb(214,198,248)" },
-  ],
-  economics: [
-    { color: "rgb(183,115,53)" },
-    { background: "rgb(247,230,211" },
-  ],
-  none:[
-    { color: "#5a5aff" },
-    { background: "#5a5aff" },
-  ]
+  chemistry: [{ color: "rgb(67,40,102)" }, { background: "rgb(214,198,248)" }],
+  economics: [{ color: "rgb(183,115,53)" }, { background: "rgb(247,230,211" }],
+  none: [{ color: "#5a5aff" }, { background: "#5a5aff" }],
 };
 
 export default function Header(props) {
-  
   let currPalette = colorPaletteSubj[props.subj][0];
-  let currBodyBG = colorPaletteSubj[props.subj][1];
+  // let currBodyBG = colorPaletteSubj[props.subj][1];
 
   const classes = useStyles();
   const [state, setState] = React.useState({
@@ -87,7 +77,7 @@ export default function Header(props) {
         />
         <ButtonSideNav
           name="Develop with Us"
-          dir="/developwithus"
+          dir="/develop"
           icon={<CodeIcon style={currPalette} />}
         />
         <ButtonSideNav
@@ -125,8 +115,11 @@ export default function Header(props) {
         </React.Fragment>
       ))}
 
-      <h1><a  href='/' style={currPalette}>Quark</a></h1>
-
+      <h1>
+        <a href="/" style={currPalette}>
+          Quark
+        </a>
+      </h1>
     </div>
   );
 }
