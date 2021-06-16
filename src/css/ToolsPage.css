@@ -19,11 +19,12 @@
   margin-top:110px;
   min-width:1000px;
   width:85vw;
-  height:88vh;
+  height:43vw;
   box-shadow: 0 3px 6px 0 rgba(0,0,0,0.13), 0 5px 7px 0 rgba(0,0,0,0.14);
   
   }
-  
+
+
   #dirButtonContainer{
   float:left;
   display:flex;
@@ -42,6 +43,19 @@
   background:rgba(200,200,200,0.0);
   border:none
   }
+
+#toolTitleText h1{
+  font-family:'Nunito';
+  font-size:20pt;
+}
+
+#toolTitleText{
+  position: absolute;
+  top:0;
+  right:25px;
+  margin-top:-10px;
+
+}
 
 #dirButtonContainer button:hover{
     transition-duration:0.5s;
@@ -75,8 +89,8 @@
   
   #inputBar{
     display:flex;
-    flex-wrap:wrap;
-
+    flex-wrap:nowrap;
+    width:100%;
   }
   
   #funcButtonContainer{

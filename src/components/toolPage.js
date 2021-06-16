@@ -14,14 +14,23 @@ export default function ToolsPage(props) {
     chemistry: [
       { color: "rgb(67,40,102)" },
       { background: "rgb(214,198,248)" },
+
     ],
     economics: [
       { color: "rgb(183,115,53)" },
       { background: "rgb(247,230,211" },
     ],
+    icons:{
+      economics:'fas fa-chart-line',
+      chemistry:'fas fa-flask'
+    }
   };
+
+
   let currPalette = colorPaletteSubj[props.subj][0];
   let currBodyBG = colorPaletteSubj[props.subj][1];
+  let currIcon = colorPaletteSubj['icons'][props.subj];
+
   return (
 <><Header subj={props.subj}/>
 
@@ -42,18 +51,18 @@ export default function ToolsPage(props) {
         ></input>
          <div id="funcButton">
         <div id="funcButtonContainer">
-          <button style={currPalette}>
-            {" "}
-            <CameraAltIcon></CameraAltIcon>
-          </button>
-          <button style={currPalette}>
-            <FullscreenIcon></FullscreenIcon>
-          </button>
           <button style={currPalette} onClick={API_downloadPNG}>
             <SaveAltIcon></SaveAltIcon>
           </button>
+          <button style={currPalette} onClick={openFull}>
+            <FullscreenIcon></FullscreenIcon>
+          </button>
         </div>
       </div>
+          <div id='toolTitleText' style={currPalette}>
+            <h1>{props.ToolName}   <i class = {currIcon}></i></h1>
+            
+          </div>
       </span>
           <iframe
             class="iframeFit"
@@ -101,3 +110,35 @@ function downloadPNG(href, name) {
   link.click();
   link.remove();
 }
+
+
+function openFull(){
+  let frameElem = document.getElementById('isPage');
+  if (frameElem.requestFullscreen) {
+      frameElem.requestFullscreen();
+    } else if (frameElem.webkitRequestFullscreen) { /* Safari */
+      frameElem.webkitRequestFullscreen();
+    } else if (frameElem.msRequestFullscreen) { /* IE11 */
+      frameElem.msRequestFullscreen();
+    }
+}
+/*
+function takeScreenshot(){
+  let contentDiv = document.getElementById('isPage');
+  let tempCanvas = document.createElement('canvas');
+  var download = function (href, name) {
+    var link = document.createElement('a');
+    link.download = name;
+    link.style.opacity = "0";
+    link.href = href;
+    link.click();
+    link.remove();
+}
+let dateObj = new Date()
+let dd = dateObj.getDay()
+let mm = dateObj.getMonth() + 1
+let yyyy = dateObj.getFullYear();
+let dateStr = dd + "_" + mm + "_" + yyyy
+download(png, `quark_screenshot_${dateStr}.png`);
+}
+*/

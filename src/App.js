@@ -5,6 +5,7 @@ import { HomePage } from "./components/HomePage";
 import { AboutPage } from "./components/AboutPage";
 import { FeedbackPage } from "./components/FeedbackPage";
 import { NotFoundPage } from "./components/NotFoundPage";
+import {DeveloperPage} from "./components/DeveloperPage"
 function App() {
   return (
     <Router>
@@ -25,9 +26,14 @@ function App() {
           <ReactTitle title="Quark - Feedback" />
           <FeedbackPage />
         </Route>
+        <Route path="/developwithus">
+          <ReactTitle title="Quark - Develop" />
+          <DeveloperPage />
+        </Route>
         <Route path="/t/chembuild">
           <ReactTitle title="Quark - ChemBuild" />
           <ToolsPage
+          ToolName="ChemBuild"
             subj="chemistry"
             ToolURL="https://joentze.github.io/ChemicalStructureConstructor/ChemicalStructureConstructor/index.html"
           ></ToolsPage>
@@ -35,6 +41,7 @@ function App() {
         <Route path="/t/econsbuild">
           <ReactTitle title="Quark - EconsBuild" />
           <ToolsPage
+            ToolName="EconsBuild"
             subj="economics"
             ToolURL="https://joentze.github.io/econsgraphs-redesign/econsgraphsweb/index.html"
           ></ToolsPage>
