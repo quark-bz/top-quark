@@ -1,0 +1,80 @@
+#flexrow{
+    display:flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+
+}
+
+#footerAll{
+    margin-top:300px;
+}
+
+#quarklogo{
+    position: relative;
+    top:0;
+    left:0;
+    width:100%;
+    height:50px;
+    background-image:url('../assets/LOGO-QUARK-PNG.png');
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
+.footerBox{
+    position: relative;
+    width:33%;
+    height:fit-content;
+    min-height:100px;
+    margin:0px;
+    background:none;
+}
+
+#sitemapContainer{
+    margin-top:60px;
+    margin-left:10px;
+    font-family:'Nunito';
+    color:#3f3fac;
+}
+
+#footerSocialLinks{
+    position: relative;
+    margin-top: 20px;
+    align-self: center;
+    font-family: 'Nunito';
+    color:#3f3fac;
+}
+#footerSocialLinks i{
+    margin:10px;
+    color:#3f3fac;
+}
+
+p:hover{
+    color:#5a5aff;
+}
+
+.linkItem{
+    display:flex;
+    flex-wrap: nowrap;
+    flex-direction:row;
+    margin-top:0px;
+}
+
+#copyrightText{
+    height:15px;
+    width:100%;
+    text-align:right;
+}
+#copyrightText{
+    font-size:10pt;
+    font-family: 'nunito';
+    color:rgb(138, 138, 138);
+}
+
+@media all and (max-width:960px){
+    #footerSocialLinks p{
+        display:none;
+    }
+    #sitemapContainer{
+        text-align:center;
+    }
+}

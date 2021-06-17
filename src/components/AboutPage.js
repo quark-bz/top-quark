@@ -4,7 +4,7 @@ import Header from "./Header.js";
 import TwoItemSubIcon from "./TwoItemSubContainer";
 import "../assets/avocadoPastel.jpg";
 import TitleSubjectText from "./MainTitleText";
-
+import Footer from './Footer'
 export const AboutPage = () => {
   return (
     <>
@@ -66,6 +66,7 @@ export const AboutPage = () => {
           oneItem={<div class="aboutimage" id="imageDeveloper"></div>}
         />
       </Container>
+      <Footer id='footerAll'></Footer>
     </>
   );
 };

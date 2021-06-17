@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import db from "../firebase";
+import Footer from './Footer'
 
 /*
 collection data
@@ -61,7 +62,6 @@ export const DeveloperPage = () => {
             <TextField
               id="name"
               label="Your Name"
-              autoFocus
               variant="outlined"
               margin="normal"
               required
@@ -73,7 +73,6 @@ export const DeveloperPage = () => {
               label="Email Address"
               autoComplete="email"
               type="email"
-              autoFocus
               variant="outlined"
               margin="normal"
               required
@@ -84,8 +83,6 @@ export const DeveloperPage = () => {
               id="toolName"
               label="Tool Name"
               autoComplete="Tool Name"
-              type="Tool Name"
-              autoFocus
               variant="outlined"
               margin="normal"
               required
@@ -96,8 +93,6 @@ export const DeveloperPage = () => {
             id="toolSubject"
             label="Tool Subject"
             autoComplete="Tool Subject"
-            type="toolSubject"
-            autoFocus
             variant="outlined"
             margin="normal"
             required
@@ -109,19 +104,20 @@ export const DeveloperPage = () => {
               label="URL of your tool!"
               autoComplete="url"
               type="url"
-              autoFocus
               variant="outlined"
               margin="normal"
               required
               fullWidth
               {...register("url")}
             />
-            <Button type="submit" style={{fontFamily:'Nunito'}} fullwidth variant="contained" color="primary">
-              Send Feedback
+
+            <Button margin='normal' type="submit" style={{fontFamily:'Nunito',marginTop:'20px'}} fullwidth variant="contained" color="primary">
+              Send Request
             </Button>
           </form>
         )}
       </Container>
+      <Footer id='footerAll'></Footer>
     </>
   );
 };

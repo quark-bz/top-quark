@@ -6,7 +6,7 @@ import TwoItemSubIcon from "./TwoItemSubContainer";
 import Card from "./SubCard";
 import "../assets/avocadoPastel.jpg";
 import TitleSubjectText from "./MainTitleText";
-
+import Footer from './Footer'
 export const HomePage = () => {
   return (
     <>
@@ -54,6 +54,7 @@ export const HomePage = () => {
           }
         />
       </Container>
+      <Footer id='footerAll'></Footer>
     </>
   );
 };

@@ -1,9 +1,9 @@
 import "../css/ToolsPage.css";
 import React from "react";
-import CameraAltIcon from "@material-ui/icons/CameraAlt";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
 import SaveAltIcon from "@material-ui/icons/SaveAlt";
 import Header from './Header'
+import Footer from './Footer'
 
 export default function ToolsPage(props) {
 
@@ -74,6 +74,7 @@ export default function ToolsPage(props) {
       </span>
      
     </div>
+    <Footer id='footerAll'></Footer>
     </>
   );
 }
