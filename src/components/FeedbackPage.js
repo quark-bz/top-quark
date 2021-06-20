@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Footer from './Footer'
 import Container from "./HomeContainer";
 import Header from "./Header.js";
 import "../assets/avocadoPastel.jpg";
@@ -84,6 +84,7 @@ export const FeedbackPage = () => {
           </form>
         )}
       </Container>
+      <Footer id='footerAll'></Footer>
     </>
   );
 };
