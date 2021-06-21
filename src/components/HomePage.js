@@ -19,15 +19,15 @@ export const HomePage = () => {
               <Card
                 link="/t/EconsBuild"
                 subject="economics"
-                toolName="Econsgraph"
+                toolName="EconsBuild"
                 description="Create & Export Economic graphs quickly"
               />
             </SubFlexContainerCard>
           }
           twoItem={
             <TitleSubjectText
-              subject="Economics"
-              description="Level up your Economics notes"
+              subject="Economics 🙌🏼"
+              description="💯 Level up your Economics notes"
               lean="LEFT"
             />
           }
@@ -47,8 +47,8 @@ export const HomePage = () => {
           }
           oneItem={
             <TitleSubjectText
-              subject="Chemistry"
-              description="Spice up your Chemistry notes"
+              subject="👩🏽‍🔬 Chemistry"
+              description="Spice up your Chemistry notes ✍🏼"
               lean="RIGHT"
             />
           }

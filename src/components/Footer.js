@@ -16,13 +16,13 @@ export default function Footer(props){
                    <div id='sitemapContainer'>
                    <div class='sitemap'><a href='/'><p>Home</p></a></div>
                    <div class='sitemap'><a href='/about'><p>About</p></a></div>
-                   <div class='sitemap'><a href='/developwithus'><p>Develop with Us</p></a></div>
+                   <div class='sitemap'><a href='/develop'><p>Develop with Us</p></a></div>
                    <div class='sitemap'><a href='/feedback'><p>Feedback</p></a></div>
                    </div>
                </div>
                <div class ='footerBox'></div>
            </div>
-           <div id='copyrightText'><p>© 2021 Quark.bz, created by Joen Tan & Lim Shao En</p></div>
+           <div id='copyrightText'><p>© 2021 Quark.bz, created by Joen & Shao En</p></div>
        </Container>
     )
 }

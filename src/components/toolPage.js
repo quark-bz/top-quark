@@ -4,6 +4,8 @@ import FullscreenIcon from "@material-ui/icons/Fullscreen";
 import SaveAltIcon from "@material-ui/icons/SaveAlt";
 import Header from './Header'
 import Footer from './Footer'
+import BlurOffPage from './BlurOff'
+
 
 export default function ToolsPage(props) {
   window.onbeforeunload = function () {
@@ -30,6 +32,7 @@ export default function ToolsPage(props) {
 
   return (
     <>
+    <BlurOffPage></BlurOffPage>
       <Header subj={props.subj} />
 
       <div id="horizontal">
