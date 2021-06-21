@@ -168,6 +168,8 @@ hr {
   border-radius: 0 0 10px 10px;
 }
 
+
+
 .subCardCover i {
   position: relative;
   top: 15px;
@@ -252,6 +254,11 @@ hr {
 }
 
 @media all and (max-width: 960px) {
+
+  .newCard h3 {
+    font-size:13pt;
+  }
+
   #aboutBackgroundStyling {
     background-size: cover;
   }
@@ -312,3 +319,4 @@ hr {
     justify-self:center;
   }
 }
+

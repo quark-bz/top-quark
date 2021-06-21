@@ -5,6 +5,12 @@
 
 }
 
+
+#createdBy{
+
+}
+
+
 #footerAll{
     margin-top:300px;
 }
@@ -13,7 +19,7 @@
     position: relative;
     top:0;
     left:0;
-    width:100%;
+    width:50%;
     height:50px;
     background-image:url('../assets/LOGO-QUARK-PNG.png');
     background-size:contain;
@@ -64,7 +70,7 @@ p:hover{
     width:100%;
     text-align:right;
 }
-#copyrightText{
+#copyrightText p{
     font-size:10pt;
     font-family: 'nunito';
     color:rgb(138, 138, 138);
@@ -74,7 +80,13 @@ p:hover{
     #footerSocialLinks p{
         display:none;
     }
+    #quarklogo{
+        display:none;
+    }
     #sitemapContainer{
         text-align:center;
+        margin-top:0px;
+    }
+    #coyrightText {
     }
 }

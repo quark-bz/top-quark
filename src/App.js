@@ -5,7 +5,8 @@ import { HomePage } from "./components/HomePage";
 import { AboutPage } from "./components/AboutPage";
 import { FeedbackPage } from "./components/FeedbackPage";
 import { NotFoundPage } from "./components/NotFoundPage";
-import DeveloperPage from "./components/DeveloperPage"
+import {DeveloperPage} from "./components/DeveloperPage"
+
 function App() {
   return (
     <Router>
