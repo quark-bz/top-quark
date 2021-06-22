@@ -4,16 +4,16 @@ import Header from "./Header.js";
 import TwoItemSubIcon from "./TwoItemSubContainer";
 import "../assets/avocadoPastel.jpg";
 import TitleSubjectText from "./MainTitleText";
-import Footer from './Footer'
+import Footer from "./Footer";
 export const AboutPage = () => {
   return (
     <>
-      <Header subj='none'/>
+      <Header subj="none" />
       <div id="aboutBackgroundStyling"></div>
       <Container id="aboutPageContainer">
         <TwoItemSubIcon
           id="abouttextone"
-          class="aboutpagestuff"
+          className="aboutpagestuff"
           oneItem={
             <TitleSubjectText
               id="aboutone"
@@ -22,12 +22,12 @@ export const AboutPage = () => {
               lean="LEFT"
             />
           }
-          twoItem={<div class="aboutimage" id="imageStudent"></div>}
+          twoItem={<div className="aboutimage" id="imageStudent"></div>}
         />
 
         <TwoItemSubIcon
           id="abouttexttwo"
-          class="aboutpagestuff"
+          className="aboutpagestuff"
           twoItem={
             <TitleSubjectText
               id="aboutone"
@@ -40,13 +40,23 @@ export const AboutPage = () => {
         />
 
         <TwoItemSubIcon
-          class="aboutpagestuff"
+          className="aboutpagestuff"
           id="abouttextthree"
           oneItem={
             <TitleSubjectText
               id="aboutone"
               subject="We Can't Do This Alone"
-              description={<p>Quark wants to meet your homework needs as best as we can, but we can’t do it alone. Can’t find a feature that you want? Leave us feedback <u><a href='/feedback'>here</a></u>.</p>}
+              description={
+                <p>
+                  Quark wants to meet your homework needs as best as we can, but
+                  we can’t do it alone. Can’t find a feature that you want?
+                  Leave us feedback{" "}
+                  <u>
+                    <a href="/feedback">here</a>
+                  </u>
+                  .
+                </p>
+              }
               lean="LEFT"
             />
           }
@@ -54,19 +64,29 @@ export const AboutPage = () => {
         />
         <TwoItemSubIcon
           id="abouttextfour"
-          class="aboutpagestuff"
+          className="aboutpagestuff"
           twoItem={
             <TitleSubjectText
               id="aboutone"
               subject="Develop with Us"
-              description={<p>Calling all web app magicians, Quark wants you. Help build this online learning community by developing tools with us. Create a tool and upload it <u><a href='/develop'>here</a></u> at Quark.</p>}
+              description={
+                <p>
+                  Calling all web app magicians, Quark wants you. Help build
+                  this online learning community by developing tools with us.
+                  Create a tool and upload it{" "}
+                  <u>
+                    <a href="/develop">here</a>
+                  </u>{" "}
+                  at Quark.
+                </p>
+              }
               lean="LEFT"
             />
           }
           oneItem={<div class="aboutimage" id="imageDeveloper"></div>}
         />
       </Container>
-      <Footer id='footerAll'></Footer>
+      <Footer id="footerAll"></Footer>
     </>
   );
 };

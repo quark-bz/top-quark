@@ -1,3 +1,4 @@
+
 import '../css/ToolsPage.css'
 export default function BlurOffPage(){
     return(
@@ -21,7 +22,9 @@ export default function BlurOffPage(){
                 <div class='blurOffDirText'><a href='/feedback'><p><u>Feedback</u></p></a></div>
                 </div>
             </div>
-        </div>
-        </>
-    )
+
+
+      </div>
+    </>
+  );
 }

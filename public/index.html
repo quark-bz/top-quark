@@ -3,28 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Quark - Home</title>
-    <meta name="description" content="Welcome to Quark!" />
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/8.6.5/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/8.6.5/firebase-auth.js"></script>
-    <script defer src="/__/firebase/8.6.5/firebase-database.js"></script>
-    <script defer src="/__/firebase/8.6.5/firebase-firestore.js"></script>
-    <script defer src="/__/firebase/8.6.5/firebase-functions.js"></script>
-    <script defer src="/__/firebase/8.6.5/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/8.6.5/firebase-storage.js"></script>
-    <script defer src="/__/firebase/8.6.5/firebase-analytics.js"></script>
-    <script defer src="/__/firebase/8.6.5/firebase-remote-config.js"></script>
-    <script defer src="/__/firebase/8.6.5/firebase-performance.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <title>Quark | Home</title>
+    <meta name="description" content="!" />
     <link rel="icon" href="%PUBLIC_URL%/FAVICON-QUARK.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    <meta name="google" content="notranslate" />
+
     <script
       src="https://kit.fontawesome.com/9d88f77bef.js"
       crossorigin="anonymous"
@@ -61,47 +46,6 @@
     <title>Quark</title>
   </head>
   <body>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const loadEl = document.querySelector("#load");
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = [
-            "auth",
-            "database",
-            "firestore",
-            "functions",
-            "messaging",
-            "storage",
-            "analytics",
-            "remoteConfig",
-            "performance",
-          ].filter((feature) => typeof app[feature] === "function");
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(
-            ", "
-          )}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent =
-            "Error loading the Firebase SDK, check the console.";
-        }
-      });
-    </script>
     <div id="root"></div>
   </body>
 </html>
