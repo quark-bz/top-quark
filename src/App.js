@@ -4,34 +4,34 @@ import ToolsPage from "./components/toolPage";
 import { HomePage } from "./components/HomePage";
 import { AboutPage } from "./components/AboutPage";
 import { FeedbackPage } from "./components/FeedbackPage";
-import { NotFoundPage } from "./components/NotFoundPage";
+// import { NotFoundPage } from "./components/NotFoundPage";
 import { DeveloperPage } from "./components/DeveloperPage";
 function App() {
   return (
     <Router>
       <Switch>
         <Route exact path="/">
-          <ReactTitle title="Quark - Home" />
+          <ReactTitle title="Quark | Home" />
           <HomePage />
         </Route>
         <Route exact path="/t">
-          <ReactTitle title="Quark - Tools" />
+          <ReactTitle title="Quark | Tools" />
           <HomePage />
         </Route>
         <Route path="/about">
-          <ReactTitle title="Quark - About" />
+          <ReactTitle title="Quark | About" />
           <AboutPage />
         </Route>
         <Route path="/feedback">
-          <ReactTitle title="Quark - Feedback" />
+          <ReactTitle title="Quark | Feedback" />
           <FeedbackPage />
         </Route>
         <Route path="/develop">
-          <ReactTitle title="Quark - Develop" />
+          <ReactTitle title="Quark | Develop" />
           <DeveloperPage />
         </Route>
         <Route path="/t/chembuild">
-          <ReactTitle title="Quark - ChemBuild" />
+          <ReactTitle title="Quark | ChemBuild" />
           <ToolsPage
             ToolName="ChemBuild"
             subj="chemistry"
@@ -39,7 +39,7 @@ function App() {
           ></ToolsPage>
         </Route>
         <Route path="/t/econsbuild">
-          <ReactTitle title="Quark - EconsBuild" />
+          <ReactTitle title="Quark | EconsBuild" />
           <ToolsPage
             ToolName="EconsBuild"
             subj="economics"
@@ -47,8 +47,8 @@ function App() {
           ></ToolsPage>
         </Route>
         <Route path="*">
-          <ReactTitle title="Quark - Not Found" />
-          <NotFoundPage />
+          <ReactTitle title="Quark | Home" />
+          {/* <NotFoundPage /> */ <HomePage />}
         </Route>
       </Switch>
     </Router>

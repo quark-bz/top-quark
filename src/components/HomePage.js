@@ -6,18 +6,18 @@ import TwoItemSubIcon from "./TwoItemSubContainer";
 import Card from "./SubCard";
 import "../assets/avocadoPastel.jpg";
 import TitleSubjectText from "./MainTitleText";
-import Footer from './Footer'
+import Footer from "./Footer";
 export const HomePage = () => {
   return (
     <>
-      <Header subj ='none'/>
+      <Header subj="none" />
       <div id="backgroundStyling"></div>
       <Container>
         <TwoItemSubIcon
           oneItem={
             <SubFlexContainerCard>
               <Card
-                link="/t/EconsBuild"
+                link="/t/econsbuild"
                 subject="economics"
                 toolName="EconsBuild"
                 description="Create & Export Economic graphs quickly"
@@ -38,7 +38,7 @@ export const HomePage = () => {
           twoItem={
             <SubFlexContainerCard>
               <Card
-                link="/t/ChemBuild"
+                link="/t/chembuild"
                 subject="chemistry"
                 toolName="ChemBuild"
                 description="Build & export Chemical structures quickly"
@@ -54,7 +54,7 @@ export const HomePage = () => {
           }
         />
       </Container>
-      <Footer id='footerAll'></Footer>
+      <Footer id="footerAll"></Footer>
     </>
   );
 };
