@@ -32,19 +32,19 @@ function App() {
         </Route>
         <Route path="/t/chembuild">
           <ReactTitle title="Quark | ChemBuild" />
-          <ToolsPage
+          <ToolPage
             ToolName="ChemBuild"
             subj="chemistry"
             ToolURL="https://joentze.github.io/ChemicalStructureConstructor/ChemicalStructureConstructor"
-          ></ToolsPage>
+          ></ToolPage>
         </Route>
         <Route path="/t/econsbuild">
           <ReactTitle title="Quark | EconsBuild" />
-          <ToolsPage
+          <ToolPage
             ToolName="EconsBuild"
             subj="economics"
             ToolURL="https://limse10.github.io/econsgraphsweb"
-          ></ToolsPage>
+          ></ToolPage>
         </Route>
         <Route path="*">
           <ReactTitle title="Quark | Home" />
