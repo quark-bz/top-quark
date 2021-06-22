@@ -171,6 +171,14 @@
     backdrop-filter: blur(25px);
   }
   
+.blurOffDirText p{
+  font-family: 'Nunito';
+  color:#4e4ec6;
+}
+.blurOffDirText{
+  margin:20px;
+}
+
   #blurBlanket h1{
     font-family: 'Poppins';
     color:#5a5aff;

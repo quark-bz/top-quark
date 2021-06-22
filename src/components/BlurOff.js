@@ -12,6 +12,13 @@ export default function BlurOffPage(){
                 <p>
                     Big ideas💡 require bigger screens! Try again on a larger screen...🙈Sorry!
                 </p>
+                <br></br>
+                <br></br>
+                <br></br>
+                <div class='blurOffDirText'><a href='/'><p><u>Home</u></p></a></div>
+                <div class='blurOffDirText'><a href='/about'><p><u>About</u></p></a></div>
+                <div class='blurOffDirText'><a href='/develop'><p><u>Develop with Us</u></p></a></div>
+                <div class='blurOffDirText'><a href='/feedback'><p><u>Feedback</u></p></a></div>
                 </div>
             </div>
         </div>
