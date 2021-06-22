@@ -6,7 +6,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import BlurOffPage from "./BlurOff";
 
-export default function ToolPage(props) {
+export const ToolPage = (props) => {
   window.onbeforeunload = function () {
     return "Are you sure you want to leave?";
   };
@@ -74,7 +74,7 @@ export default function ToolPage(props) {
       <Footer id="footerAll"></Footer>
     </>
   );
-}
+};
 
 function API_downloadPNG(e) {
   e.preventDefault();
