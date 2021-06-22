@@ -13,16 +13,18 @@
   
   #isPage{
   border-radius: 30px;
-  position: absolute;
-  margin-left:100px;
-  margin-top:70px;
+  position: relative;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:110px;
   min-width:1000px;
   width:85vw;
-  height:88vh;
+  height:43vw;
   box-shadow: 0 3px 6px 0 rgba(0,0,0,0.13), 0 5px 7px 0 rgba(0,0,0,0.14);
   
   }
-  
+
+
   #dirButtonContainer{
   float:left;
   display:flex;
@@ -42,22 +44,37 @@
   border:none
   }
 
+#toolTitleText h1{
+  font-family:'Nunito';
+  font-size:20pt;
+}
+
+#toolTitleText{
+  position: absolute;
+  top:0;
+  right:25px;
+  margin-top:-10px;
+
+}
+
 #dirButtonContainer button:hover{
     transition-duration:0.5s;
     background:rgba(200,200,200,0.3);
 }
 
   #textInputTitle{
-  position: fixed;
-  margin-left:100px;
-  margin-top:15px;
-  
+  position: relative;
+  top:-50px;
+  display:flex;
+  flex-direction: row;
+  flex-wrap:wrap;
   }
 
   #titleInputMain{
   z-index: 1000;
   padding:8px;
   border-radius:20px;
+    height:20px;
   outline:none;
   border:none;
   background:rgba(230,230,230,0.3);
@@ -70,24 +87,29 @@
   background:rgba(230,230,230,0.8)
   }
   
-  
+  #inputBar{
+    display:flex;
+    flex-wrap:nowrap;
+    width:100%;
+  }
   
   #funcButtonContainer{
-  float:right;
   display:flex;
+  z-index: 5;
+  top:-5px;
+  margin-left:20px;
   flex-wrap:wrap;
-  flex-direction: column;
-  position: fixed;
-  margin-top:10%;
-  right:0.7%;
+  flex-direction: row;
+  position: relative;
+  width:fit-content;
   border-radius:40px;
-  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.13), 0 5px 7px 0 rgba(0,0,0,0.14);
+  background:transparent;
   }
   #funcButtonContainer button{
   position: relative;
   width:40px;
   height:40px;
-    margin:20px;
+    margin:5px;
     border-radius:50%;
     background:rgba(200,200,200,0.0);
     border:none;
@@ -108,10 +130,11 @@
   
   }
   #horizontal{
-  position: absolute;
-  top:0;left:0;
+  position: relative;
+  top:10px;left:0;
+
   width:100%;
-  height:100%;
+  height:fit-content;
   }
 
   #headerTool h1{
@@ -130,3 +153,47 @@
       text-decoration:none;
       color:inherit;
   }
+
+  #limitText{
+    text-align:center;
+  }
+  
+  #blurBlanket{
+    display:none;
+    
+    position: fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    z-index:10000;
+    background:linear-gradient(180deg,rgba(230,230,230,0.1),rgba(155, 135, 255, 0.5));
+    backdrop-filter: blur(25px);
+  }
+  
+  #blurBlanket h1{
+    font-family: 'Poppins';
+    color:#5a5aff;
+  }
+  #blurBlanket p{
+    color:#4e4ec6;
+    margin-left:auto;
+    font-family: 'Nunito';
+    font-size:20px;
+  }
+  
+  #blurBlanketTextContainer{
+    margin-left:auto;
+    margin-right:auto;
+    width:260px;
+  }
+
+  @media all and (max-width: 500px) {
+    #blurBlanket{
+      display:block;
+    }
+    #horizontal{
+      display:none;
+    }
+  }
+  

@@ -11,14 +11,15 @@
   background: purple;
   text-align: center;
 }
-.drawer {
-}
+
+
 .navMenu {
   background: purple;
 }
 
 #header {
   position: absolute;
+  z-index: 1000;
   top: 0;
   left: 0;
   width: 100%;
@@ -57,7 +58,7 @@
   margin-left: 60px;
   width: 100%;
   height: 350px;
-  background-image: url("./assets/TheStudentAboutTwo.png");
+  background-image: url("./assets/about1.png");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -67,7 +68,7 @@
   margin-right: 50px;
   width: 100%;
   height: 180px;
-  background-image: url("./assets/Handydandytools.png");
+  background-image: url("./assets/about2.png");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -75,7 +76,7 @@
   margin-left: 100px;
   width: 100%;
   height: 280px;
-  background-image: url("./assets/feedbackIcon.png");
+  background-image: url("./assets/about3.png");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -83,7 +84,7 @@
   margin-right: 50px;
   width: 100%;
   height: 380px;
-  background-image: url("./assets/developwithus.png");
+  background-image: url("./assets/about4.png");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -167,6 +168,8 @@ hr {
   border-radius: 0 0 10px 10px;
 }
 
+
+
 .subCardCover i {
   position: relative;
   top: 15px;
@@ -230,8 +233,6 @@ hr {
   /*color:#413bb5;*/
 }
 
-.aboutpagestuff {
-}
 
 #aboutPageContainer {
   margin-top: 120px;
@@ -253,6 +254,11 @@ hr {
 }
 
 @media all and (max-width: 960px) {
+
+  .newCard h3 {
+    font-size:13pt;
+  }
+
   #aboutBackgroundStyling {
     background-size: cover;
   }
@@ -298,4 +304,19 @@ hr {
   #chemistryContainer {
     flex-wrap: wrap-reverse;
   }
+
+  #imageStudent {
+    justify-self:center;
+  }
+  
+  #imageToolsMan {
+    justify-self:center;
+  }
+  #imageFeedback {
+    justify-self:center;
+  }
+  #imageDeveloper {
+    justify-self:center;
+  }
 }
+

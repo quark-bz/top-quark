@@ -1,13 +1,15 @@
 import "../css/ToolsPage.css";
-import HomeIcon from "@material-ui/icons/Home";
 import React from "react";
-import EmojiObjectsIcon from "@material-ui/icons/EmojiObjects";
-import DashboardIcon from "@material-ui/icons/Dashboard";
-import CameraAltIcon from "@material-ui/icons/CameraAlt";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
 import SaveAltIcon from "@material-ui/icons/SaveAlt";
+import Header from "./Header";
+import Footer from "./Footer";
+import BlurOffPage from "./BlurOff";
 
 export default function ToolsPage(props) {
+  window.onbeforeunload = function () {
+    return "Are you sure you want to leave?";
+  };
   const colorPaletteSubj = {
     chemistry: [
       { color: "rgb(67,40,102)" },
@@ -17,61 +19,60 @@ export default function ToolsPage(props) {
       { color: "rgb(183,115,53)" },
       { background: "rgb(247,230,211" },
     ],
+    icons: {
+      economics: "fas fa-chart-line",
+      chemistry: "fas fa-flask",
+    },
   };
+
   let currPalette = colorPaletteSubj[props.subj][0];
-  let currBodyBG = colorPaletteSubj[props.subj][1];
+  //   let currBodyBG = colorPaletteSubj[props.subj][1];
+  let currIcon = colorPaletteSubj["icons"][props.subj];
+
   return (
-    <div id="horizontal">
-      <div id="headerTool" style={currPalette}>
-        <h1>
-          <a href="/">Quark</a>
-        </h1>
+    <>
+      <BlurOffPage></BlurOffPage>
+      <Header subj={props.subj} />
+
+      <div id="horizontal">
+        <div id="headerTool" style={currPalette}></div>
+
+        <span id="dirButton"></span>
+        <span id="inputBar">
+          <div id="isPage">
+            <span id="textInputTitle">
+              <input
+                id="titleInputMain"
+                type="text"
+                placeholder="Untitled Drawing"
+              ></input>
+              <div id="funcButton">
+                <div id="funcButtonContainer">
+                  <button style={currPalette} onClick={API_downloadPNG}>
+                    <SaveAltIcon></SaveAltIcon>
+                  </button>
+                  <button style={currPalette} onClick={openFull}>
+                    <FullscreenIcon></FullscreenIcon>
+                  </button>
+                </div>
+              </div>
+              <div id="toolTitleText" style={currPalette}>
+                <h1>
+                  {props.ToolName} <i class={currIcon}></i>
+                </h1>
+              </div>
+            </span>
+            <iframe
+              class="iframeFit"
+              id="iframeFit"
+              title="tool"
+              src={props.ToolURL}
+            ></iframe>
+          </div>
+        </span>
       </div>
-      <span id="textInputTitle">
-        <input
-          id="titleInputMain"
-          type="text"
-          placeholder="Untitled Drawing"
-        ></input>
-      </span>
-      <span id="dirButton">
-        <div id="dirButtonContainer">
-          <button style={currPalette}>
-            <HomeIcon></HomeIcon>
-          </button>
-          <button style={currPalette}>
-            <EmojiObjectsIcon></EmojiObjectsIcon>
-          </button>
-          <button style={currPalette}>
-            <DashboardIcon></DashboardIcon>
-          </button>
-        </div>
-      </span>
-      <span>
-        <div id="isPage">
-          <iframe
-            class="iframeFit"
-            id="iframeFit"
-            title="tool"
-            src={props.ToolURL}
-          ></iframe>
-        </div>
-      </span>
-      <span id="funcButton">
-        <div id="funcButtonContainer" style={currBodyBG}>
-          <button style={currPalette}>
-            {" "}
-            <CameraAltIcon></CameraAltIcon>
-          </button>
-          <button style={currPalette}>
-            <FullscreenIcon></FullscreenIcon>
-          </button>
-          <button style={currPalette} onClick={API_downloadPNG}>
-            <SaveAltIcon></SaveAltIcon>
-          </button>
-        </div>
-      </span>
-    </div>
+      <Footer id="footerAll"></Footer>
+    </>
   );
 }
 
@@ -107,3 +108,36 @@ function downloadPNG(href, name) {
   link.click();
   link.remove();
 }
+
+function openFull() {
+  let frameElem = document.getElementById("isPage");
+  if (frameElem.requestFullscreen) {
+    frameElem.requestFullscreen();
+  } else if (frameElem.webkitRequestFullscreen) {
+    /* Safari */
+    frameElem.webkitRequestFullscreen();
+  } else if (frameElem.msRequestFullscreen) {
+    /* IE11 */
+    frameElem.msRequestFullscreen();
+  }
+}
+/*
+function takeScreenshot(){
+  let contentDiv = document.getElementById('isPage');
+  let tempCanvas = document.createElement('canvas');
+  var download = function (href, name) {
+    var link = document.createElement('a');
+    link.download = name;
+    link.style.opacity = "0";
+    link.href = href;
+    link.click();
+    link.remove();
+}
+let dateObj = new Date()
+let dd = dateObj.getDay()
+let mm = dateObj.getMonth() + 1
+let yyyy = dateObj.getFullYear();
+let dateStr = dd + "_" + mm + "_" + yyyy
+download(png, `quark_screenshot_${dateStr}.png`);
+}
+*/
