@@ -6,7 +6,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import BlurOffPage from "./BlurOff";
 
-export default function ToolsPage(props) {
+export default function ToolPage(props) {
   window.onbeforeunload = function () {
     return "Are you sure you want to leave?";
   };
