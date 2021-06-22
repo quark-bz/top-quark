@@ -2,10 +2,9 @@ import "../css/ToolsPage.css";
 import React from "react";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
 import SaveAltIcon from "@material-ui/icons/SaveAlt";
-import Header from './Header'
-import Footer from './Footer'
-import BlurOffPage from './BlurOff'
-
+import Header from "./Header";
+import Footer from "./Footer";
+import BlurOffPage from "./BlurOff";
 
 export default function ToolsPage(props) {
   window.onbeforeunload = function () {
@@ -32,7 +31,7 @@ export default function ToolsPage(props) {
 
   return (
     <>
-    <BlurOffPage></BlurOffPage>
+      <BlurOffPage></BlurOffPage>
       <Header subj={props.subj} />
 
       <div id="horizontal">
@@ -72,7 +71,7 @@ export default function ToolsPage(props) {
           </div>
         </span>
       </div>
-      <Footer id='footerAll'></Footer>
+      <Footer id="footerAll"></Footer>
     </>
   );
 }
