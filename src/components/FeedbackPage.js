@@ -39,7 +39,11 @@ export const FeedbackPage = () => {
     <>
       <Header subj='none' />
       <div id="aboutBackgroundStyling"></div>
+        
       <Container id="feedbackPageContainer">
+
+      <div id='developerHead'><h1 style={{fontFamily:'Poppins', color:'#6464ff',fontSize:'30pt'}}>Let us know how we're doing!</h1></div>
+      <div id='developerP'><p style={{fontFamily:'Nunito',color:'#5a5aff',fontSize:'15pt'}}>Be kind 😃...</p></div>
         {sent ? (
           <div>Thanks for your feedback!</div>
         ) : (
