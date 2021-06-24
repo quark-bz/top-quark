@@ -414,7 +414,9 @@ hr {
     margin-top: 10px;
   }
 
-
+#developerHead h1{
+  font-family:'Poppins'
+}
 
   .aboutimage {
     margin-left: auto;
