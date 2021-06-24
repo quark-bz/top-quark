@@ -55,7 +55,7 @@ export const DeveloperPage = () => {
       <div id="aboutBackgroundStyling"></div>
       <Container id="feedbackPageContainer">
         <div id='developerHead'><h1 style={{fontFamily:'Poppins', color:'#6464ff',fontSize:'30pt'}}>Have a Tool you wanna share?</h1></div>
-        <div id='developerP'><p style={{fontFamily:'Nunito',color:'#5a5aff',fontSize:'15pt'}}>Develop it 🛠 with us! Reach out to us.</p></div>
+        <div id='developerP'><p style={{fontFamily:'Nunito',color:'#5a5aff',fontSize:'15pt'}}>Develop it 🛠 with us! Reach out here.</p></div>
         {sent ? (
           <div>Thank you for your effort! We'll be in touch shortly</div>
         ) : (
