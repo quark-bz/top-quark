@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ReactTitle } from "react-meta-tags";
-import { ToolPage } from "./components/ToolPage";
+import { ToolPage }  from "./components/ToolPage";
 import { HomePage } from "./components/HomePage";
 import { AboutPage } from "./components/AboutPage";
 import { FeedbackPage } from "./components/FeedbackPage";

@@ -18,8 +18,10 @@
   margin-right:auto;
   margin-top:110px;
   min-width:1000px;
-  width:85vw;
-  height:43vw;
+  max-width:1700px;
+  width:150vh;
+  height:80vh;
+  min-height:600px;
   box-shadow: 0 3px 6px 0 rgba(0,0,0,0.13), 0 5px 7px 0 rgba(0,0,0,0.14);
   
   }
@@ -171,6 +173,14 @@
     backdrop-filter: blur(25px);
   }
   
+.blurOffDirText p{
+  font-family: 'Nunito';
+  color:#4e4ec6;
+}
+.blurOffDirText{
+  margin:20px;
+}
+
   #blurBlanket h1{
     font-family: 'Poppins';
     color:#5a5aff;
