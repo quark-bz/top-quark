@@ -68,9 +68,9 @@
 	text-indent: 8px;
 }
 #rotateTitle div{
-	animation: topToBottom 10.5s linear infinite 0.5s;
-	-ms-animation: topToBottom 10.5s linear infinite 0.5s;
-	-webkit-animation: topToBottom 10.5s linear infinite 0.5s;
+	animation: topToBottom 10s linear infinite 0s;
+	-ms-animation: topToBottom 10s linear infinite 0s;
+	-webkit-animation: topToBottom 10s linear infinite 0s;
 	color: #5a5aff;
 	opacity: 0;
   overflow:auto;
@@ -414,9 +414,6 @@ hr {
     margin-top: 10px;
   }
 
-#developerHead h1{
-  font-family:'Poppins'
-}
 
   .aboutimage {
     margin-left: auto;
