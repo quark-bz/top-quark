@@ -6,6 +6,7 @@ import { AboutPage } from "./components/AboutPage";
 import { FeedbackPage } from "./components/FeedbackPage";
 // import { NotFoundPage } from "./components/NotFoundPage";
 import { DeveloperPage } from "./components/DeveloperPage";
+import LoginPage from "./components/LoginPage";
 function App() {
   return (
     <Router>
@@ -13,6 +14,10 @@ function App() {
         <Route exact path="/">
           <ReactTitle title="Quark | Home" />
           <HomePage />
+        </Route>
+        <Route exact path="/login">
+          <ReactTitle title="Quark | Login" />
+            <LoginPage/>
         </Route>
         <Route exact path="/t">
           <ReactTitle title="Quark | Tools" />
