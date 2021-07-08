@@ -5,6 +5,7 @@ export default function SignupForm(){
     return(
         <>
         <div id='loginBG'></div>
+        <div id="lgwrapper">
         <div class='loginPageContainer'>
             <div id='loginFlexBox'>
                 <div id='topIcon'>
@@ -16,7 +17,7 @@ export default function SignupForm(){
                     <div id='pwdInput'><input type='password' placeholder=" Password" class='loginInputClass'></input></div>
                     <div id='cfmPwdInput'><input type='password' placeholder=" Confirm Password" class='loginInputClass'></input></div>
                 </div>
-                    <button id='submitBtn'type="submit">Log in</button>
+                    <button id='submitBtn'type="submit">Sign up</button>
                     <div class='divTextWrap' id='forgotPwd'><a href='/login'><p>Back to Log in</p></a></div>
                 <div id='horizontalLineSep'>
                     <hr class='orSepLn'></hr>
@@ -31,7 +32,7 @@ export default function SignupForm(){
                 
                 <div class='divTextWrap' id='skipText'><p><a id='homeAref'href='/home'><i class="fas fa-home"></i></a></p></div>
                 </div>
-
+                </div>
         </div>
         </>
     )
