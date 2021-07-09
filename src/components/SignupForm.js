@@ -1,7 +1,24 @@
 import '../css/login.css'
-
+import { withRouter } from 'react-router';
+import {SignInWithGoogle} from '../firebase'
+import { useCallback } from 'react'
 //styling only, to add in functions and auth
-export default function SignupForm(){
+
+    const SignupForm = ({history})=>{
+
+        const googleSignIn = useCallback(async event=>{
+            event.preventDefault()
+            try{
+                await SignInWithGoogle()
+                history.push('/')
+            }
+            catch(error){
+                alert(error)
+            }
+        },
+            [history]
+        );
+
     return(
         <>
         <div id='loginBG'></div>
@@ -25,9 +42,9 @@ export default function SignupForm(){
                     <hr class='orSepLn'></hr>
                 </div>
                 <div id='altLoginIcon'>
-                    <i class="fab fa-google fa-2x"></i>
-                    <i class="fab fa-github fa-2x"></i>
-                    <i class="fab fa-facebook fa-2x"></i>
+                    <i onClick={googleSignIn} class="fab fa-google fa-2x"></i>
+                    {/*<i class="fab fa-github fa-2x"></i>
+                    <i class="fab fa-facebook fa-2x"></i>*/}
                 </div>
                 
                 <div class='divTextWrap' id='skipText'><p><a id='homeAref'href='/home'><i class="fas fa-home"></i></a></p></div>
@@ -37,3 +54,5 @@ export default function SignupForm(){
         </>
     )
 }
+
+export default withRouter(SignupForm)

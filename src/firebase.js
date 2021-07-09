@@ -1,7 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/analytics";
-
+import "firebase/auth"
 let firebaseConfig = {
   apiKey: "AIzaSyCzxkMTakEHWYPkKI39X0kDg_y8-KatQ1c",
   authDomain: "quark-6d7c5.firebaseapp.com",
@@ -14,7 +14,21 @@ let firebaseConfig = {
   measurementId: "G-PCDNSZZLL6",
 };
 
-firebase.initializeApp(firebaseConfig);
+const GoogleProvider = new firebase.auth.GoogleAuthProvider()
+
+//function to enter with google provider 
+export async function SignInWithGoogle(){
+  try{
+    //creates pop up
+    await firebase.auth().signInWithPopup(GoogleProvider);
+    }
+    catch(error){
+      alert(error)
+    }
+}
+
+export const app  = firebase.initializeApp(firebaseConfig);
+
 firebase.analytics();
 const db = firebase.firestore();
 

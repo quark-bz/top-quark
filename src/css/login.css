@@ -159,7 +159,10 @@ body{
 }
 #altLoginIcon i{
     align-self:center;
-    margin:23px;
+    margin-top:20px;
+    margin-bottom:15px;
+    margin-left:auto;
+    margin-right:auto;
     color:#5a5aff;
     opacity: 0.8;
 }
