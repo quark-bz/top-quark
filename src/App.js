@@ -7,7 +7,7 @@ import { FeedbackPage } from "./components/FeedbackPage";
 // import { NotFoundPage } from "./components/NotFoundPage";
 import { DeveloperPage } from "./components/DeveloperPage";
 import LoginPage from "./components/LoginPage";
-import SignupPage from "./components/SignupPage"
+import SignupPage from "./components/SignupPage";
 function App() {
   return (
     <Router>
@@ -18,11 +18,11 @@ function App() {
         </Route>
         <Route exact path="/login">
           <ReactTitle title="Quark | Login" />
-            <LoginPage/>
+          <LoginPage />
         </Route>
         <Route exact path="/signup">
           <ReactTitle title="Quark | Sign up!" />
-            <SignupPage/>
+          <SignupPage />
         </Route>
         <Route exact path="/t">
           <ReactTitle title="Quark | Tools" />
