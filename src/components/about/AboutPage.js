@@ -1,10 +1,10 @@
 import * as React from "react";
-import Container from "./HomeContainer";
-import Header from "./Header.js";
-import TwoItemSubIcon from "./TwoItemSubContainer";
-import "../assets/avocadoPastel.jpg";
-import TitleSubjectText from "./MainTitleText";
-import Footer from "./Footer";
+import Container from "../home/HomeContainer";
+import Header from "../Header.js";
+import TwoItemSubIcon from "../home/TwoItemSubContainer";
+import "../../assets/avocadoPastel.jpg";
+import TitleSubjectText from "../home/MainTitleText";
+import Footer from "../Footer";
 export const AboutPage = () => {
   return (
     <>
@@ -48,8 +48,8 @@ export const AboutPage = () => {
               subject="We Can't Do This Alone"
               description={
                 <p>
-                  Quark wants to meet your homework👓 needs as best as we can, but
-                  we can’t do it alone. Can’t find a feature that you want?
+                  Quark wants to meet your homework👓 needs as best as we can,
+                  but we can’t do it alone. Can’t find a feature that you want?
                   Leave us feedback{" "}
                   <u>
                     <a href="/feedback">here</a>

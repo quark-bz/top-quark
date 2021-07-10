@@ -1,4 +1,4 @@
-import "../App.css";
+import "../../App.css";
 
 export default function Container(props) {
   return (

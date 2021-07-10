@@ -1,11 +1,10 @@
-import "../css/ToolsPage.css";
+import "../../css/ToolsPage.css";
 import React from "react";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
 import SaveAltIcon from "@material-ui/icons/SaveAlt";
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "../Header";
+import Footer from "../Footer";
 import BlurOffPage from "./BlurOff";
-
 
 export const ToolPage = (props) => {
   window.onbeforeunload = function () {

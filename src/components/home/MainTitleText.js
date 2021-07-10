@@ -1,4 +1,4 @@
-import "../App.css";
+import "../../App.css";
 
 export default function TitleSubjectText(props) {
   let leanDirection = {};
