@@ -14,6 +14,9 @@ import EmojiObjectsIcon from "@material-ui/icons/EmojiObjects";
 import ButtonSideNav from "./buttonLink.js";
 import CodeIcon from "@material-ui/icons/Code";
 import "../App.css";
+import { useAuth } from "../contexts/FirebaseAuthContext";
+import { withRouter } from "react-router";
+import { Button } from "react-bootstrap";
 
 const useStyles = makeStyles({
   list: {
@@ -30,8 +33,10 @@ const colorPaletteSubj = {
   none: [{ color: "#5a5aff" }, { background: "#5a5aff" }],
 };
 
-export default function Header(props) {
-  let currPalette = colorPaletteSubj[props.subj][0];
+const Header = ({ history, subj }) => {
+  const { currentUser, logout } = useAuth();
+
+  let currPalette = colorPaletteSubj[subj][0];
   // let currBodyBG = colorPaletteSubj[props.subj][1];
 
   const classes = useStyles();
@@ -39,6 +44,14 @@ export default function Header(props) {
     left: false,
   });
 
+  const handleLogout = async () => {
+    try {
+      await logout();
+      history.push("/");
+    } catch {
+      alert("failed to logout");
+    }
+  };
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event.type === "keydown" &&
@@ -120,6 +133,23 @@ export default function Header(props) {
           Quark
         </a>
       </h1>
+      {currentUser ? (
+        <>
+          <div>{currentUser.email}</div>
+          <Button onClick={handleLogout}>logout</Button>
+        </>
+      ) : (
+        // <div />
+        <Button
+          onClick={() => {
+            history.push("login");
+          }}
+        >
+          login
+        </Button>
+      )}
     </div>
   );
-}
+};
+
+export default withRouter(Header);

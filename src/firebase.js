@@ -1,8 +1,9 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/analytics";
-import "firebase/auth"
-let firebaseConfig = {
+import "firebase/auth";
+
+export const firebaseConfig = {
   apiKey: "AIzaSyCzxkMTakEHWYPkKI39X0kDg_y8-KatQ1c",
   authDomain: "quark-6d7c5.firebaseapp.com",
   databaseURL:
@@ -14,22 +15,9 @@ let firebaseConfig = {
   measurementId: "G-PCDNSZZLL6",
 };
 
-const GoogleProvider = new firebase.auth.GoogleAuthProvider()
+export const app = firebase.initializeApp(firebaseConfig);
 
-//function to enter with google provider 
-export async function SignInWithGoogle(){
-  try{
-    //creates pop up
-    await firebase.auth().signInWithPopup(GoogleProvider);
-    }
-    catch(error){
-      alert(error)
-    }
-}
-
-export const app  = firebase.initializeApp(firebaseConfig);
+export const auth = app.auth();
 
 firebase.analytics();
-const db = firebase.firestore();
-
-export default db;
+export const db = firebase.firestore();

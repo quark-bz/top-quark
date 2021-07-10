@@ -8,60 +8,64 @@ import { FeedbackPage } from "./components/FeedbackPage";
 import { DeveloperPage } from "./components/DeveloperPage";
 import LoginPage from "./components/LoginPage";
 import SignupPage from "./components/SignupPage";
+import { FirebaseAuthProvider } from "./contexts/FirebaseAuthContext";
+
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <ReactTitle title="Quark | Home" />
-          <HomePage />
-        </Route>
-        <Route exact path="/login">
-          <ReactTitle title="Quark | Login" />
-          <LoginPage />
-        </Route>
-        <Route exact path="/signup">
-          <ReactTitle title="Quark | Sign up!" />
-          <SignupPage />
-        </Route>
-        <Route exact path="/t">
-          <ReactTitle title="Quark | Tools" />
-          <HomePage />
-        </Route>
-        <Route path="/about">
-          <ReactTitle title="Quark | About" />
-          <AboutPage />
-        </Route>
-        <Route path="/feedback">
-          <ReactTitle title="Quark | Feedback" />
-          <FeedbackPage />
-        </Route>
-        <Route path="/develop">
-          <ReactTitle title="Quark | Develop" />
-          <DeveloperPage />
-        </Route>
-        <Route path="/t/chembuild">
-          <ReactTitle title="Quark | ChemBuild" />
-          <ToolPage
-            ToolName="ChemBuild"
-            subj="chemistry"
-            ToolURL="https://joentze.github.io/ChemicalStructureConstructor/ChemicalStructureConstructor"
-          ></ToolPage>
-        </Route>
-        <Route path="/t/econsbuild">
-          <ReactTitle title="Quark | EconsBuild" />
-          <ToolPage
-            ToolName="EconsBuild"
-            subj="economics"
-            ToolURL="https://limse10.github.io/econsgraphsweb"
-          ></ToolPage>
-        </Route>
-        <Route path="*">
-          <ReactTitle title="Quark | Home" />
-          {/* <NotFoundPage /> */ <HomePage />}
-        </Route>
-      </Switch>
-    </Router>
+    <FirebaseAuthProvider>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <ReactTitle title="Quark | Home" />
+            <HomePage />
+          </Route>
+          <Route exact path="/login">
+            <ReactTitle title="Quark | Login" />
+            <LoginPage />
+          </Route>
+          <Route exact path="/signup">
+            <ReactTitle title="Quark | Sign up!" />
+            <SignupPage />
+          </Route>
+          <Route exact path="/t">
+            <ReactTitle title="Quark | Tools" />
+            <HomePage />
+          </Route>
+          <Route path="/about">
+            <ReactTitle title="Quark | About" />
+            <AboutPage />
+          </Route>
+          <Route path="/feedback">
+            <ReactTitle title="Quark | Feedback" />
+            <FeedbackPage />
+          </Route>
+          <Route path="/develop">
+            <ReactTitle title="Quark | Develop" />
+            <DeveloperPage />
+          </Route>
+          <Route path="/t/chembuild">
+            <ReactTitle title="Quark | ChemBuild" />
+            <ToolPage
+              ToolName="ChemBuild"
+              subj="chemistry"
+              ToolURL="https://joentze.github.io/ChemicalStructureConstructor/ChemicalStructureConstructor"
+            ></ToolPage>
+          </Route>
+          <Route path="/t/econsbuild">
+            <ReactTitle title="Quark | EconsBuild" />
+            <ToolPage
+              ToolName="EconsBuild"
+              subj="economics"
+              ToolURL="https://limse10.github.io/econsgraphsweb"
+            ></ToolPage>
+          </Route>
+          <Route path="*">
+            <ReactTitle title="Quark | Home" />
+            {/* <NotFoundPage /> */ <HomePage />}
+          </Route>
+        </Switch>
+      </Router>
+    </FirebaseAuthProvider>
   );
 }
 export default App;

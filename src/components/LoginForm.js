@@ -1,21 +1,36 @@
 import "../css/login.css";
-import { SignInWithGoogle } from "../firebase";
+// import { SignInWithGoogle } from "../firebase";
 import { useCallback } from "react";
 import { withRouter } from "react-router";
-//styling only, to add in functions and auth
+import { useAuth } from "../contexts/FirebaseAuthContext";
+import { useForm } from "react-hook-form";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+
 const LoginForm = ({ history }) => {
-  const googleSignIn = useCallback(
+  const { loginGoogle, loginPassword } = useAuth();
+  const handleLoginGoogle = useCallback(
     async (event) => {
       event.preventDefault();
       try {
-        await SignInWithGoogle();
+        await loginGoogle();
         history.push("/");
       } catch (error) {
         alert(error);
       }
     },
-    [history]
+    [loginGoogle, history]
   );
+
+  const handleLoginPassword = async (data) => {
+    try {
+      await loginPassword(data.email, data.password);
+      history.push("/");
+    } catch (error) {
+      alert(error);
+    }
+  };
+  const { register, handleSubmit } = useForm();
   return (
     <>
       <div id="loginBG"></div>
@@ -23,25 +38,46 @@ const LoginForm = ({ history }) => {
         <div class="loginPageContainer">
           <div id="loginFlexBox">
             <div id="topIcon"></div>
-            <div id="loginInputText">
-              <div id="usernameInput">
-                <input
-                  type="text"
-                  class="loginInputClass"
-                  placeholder=" Username / E-mail"
-                ></input>
+            <form
+              id="loginInputText"
+              onSubmit={handleSubmit(handleLoginPassword)}
+            >
+              <div>
+                <TextField
+                  id="usernameInput"
+                  label="Email Address"
+                  autoComplete="email"
+                  type="email"
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  {...register("email")}
+                />
               </div>
-              <div id="pwdInput">
-                <input
+              <div>
+                <TextField
+                  id="pwdInput"
+                  label="Password"
+                  autoComplete="password"
                   type="password"
-                  placeholder=" Password"
-                  class="loginInputClass"
-                ></input>
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  {...register("password")}
+                />
               </div>
-            </div>
-            <button id="submitBtn" type="submit">
-              Log in
-            </button>
+
+              <Button
+                id="loginSubmitBtn"
+                margin="normal"
+                type="submit"
+                style={{ fontFamily: "Nunito", marginTop: "20px" }}
+                variant="contained"
+                color="primary"
+              >
+                Login
+              </Button>
+            </form>
             <div class="divTextWrap" id="forgotPwd">
               <a href="#">
                 <p>Forgot password?</p>
@@ -53,7 +89,7 @@ const LoginForm = ({ history }) => {
               <hr class="orSepLn"></hr>
             </div>
             <div id="altLoginIcon">
-              <i onClick={googleSignIn} class="fab fa-google fa-2x"></i>
+              <i onClick={handleLoginGoogle} class="fab fa-google fa-2x"></i>
               {/*<i class="fab fa-github fa-2x"></i>
                     <i class="fab fa-facebook fa-2x"></i>*/}
             </div>
