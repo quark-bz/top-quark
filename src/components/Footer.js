@@ -1,4 +1,4 @@
-import Container from "./HomeContainer";
+import Container from "./home/HomeContainer";
 import "../css/Footer.css";
 
 export default function Footer(props) {

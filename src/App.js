@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ReactTitle } from "react-meta-tags";
-import { ToolPage } from "./components/ToolPage";
-import { HomePage } from "./components/HomePage";
-import { AboutPage } from "./components/AboutPage";
-import { FeedbackPage } from "./components/FeedbackPage";
+import { ToolPage } from "./components/tool/ToolPage";
+import { HomePage } from "./components/home/HomePage";
+import { AboutPage } from "./components/about/AboutPage";
+import { FeedbackPage } from "./components/feedback/FeedbackPage";
 // import { NotFoundPage } from "./components/NotFoundPage";
-import { DeveloperPage } from "./components/DeveloperPage";
-import LoginPage from "./components/LoginPage";
-import SignupPage from "./components/SignupPage";
+import { DeveloperPage } from "./components/develop/DeveloperPage";
+import LoginPage from "./components/auth/LoginPage";
+import SignupPage from "./components/auth/SignupPage";
 import { FirebaseAuthProvider } from "./contexts/FirebaseAuthContext";
 
 function App() {

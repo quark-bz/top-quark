@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import Container from "./HomeContainer";
-import Header from "./Header.js";
-import "../assets/avocadoPastel.jpg";
+import Container from "../home/HomeContainer";
+import Header from "../Header.js";
+import "../../assets/avocadoPastel.jpg";
 import { useForm } from "react-hook-form";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import { db } from "../firebase";
-import Footer from "./Footer";
-import "../App.css";
+import { db } from "../../firebase";
+import Footer from "../Footer";
+import "../../App.css";
 /*
 collection data
 form = {

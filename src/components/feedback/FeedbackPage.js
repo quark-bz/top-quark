@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import Footer from "./Footer";
-import Container from "./HomeContainer";
-import Header from "./Header.js";
-import "../assets/avocadoPastel.jpg";
+import Footer from "../Footer";
+import Container from "../home/HomeContainer";
+import Header from "../Header.js";
+import "../../assets/avocadoPastel.jpg";
 import { useForm } from "react-hook-form";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import { db } from "../firebase";
+import { db } from "../../firebase";
 
 export const FeedbackPage = () => {
   const [sent, setSent] = useState(false);

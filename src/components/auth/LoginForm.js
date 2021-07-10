@@ -1,14 +1,14 @@
-import "../css/login.css";
-import { withRouter } from "react-router";
-import { useRef } from "react";
-import { useAuth } from "../contexts/FirebaseAuthContext";
+import "../../css/login.css";
+// import { SignInWithGoogle } from "../firebase";
 import { useCallback } from "react";
+import { withRouter } from "react-router";
+import { useAuth } from "../../contexts/FirebaseAuthContext";
 import { useForm } from "react-hook-form";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
-const SignupForm = ({ history }) => {
-  const { loginGoogle, signup, loginPassword } = useAuth();
+const LoginForm = ({ history }) => {
+  const { loginGoogle, loginPassword } = useAuth();
   const handleLoginGoogle = useCallback(
     async (event) => {
       event.preventDefault();
@@ -22,26 +22,15 @@ const SignupForm = ({ history }) => {
     [loginGoogle, history]
   );
 
-  const handleSignup = async (data) => {
+  const handleLoginPassword = async (data) => {
     try {
-      await signup(data.email, data.password);
       await loginPassword(data.email, data.password);
       history.push("/");
     } catch (error) {
       alert(error);
     }
   };
-
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
-
-  const password = useRef({});
-  password.current = watch("password", "");
-
+  const { register, handleSubmit } = useForm();
   return (
     <>
       <div id="loginBG"></div>
@@ -49,10 +38,13 @@ const SignupForm = ({ history }) => {
         <div class="loginPageContainer">
           <div id="loginFlexBox">
             <div id="topIcon"></div>
-            <form id="loginInputText" onSubmit={handleSubmit(handleSignup)}>
+            <form
+              id="loginInputText"
+              onSubmit={handleSubmit(handleLoginPassword)}
+            >
               <div>
                 <TextField
-                  id="emailInput"
+                  id="usernameInput"
                   label="Email Address"
                   autoComplete="email"
                   type="email"
@@ -62,17 +54,6 @@ const SignupForm = ({ history }) => {
                   {...register("email")}
                 />
               </div>
-              {/* <div>
-                <TextField
-                  id="usernameInput"
-                  label="Username"
-                  type="username"
-                  variant="outlined"
-                  margin="normal"
-                  required
-                  {...register("username")}
-                />
-              </div> */}
               <div>
                 <TextField
                   id="pwdInput"
@@ -82,41 +63,10 @@ const SignupForm = ({ history }) => {
                   variant="outlined"
                   margin="normal"
                   required
-                  {...register("password", {
-                    required: "You must specify a password",
-                    minLength: {
-                      value: 8,
-                      message: "Password must have at least 8 characters",
-                    },
-                  })}
+                  {...register("password")}
                 />
-                {errors.password && (
-                  <p class="loginerror">{errors.password.message}</p>
-                )}
               </div>
 
-              <div>
-                <TextField
-                  id="cfmpwdInput"
-                  name="cfmpassword"
-                  label="Confirm Password"
-                  autoComplete="password"
-                  type="password"
-                  variant="outlined"
-                  margin="normal"
-                  required
-                  {...register("cfmpassword", {
-                    validate: (value) =>
-                      value === password.current ||
-                      "The passwords do not match",
-                  })}
-                />
-                {errors.cfmpassword && (
-                  <p class="loginerror">
-                    {errors.cfmpassword.message} hi joen pls fix this :(
-                  </p>
-                )}
-              </div>
               <Button
                 id="loginSubmitBtn"
                 margin="normal"
@@ -125,12 +75,12 @@ const SignupForm = ({ history }) => {
                 variant="contained"
                 color="primary"
               >
-                Sign Up
+                Login
               </Button>
             </form>
             <div class="divTextWrap" id="forgotPwd">
-              <a href="/login">
-                <p>Back to Log in</p>
+              <a href="#">
+                <p>Forgot password?</p>
               </a>
             </div>
             <div id="horizontalLineSep">
@@ -153,9 +103,18 @@ const SignupForm = ({ history }) => {
             </div>
           </div>
         </div>
+
+        <div id="signupcontainer">
+          <p>
+            No account? Sign up{" "}
+            <a href="/signup">
+              <u>here</u>
+            </a>
+          </p>
+        </div>
       </div>
     </>
   );
 };
 
-export default withRouter(SignupForm);
+export default withRouter(LoginForm);
