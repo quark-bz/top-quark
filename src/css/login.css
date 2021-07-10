@@ -185,3 +185,15 @@ a{
         background-position-y: 0px;
     }
 }
+
+@media all and (max-width:812px){
+    #loginBG{
+        background-image:none;
+        
+    }
+
+    #lgwrapper{
+        left:13vw;
+    }
+   
+}

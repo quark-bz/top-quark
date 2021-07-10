@@ -30,7 +30,7 @@ import { useCallback } from 'react'
                 </div>
                 <div id='loginInputText'>
                     <div id='EmailInput'><input type="text" class='loginInputClass' placeholder=" Your E-mail"></input></div>
-                    <div id='usernameInput'><input type="text" class='loginInputClass' placeholder=" YourUsername"></input></div>
+                    <div id='usernameInput'><input type="text" class='loginInputClass' placeholder=" Your Username"></input></div>
                     <div id='pwdInput'><input type='password' placeholder=" Password" class='loginInputClass'></input></div>
                     <div id='cfmPwdInput'><input type='password' placeholder=" Confirm Password" class='loginInputClass'></input></div>
                 </div>

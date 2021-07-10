@@ -20,7 +20,7 @@ const GoogleProvider = new firebase.auth.GoogleAuthProvider()
 export async function SignInWithGoogle(){
   try{
     //creates pop up
-    await firebase.auth().signInWithPopup(GoogleProvider);
+    await firebase.auth().signInWithRedirect(GoogleProvider);
     }
     catch(error){
       alert(error)
