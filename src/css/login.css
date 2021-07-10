@@ -147,6 +147,18 @@ body {
 .loginerror:hover {
   color: red;
 }
+
+.loginBtn {
+  width: 4em;
+  height: 3em;
+  border-radius: 10%;
+  outline: #5a5aff;
+  border: #5a5aff;
+  transition-duration: 0.3s;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.13), 0 6px 10px 0 rgba(0, 0, 0, 0.14);
+  font-family: nunito;
+}
+
 #skipText {
   color: #bcbcbc;
   opacity: 0.9;

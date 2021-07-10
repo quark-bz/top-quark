@@ -14,6 +14,7 @@ import EmojiObjectsIcon from "@material-ui/icons/EmojiObjects";
 import ButtonSideNav from "./buttonLink.js";
 import CodeIcon from "@material-ui/icons/Code";
 import "../App.css";
+import "../css/login.css";
 import { useAuth } from "../contexts/FirebaseAuthContext";
 import { withRouter } from "react-router";
 import { Button } from "react-bootstrap";
@@ -136,11 +137,14 @@ const Header = ({ history, subj }) => {
       {currentUser ? (
         <>
           <div>{currentUser.email}</div>
-          <Button onClick={handleLogout}>logout</Button>
+          <Button className="loginBtn" onClick={handleLogout}>
+            logout
+          </Button>
         </>
       ) : (
         // <div />
         <Button
+          className="loginBtn"
           onClick={() => {
             history.push("login");
           }}
