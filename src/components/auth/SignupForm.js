@@ -59,6 +59,9 @@ const SignupForm = ({ history }) => {
                   variant="outlined"
                   margin="normal"
                   required
+                  style={{width:'200px', marginTop:'10px'}}
+                  margin="small"
+                  size='small'
                   {...register("email")}
                 />
               </div>
@@ -82,6 +85,9 @@ const SignupForm = ({ history }) => {
                   variant="outlined"
                   margin="normal"
                   required
+                  style={{width:'200px',marginTop:'20px'}}
+                  margin="small"
+                  size='small'
                   {...register("password", {
                     required: "You must specify a password",
                     minLength: {
@@ -105,6 +111,9 @@ const SignupForm = ({ history }) => {
                   variant="outlined"
                   margin="normal"
                   required
+                  style={{width:'200px', marginTop:'20px'}}
+                  margin="small"
+                  size='small'
                   {...register("cfmpassword", {
                     validate: (value) =>
                       value === password.current ||
@@ -121,7 +130,7 @@ const SignupForm = ({ history }) => {
                 id="loginSubmitBtn"
                 margin="normal"
                 type="submit"
-                style={{ fontFamily: "Nunito", marginTop: "20px" }}
+                style={{ fontFamily: "Nunito", marginTop: "30px" ,background:'#5a5aff'}}
                 variant="contained"
                 color="primary"
               >
