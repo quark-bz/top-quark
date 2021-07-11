@@ -4,7 +4,7 @@ import ListItem from "@material-ui/core/ListItem";
 
 function ButtonSideNav(props) {
   return (
-    <a style={{ textDecoration: "none", color: "inherit" }} href={props.dir}>
+    <a style={{ textDecoration: "none", color: "inherit" }} onClick={props.func} href={props.dir}>
       <ListItem button key={props.name}>
         <ListItemIcon>{props.icon}</ListItemIcon>
         <ListItemText primary={props.name} />

@@ -1,14 +1,8 @@
 {
-  "/404": "pages/404.html",
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
-  "/about": "pages/about.html",
-  "/api/hello": "pages/api/hello.js",
-  "/develop": "pages/develop.html",
-  "/feedback": "pages/feedback.html",
-  "/": "pages/index.html",
-  "/login": "pages/login.html",
-  "/signup": "pages/signup.html",
+  "/_error": "pages/_error.js",
   "/t/[toolname]": "pages/t/[toolname].js",
-  "/_error": "pages/_error.js"
+  "/": "pages/index.js",
+  "/404": "pages/404.js"
 }

@@ -6,6 +6,7 @@ import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 // import DashboardIcon from "@material-ui/icons/Dashboard";
 import FeedbackIcon from "@material-ui/icons/Feedback";
+import Divider from '@material-ui/core/Divider';
 //import InboxIcon from '@material-ui/icons/MoveToInbox';
 //import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from "@material-ui/icons/Menu";
@@ -17,7 +18,12 @@ import CodeIcon from "@material-ui/icons/Code";
 // import "../css/App.css";
 // import "../css/login.css";
 import { useAuth } from "../contexts/FirebaseAuthContext";
-import { Button } from "react-bootstrap";
+//import { withRouter } from "react-router";
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
+//import { Button } from "react-bootstrap";
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+//import { Button } from "react-bootstrap";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -82,6 +88,31 @@ const Header = ({ subj }) => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List style={currPalette}>
+      {currentUser ? (
+        <>
+          <ButtonSideNav className="loginBtn"
+            dir='/profile'
+            icon={<AccountCircleIcon style={currPalette}></AccountCircleIcon>}
+            name={currentUser.displayName}
+          >
+          </ButtonSideNav>
+        </>
+      ) : (
+        // <div />
+        <ButtonSideNav style={{float:'right', marginTop:'-70px'}}
+          name='Login to Quark'
+          icon={<VpnKeyIcon style={currPalette}></VpnKeyIcon>}
+          className="loginBtn"
+          func={() => {
+            console.log('to login')
+            router.push("/login");
+          }}
+        >
+        </ButtonSideNav>
+        )}
+      </List>
+          <Divider/>
+      <List style={currPalette}>
         <ButtonSideNav
           name="Home"
           dir="/"
@@ -102,13 +133,23 @@ const Header = ({ subj }) => {
           dir="/feedback"
           icon={<FeedbackIcon style={currPalette} />}
         />
+      <br></br>
+      <br></br>
+      {currentUser ?(
+        <ButtonSideNav
+        func={handleLogout}
+        icon={<ExitToAppIcon style={currPalette}></ExitToAppIcon>}
+        name='Sign Out'
+        />
+      ):(<></>
+      )}
       </List>
     </div>
   );
 
   return (
     <div id="header">
-      {["left" /*, 'right', 'top', 'bottom'*/].map((anchor) => (
+      {["left"].map((anchor) => (
         <React.Fragment key={anchor}>
           <IconButton
             style={{
@@ -134,27 +175,10 @@ const Header = ({ subj }) => {
 
       <h1>
         <Link href="/" style={currPalette}>
-          Quark
+          <div style={currPalette}>Quark</div>
         </Link>
       </h1>
-      {/* {currentUser ? (
-        <>
-          <div>{currentUser.email}</div>
-          <Button className="loginBtn" onClick={handleLogout}>
-            logout
-          </Button>
-        </>
-      ) : (
-        // <div />
-        <Button
-          className="loginBtn"
-          onClick={() => {
-            router.push("/login");
-          }}
-        >
-          login
-        </Button>
-      )} */}
+
     </div>
   );
 };
