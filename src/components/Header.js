@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/link-passhref */
 import React from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
@@ -14,14 +15,17 @@ import HomeIcon from "@material-ui/icons/Home";
 import EmojiObjectsIcon from "@material-ui/icons/EmojiObjects";
 import ButtonSideNav from "./buttonLink.js";
 import CodeIcon from "@material-ui/icons/Code";
-import "../App.css";
-import "../css/login.css";
+// import "../css/App.css";
+// import "../css/login.css";
 import { useAuth } from "../contexts/FirebaseAuthContext";
-import { withRouter } from "react-router";
+//import { withRouter } from "react-router";
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 //import { Button } from "react-bootstrap";
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+//import { Button } from "react-bootstrap";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 const useStyles = makeStyles({
   list: {
@@ -38,8 +42,9 @@ const colorPaletteSubj = {
   none: [{ color: "#5a5aff" }, { background: "#5a5aff" }],
 };
 
-const Header = ({ history, subj }) => {
+const Header = ({ subj }) => {
   const { currentUser, logout } = useAuth();
+  const router = useRouter();
 
   let currPalette = colorPaletteSubj[subj][0];
   // let currBodyBG = colorPaletteSubj[props.subj][1];
@@ -52,8 +57,7 @@ const Header = ({ history, subj }) => {
   const handleLogout = async () => {
     try {
       await logout();
-      console.log('logging out')
-      history.push("/");
+      router.push("/");
     } catch {
       alert("failed to logout");
     }
@@ -101,7 +105,7 @@ const Header = ({ history, subj }) => {
           className="loginBtn"
           func={() => {
             console.log('to login')
-            history.push("/login");
+            router.push("/login");
           }}
         >
         </ButtonSideNav>
@@ -170,31 +174,13 @@ const Header = ({ history, subj }) => {
       ))}
 
       <h1>
-        <a href="/" style={currPalette}>
+        <Link href="/" style={currPalette}>
           Quark
-        </a>
+        </Link>
       </h1>
-      {/*
-      {currentUser ? (
-        <>
-          <div>{currentUser.email}</div>
-          <Button className="loginBtn" onClick={handleLogout}>
-            logout
-          </Button>
-        </>
-      ) : (
-        // <div />
-        <Button style={{float:'right', marginTop:'-70px'}}
-          className="loginBtn"
-          onClick={() => {
-            history.push("/login");
-          }}
-        >
-          Log in
-        </Button>
-        )}*/}
+
     </div>
   );
 };
 
-export default withRouter(Header);
+export default Header;

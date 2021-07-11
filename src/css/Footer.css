@@ -1,92 +1,88 @@
-#flexrow{
-    display:flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-
+#flexrow {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
 }
 
-
-#createdBy{
-
+#createdBy {
 }
 
-
-#footerAll{
-    margin-top:300px;
+#footerAll {
+  margin-top: 300px;
 }
 
-#quarklogo{
-    position: relative;
-    top:0;
-    left:0;
-    width:50%;
-    height:50px;
-    background-image:url('../assets/LOGO-QUARK-PNG.png');
-    background-size:contain;
-    background-repeat: no-repeat;
+#quarklogo {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50px;
+  background-image: url("../../src/assets/LOGO-QUARK-PNG.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-.footerBox{
-    position: relative;
-    width:33%;
-    height:fit-content;
-    min-height:100px;
-    margin:0px;
-    background:none;
+.footerBox {
+  position: relative;
+  width: 33%;
+  height: fit-content;
+  min-height: 100px;
+  margin: 0px;
+  background: none;
 }
 
-#sitemapContainer{
-    margin-top:60px;
-    margin-left:10px;
-    font-family:'Nunito';
-    color:#3f3fac;
+#sitemapContainer {
+  margin-top: 60px;
+  margin-left: 10px;
+  font-family: "Nunito";
+  color: #3f3fac;
 }
 
-#footerSocialLinks{
-    position: relative;
-    margin-top: 20px;
-    align-self: center;
-    font-family: 'Nunito';
-    color:#3f3fac;
+#footerSocialLinks {
+  position: relative;
+  margin-top: 20px;
+  align-self: center;
+  font-family: "Nunito";
+  color: #3f3fac;
 }
-#footerSocialLinks i{
-    margin:10px;
-    color:#3f3fac;
-}
-
-p:hover{
-    color:#5a5aff;
+#footerSocialLinks i {
+  margin: 10px;
+  color: #3f3fac;
 }
 
-.linkItem{
-    display:flex;
-    flex-wrap: nowrap;
-    flex-direction:row;
-    margin-top:0px;
+p:hover {
+  color: #5a5aff;
 }
 
-#copyrightText{
-    height:15px;
-    width:100%;
-    text-align:right;
-}
-#copyrightText p{
-    font-size:10pt;
-    font-family: 'nunito';
-    color:rgb(138, 138, 138);
+.linkItem {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  margin-top: 0px;
 }
 
-@media all and (max-width:960px){
-    #footerSocialLinks p{
-        display:none;
-    }
-    #quarklogo{
-        display:none;
-    }
-    #sitemapContainer{
-        text-align:center;
-        margin-top:0px;
-    }
-    #coyrightText {
-    }
+#copyrightText {
+  height: 15px;
+  width: 100%;
+  text-align: right;
+}
+#copyrightText p {
+  font-size: 10pt;
+  font-family: "nunito";
+  color: rgb(138, 138, 138);
+}
+
+@media all and (max-width: 960px) {
+  #footerSocialLinks p {
+    display: none;
+  }
+  #quarklogo {
+    display: none;
+  }
+  #sitemapContainer {
+    text-align: center;
+    margin-top: 0px;
+  }
+  #coyrightText {
+  }
 }

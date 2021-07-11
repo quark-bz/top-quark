@@ -1,6 +1,8 @@
+/* eslint-disable @next/next/link-passhref */
 import Container from "./home/HomeContainer";
-import "../css/Footer.css";
-
+// import "../css/Footer.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 export default function Footer(props) {
   return (
     <Container id={props.id}>
@@ -10,39 +12,39 @@ export default function Footer(props) {
           <div id="footerSocialLinks">
             <a href="https://www.instagram.com/quark.bz/">
               <div className="linkItem">
-                <i className="fab fa-instagram fa-2x"></i>
+                <i className="fab fa-instagram fa-2x" />
                 <p>Quark.bz</p>
               </div>
             </a>
-            <a href="https://github.com/quark-bz">
+            <Link href="https://github.com/quark-bz">
               <div className="linkItem">
                 <i className="fab fa-github fa-2x"></i>
                 <p>Quark-bz</p>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="footerBox">
           <div id="sitemapContainer">
             <div className="sitemap">
-              <a href="/">
+              <Link href="/">
                 <p>Home</p>
-              </a>
+              </Link>
             </div>
             <div className="sitemap">
-              <a href="/about">
+              <Link href="/about">
                 <p>About</p>
-              </a>
+              </Link>
             </div>
             <div className="sitemap">
-              <a href="/develop">
+              <Link href="/develop">
                 <p>Develop with Us</p>
-              </a>
+              </Link>
             </div>
             <div className="sitemap">
-              <a href="/feedback">
+              <Link href="/feedback">
                 <p>Feedback</p>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

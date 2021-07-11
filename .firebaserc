@@ -1,5 +1,21 @@
 {
   "projects": {
     "default": "quark-6d7c5"
+  },
+  "targets": {
+    "quark-ssr": {
+      "hosting": {
+        "quark-ssr": [
+          "quark-ssr"
+        ]
+      }
+    },
+    "quark-6d7c5": {
+      "hosting": {
+        "quark-ssr": [
+          "quark-ssr"
+        ]
+      }
+    }
   }
 }

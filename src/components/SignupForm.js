@@ -2,6 +2,7 @@ import '../css/login.css'
 import { withRouter } from 'react-router';
 import {SignInWithGoogle} from '../firebase'
 import { useCallback } from 'react'
+import { Router } from 'next/router';
 //styling only, to add in functions and auth
 
     const SignupForm = ({history})=>{
@@ -10,7 +11,8 @@ import { useCallback } from 'react'
             event.preventDefault()
             try{
                 await SignInWithGoogle()
-                history.push('/')
+                
+                Router.push('/')
             }
             catch(error){
                 alert(error)

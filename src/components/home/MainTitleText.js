@@ -1,4 +1,4 @@
-import "../../App.css";
+// import "../../css/App.css";
 
 export default function TitleSubjectText(props) {
   let leanDirection = {};
@@ -10,7 +10,7 @@ export default function TitleSubjectText(props) {
   return (
     <div className="titleSubjectTextStyle" style={leanDirection} id={props.id}>
       <h1>{props.subject}</h1>
-      <p>{props.description}</p>
+      <div>{props.description}</div>
     </div>
   );
 }

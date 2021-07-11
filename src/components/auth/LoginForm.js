@@ -1,31 +1,34 @@
-import "../../css/login.css";
+/* eslint-disable @next/next/link-passhref */
+// import "../../css/login.css";
 // import { SignInWithGoogle } from "../firebase";
 import { useCallback } from "react";
-import { withRouter } from "react-router";
 import { useAuth } from "../../contexts/FirebaseAuthContext";
 import { useForm } from "react-hook-form";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
-const LoginForm = ({ history }) => {
+const LoginForm = ({}) => {
   const { loginGoogle, loginPassword } = useAuth();
+  const router = useRouter();
   const handleLoginGoogle = useCallback(
     async (event) => {
       event.preventDefault();
       try {
         await loginGoogle();
-        history.push("/");
+        router.push("/");
       } catch (error) {
         alert(error);
       }
     },
-    [loginGoogle, history]
+    [loginGoogle, router]
   );
 
   const handleLoginPassword = async (data) => {
     try {
       await loginPassword(data.email, data.password);
-      history.push("/");
+      router.push("/");
     } catch (error) {
       alert(error);
     }
@@ -35,7 +38,7 @@ const LoginForm = ({ history }) => {
     <>
       <div id="loginBG"></div>
       <div id="lgwrapper">
-        <div class="loginPageContainer">
+        <div className="loginPageContainer">
           <div id="loginFlexBox">
             <div id="topIcon"></div>
             <form
@@ -83,28 +86,29 @@ const LoginForm = ({ history }) => {
                 Login
               </Button>
             </form>
-            <div class="divTextWrap" id="forgotPwd">
+            <div className="divTextWrap" id="forgotPwd">
               <a href="#">
                 <p>Forgot password?</p>
               </a>
             </div>
             <div id="horizontalLineSep">
-              <hr class="orSepLn"></hr>
+              <hr className="orSepLn"></hr>
               <p>or with</p>
-              <hr class="orSepLn"></hr>
+              <hr className="orSepLn"></hr>
             </div>
             <div id="altLoginIcon">
-              <i onClick={handleLoginGoogle} class="fab fa-google fa-2x"></i>
+              <i
+                onClick={handleLoginGoogle}
+                className="fab fa-google fa-2x"
+              ></i>
               {/*<i class="fab fa-github fa-2x"></i>
                     <i class="fab fa-facebook fa-2x"></i>*/}
             </div>
 
-            <div class="divTextWrap" id="skipText">
-              <p>
-                <a id="homeAref" href="/home">
-                  <i class="fas fa-home"></i>
-                </a>
-              </p>
+            <div className="divTextWrap" id="skipText">
+              <Link id="homeAref" href="/home">
+                <i className="fas fa-home"></i>
+              </Link>
             </div>
           </div>
         </div>
@@ -112,9 +116,9 @@ const LoginForm = ({ history }) => {
         <div id="signupcontainer">
           <p>
             No account? Sign up{" "}
-            <a href="/signup">
+            <Link href="/signup">
               <u>here</u>
-            </a>
+            </Link>
           </p>
         </div>
       </div>
@@ -122,4 +126,4 @@ const LoginForm = ({ history }) => {
   );
 };
 
-export default withRouter(LoginForm);
+export default LoginForm;

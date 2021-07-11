@@ -1,4 +1,4 @@
-import "../../App.css";
+// import "../../css/App.css";
 
 export default function TwoItemSubCont(props) {
   let classString = `flexwrap ${props.class}`;

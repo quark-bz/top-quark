@@ -5,7 +5,7 @@ body {
   position: absolute;
   top: -0px;
   left: 0;
-  background-image: url("../assets/LOGINBG.svg");
+  background-image: url("../../src/assets/LOGINBG.svg");
   background-size: cover;
   background-position-y: -130px;
   background-repeat: no-repeat;
@@ -13,7 +13,7 @@ body {
   height: 100%;
 }
 #topIcon {
-  background-image: url("../assets/LOGO-QUARK-SVG.svg");
+  background-image: url("../../src/assets/LOGO-QUARK-SVG.svg");
   height: 50px;
   background-repeat: no-repeat;
 
