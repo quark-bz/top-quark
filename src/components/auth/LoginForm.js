@@ -66,13 +66,18 @@ const LoginForm = ({}) => {
                   autoComplete="email"
                   type="email"
                   variant="outlined"
-                  margin="normal"
+                  style={{width:'200px'}}
+                  margin="small"
+                  size='small'
                   required
                   {...register("email")}
                 />
               </div>
               <div>
                 <TextField
+                  style={{width:'200px'}}
+                  margin="small"
+                  size='small'
                   id="pwdInput"
                   label="Password"
                   autoComplete="password"
@@ -88,7 +93,7 @@ const LoginForm = ({}) => {
                 id="loginSubmitBtn"
                 margin="normal"
                 type="submit"
-                style={{ fontFamily: "Nunito", marginTop: "20px" }}
+                style={{ fontFamily: "Nunito", marginTop: "20px" ,background:'#5a5aff'}}
                 variant="contained"
                 color="primary"
               >
