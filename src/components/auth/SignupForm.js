@@ -75,11 +75,10 @@ const SignupForm = ({}) => {
                   autoComplete="email"
                   type="email"
                   variant="outlined"
-                  margin="normal"
                   required
-                  style={{width:'200px', marginTop:'10px'}}
+                  style={{ width: "200px", marginTop: "10px" }}
                   margin="small"
-                  size='small'
+                  size="small"
                   {...register("email")}
                 />
               </div>
@@ -101,11 +100,10 @@ const SignupForm = ({}) => {
                   autoComplete="password"
                   type="password"
                   variant="outlined"
-                  margin="normal"
                   required
-                  style={{width:'200px',marginTop:'20px'}}
+                  style={{ width: "200px", marginTop: "20px" }}
                   margin="small"
-                  size='small'
+                  size="small"
                   {...register("password", {
                     required: "You must specify a password",
                     minLength: {
@@ -127,11 +125,10 @@ const SignupForm = ({}) => {
                   autoComplete="password"
                   type="password"
                   variant="outlined"
-                  margin="normal"
                   required
-                  style={{width:'200px', marginTop:'20px'}}
+                  style={{ width: "200px", marginTop: "20px" }}
                   margin="small"
-                  size='small'
+                  size="small"
                   {...register("cfmpassword", {
                     validate: (value) =>
                       value === password.current ||
@@ -148,7 +145,11 @@ const SignupForm = ({}) => {
                 id="loginSubmitBtn"
                 margin="normal"
                 type="submit"
-                style={{ fontFamily: "Nunito", marginTop: "30px" ,background:'#5a5aff'}}
+                style={{
+                  fontFamily: "Nunito",
+                  marginTop: "30px",
+                  background: "#5a5aff",
+                }}
                 variant="contained"
                 color="primary"
               >
