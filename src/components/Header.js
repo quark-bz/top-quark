@@ -175,7 +175,7 @@ const Header = ({ subj }) => {
 
       <h1>
         <Link href="/" style={currPalette}>
-          Quark
+          <div style={currPalette}>Quark</div>
         </Link>
       </h1>
 

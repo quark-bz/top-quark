@@ -3,5 +3,6 @@
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
   "/t/[toolname]": "pages/t/[toolname].js",
-  "/login": "pages/login.js"
+  "/": "pages/index.js",
+  "/404": "pages/404.js"
 }
