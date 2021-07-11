@@ -1,11 +1,12 @@
-import "../../css/ToolsPage.css";
+/* eslint-disable @next/next/link-passhref */
+import Link from "next/link";
 export default function BlurOffPage() {
   return (
     <>
       <div id="blurBlanket">
         <div id="limitText">
           <h1>
-            <a href="/">Quark</a>
+            <Link href="/">Quark</Link>
           </h1>
           <br></br>
           <div id="blurBlanketTextContainer">
@@ -16,33 +17,25 @@ export default function BlurOffPage() {
             <br></br>
             <br></br>
             <br></br>
-            <div class="blurOffDirText">
-              <a href="/">
-                <p>
-                  <u>Home</u>
-                </p>
-              </a>
+            <div className="blurOffDirText">
+              <Link href="/">
+                <u>Home</u>
+              </Link>
             </div>
-            <div class="blurOffDirText">
-              <a href="/about">
-                <p>
-                  <u>About</u>
-                </p>
-              </a>
+            <div className="blurOffDirText">
+              <Link href="/about">
+                <u>About</u>
+              </Link>
             </div>
-            <div class="blurOffDirText">
-              <a href="/develop">
-                <p>
-                  <u>Develop with Us</u>
-                </p>
-              </a>
+            <div className="blurOffDirText">
+              <Link href="/develop">
+                <u>Develop with Us</u>
+              </Link>
             </div>
-            <div class="blurOffDirText">
-              <a href="/feedback">
-                <p>
-                  <u>Feedback</u>
-                </p>
-              </a>
+            <div className="blurOffDirText">
+              <Link href="/feedback">
+                <u>Feedback</u>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,8 +1,8 @@
-import "../../App.css";
+// import "../../css/App.css";
 
 function Card(props) {
   let iconSubList = {
-    economics: ["fas fa-chart-line", "rgb(255, 218, 184)"],
+    economics: ["fas fa-line-chart", "rgb(255, 218, 184)"],
     chemistry: ["fas fa-flask", "rgb(210, 184, 255)"],
   };
 

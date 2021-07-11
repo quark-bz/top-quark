@@ -15,9 +15,12 @@ export const firebaseConfig = {
   measurementId: "G-PCDNSZZLL6",
 };
 
-export const app = firebase.initializeApp(firebaseConfig);
+export const app = firebase.apps.length
+  ? firebase.app()
+  : firebase.initializeApp(firebaseConfig);
 
 export const auth = app.auth();
 
-firebase.analytics();
+const analytics = () => firebase.analytics();
+
 export const db = firebase.firestore();

@@ -1,32 +1,35 @@
-import "../../css/login.css";
-import { withRouter } from "react-router";
+/* eslint-disable @next/next/link-passhref */
+// import "../../css/login.css";
 import { useRef } from "react";
 import { useAuth } from "../../contexts/FirebaseAuthContext";
 import { useCallback } from "react";
 import { useForm } from "react-hook-form";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
-const SignupForm = ({ history }) => {
+const SignupForm = ({}) => {
   const { loginGoogle, signup, loginPassword } = useAuth();
+  const router = useRouter();
   const handleLoginGoogle = useCallback(
     async (event) => {
       event.preventDefault();
       try {
         await loginGoogle();
-        history.push("/");
+        router.push("/");
       } catch (error) {
         alert(error);
       }
     },
-    [loginGoogle, history]
+    [loginGoogle, router]
   );
 
   const handleSignup = async (data) => {
     try {
       await signup(data.email, data.password);
       await loginPassword(data.email, data.password);
-      history.push("/");
+      router.push("/");
     } catch (error) {
       alert(error);
     }
@@ -46,7 +49,7 @@ const SignupForm = ({ history }) => {
     <>
       <div id="loginBG"></div>
       <div id="lgwrapper">
-        <div class="loginPageContainer">
+        <div className="loginPageContainer">
           <div id="loginFlexBox">
             <div id="topIcon"></div>
             <form id="loginInputText" onSubmit={handleSubmit(handleSignup)}>
@@ -91,7 +94,7 @@ const SignupForm = ({ history }) => {
                   })}
                 />
                 {errors.password && (
-                  <p class="loginerror">{errors.password.message}</p>
+                  <p className="loginerror">{errors.password.message}</p>
                 )}
               </div>
 
@@ -112,7 +115,7 @@ const SignupForm = ({ history }) => {
                   })}
                 />
                 {errors.cfmpassword && (
-                  <p class="loginerror">
+                  <p className="loginerror">
                     {errors.cfmpassword.message} hi joen pls fix this :(
                   </p>
                 )}
@@ -128,28 +131,29 @@ const SignupForm = ({ history }) => {
                 Sign Up
               </Button>
             </form>
-            <div class="divTextWrap" id="forgotPwd">
-              <a href="/login">
+            <div className="divTextWrap" id="forgotPwd">
+              <Link href="/login">
                 <p>Back to Log in</p>
-              </a>
+              </Link>
             </div>
             <div id="horizontalLineSep">
-              <hr class="orSepLn"></hr>
+              <hr className="orSepLn"></hr>
               <p>or with</p>
-              <hr class="orSepLn"></hr>
+              <hr className="orSepLn"></hr>
             </div>
             <div id="altLoginIcon">
-              <i onClick={handleLoginGoogle} class="fab fa-google fa-2x"></i>
+              <i
+                onClick={handleLoginGoogle}
+                className="fab fa-google fa-2x"
+              ></i>
               {/*<i class="fab fa-github fa-2x"></i>
                     <i class="fab fa-facebook fa-2x"></i>*/}
             </div>
 
-            <div class="divTextWrap" id="skipText">
-              <p>
-                <a id="homeAref" href="/home">
-                  <i class="fas fa-home"></i>
-                </a>
-              </p>
+            <div className="divTextWrap" id="skipText">
+              <Link id="homeAref" href="/home">
+                <i className="fas fa-home"></i>
+              </Link>
             </div>
           </div>
         </div>
@@ -158,4 +162,4 @@ const SignupForm = ({ history }) => {
   );
 };
 
-export default withRouter(SignupForm);
+export default SignupForm;

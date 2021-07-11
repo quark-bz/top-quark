@@ -1,0 +1,541 @@
+.fa,
+.far,
+.fas,
+.fab,
+.fa-2x {
+  font-family: FontAwesome !important;
+  font-style: normal;
+}
+i.fa {
+  font-style: normal;
+}
+.header {
+  width: 100%;
+  height: fit-content;
+  background: purple;
+  text-align: center;
+}
+
+.MainPage {
+  width: 100%;
+  height: fit-content;
+  background: purple;
+  text-align: center;
+}
+
+.navMenu {
+  background: purple;
+}
+
+#header {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: fit-content;
+  text-align: center;
+}
+#header h1 {
+  margin-top: 10px;
+  width: 100%;
+  height: fit-content;
+  font-family: "poppins";
+  color: #5a5aff;
+}
+
+#header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#homeTextAnimated {
+  -webkit-animation: tracking-in-contract-bck-top 1s
+    cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation: tracking-in-contract-bck-top 1s cubic-bezier(0.215, 0.61, 0.355, 1)
+    both;
+  font-family: "Poppins";
+  color: #5a5aff;
+  font-size: 20pt;
+  margin-top: 150px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+#titleAnimation {
+  height: 400px;
+  backdrop-filter: blur(0px);
+}
+
+#innerDivAnimation {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#rotateTitle {
+  display: inline;
+  z-index: 1000px;
+  text-indent: 8px;
+}
+#rotateTitle div {
+  animation: topToBottom 10s linear infinite 0s;
+  -ms-animation: topToBottom 10s linear infinite 0s;
+  -webkit-animation: topToBottom 10s linear infinite 0s;
+  color: #5a5aff;
+  opacity: 0;
+  overflow: auto;
+  position: absolute;
+}
+#rotateTitle div:nth-child(2) {
+  animation-delay: 2.5s;
+  -ms-animation-delay: 2.5s;
+  -webkit-animation-delay: 2.5s;
+}
+#rotateTitle div:nth-child(3) {
+  animation-delay: 5s;
+  -ms-animation-delay: 5s;
+  -webkit-animation-delay: 5s;
+}
+
+#rotateTitle div:nth-child(4) {
+  animation-delay: 7.5s;
+  -ms-animation-delay: 7.5s;
+  -webkit-animation-delay: 7.5s;
+}
+/*topToBottom Animation*/
+
+@keyframes topToBottom {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+    -moz-transform: translateY(-50px);
+  }
+  10% {
+    opacity: 1;
+    -moz-transform: translateY(0px);
+  }
+  25% {
+    opacity: 1;
+    -moz-transform: translateY(0px);
+  }
+  30% {
+    opacity: 0;
+    -moz-transform: translateY(50px);
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes topToBottom {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+    -moz-transform: translateY(-50px);
+  }
+  10% {
+    opacity: 1;
+    -moz-transform: translateY(0px);
+  }
+  25% {
+    opacity: 1;
+    -moz-transform: translateY(0px);
+  }
+  30% {
+    opacity: 0;
+    -moz-transform: translateY(50px);
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes topToBottom {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+  }
+  10% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+  }
+  25% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+  }
+  30% {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-ms-keyframes topToBottom {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+    -ms-transform: translateY(-50px);
+  }
+  10% {
+    opacity: 1;
+    -ms-transform: translateY(0px);
+  }
+  25% {
+    opacity: 1;
+    -ms-transform: translateY(0px);
+  }
+  30% {
+    opacity: 0;
+    -ms-transform: translateY(50px);
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes tracking-in-contract-bck-top {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px) translateY(-300px);
+    transform: translateZ(400px) translateY(-300px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-contract-bck-top {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px) translateY(-300px);
+    transform: translateZ(400px) translateY(-300px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+
+#titleAnimation {
+  background: transparent;
+  box-shadow: none;
+}
+
+.mainContainer {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 90px;
+  position: relative;
+  min-width: 70vw;
+  width: fit-content;
+  height: fit-content;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(30px);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.13), 0 5px 7px 0 rgba(0, 0, 0, 0.14);
+}
+
+#imageStudent {
+  margin-left: 60px;
+  width: 100%;
+  height: 350px;
+  background-image: url("../../src/assets/about1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#imageToolsMan {
+  margin-top: 90px;
+  margin-right: 50px;
+  width: 100%;
+  height: 180px;
+  background-image: url("../../src/assets/about2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#imageFeedback {
+  margin-left: 100px;
+  width: 100%;
+  height: 280px;
+  background-image: url("../../src/assets/about3.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#imageDeveloper {
+  margin-right: 50px;
+  width: 100%;
+  height: 380px;
+  background-image: url("../../src/assets/about4.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+hr {
+  border-top: 0.5px solid whitesmoke;
+}
+.flexwrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.flexwrapcard {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+.itemcontainer {
+  position: relative;
+  min-width: 30vw;
+  /*change to height:fit-content later*/
+  min-height: 100px;
+  height: fit-content;
+  /*background:transparent*/
+  background: transparent;
+  margin: 10px;
+  margin-top: 20px;
+  padding-bottom: 15px;
+}
+
+.newCard {
+  font-family: "Nunito";
+  position: relative;
+  margin: 10px;
+  width: 160px;
+  height: 180px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.13), 0 5px 7px 0 rgba(0, 0, 0, 0.14);
+  transition-duration: 0.6s;
+}
+.newCard:hover {
+  transition-duration: 0.6s;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 15px 0 rgba(0, 0, 0, 0.19);
+}
+.newCard h3 {
+  margin-top: -2px;
+  color: #5a5aff;
+}
+.newCard p {
+  color: #5a5aff;
+  margin-left: 15px;
+  padding-top: 5px;
+}
+.newCard button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: -25px;
+  right: 17px;
+  outline: none;
+  border: none;
+  background: #5a5aff;
+  transition-duration: 0.3s;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.13), 0 6px 10px 0 rgba(0, 0, 0, 0.14);
+}
+.newDescription {
+  width: 130px;
+}
+.newDescription p {
+  font-size: 14px;
+}
+.subCardCover {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 78%;
+  border-radius: 0 0 10px 10px;
+}
+
+.subCardCover i {
+  position: relative;
+  top: 15px;
+  margin-left: 15px;
+  color: #5a5aff;
+}
+.cardButtonNew i {
+  color: white;
+  position: relative;
+  top: 0;
+  left: -7px;
+}
+.cardButtonNew:hover {
+  transition-duration: 0.5s;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 15px 0 rgba(0, 0, 0, 0.19);
+}
+.overflowWrapper {
+  width: 100px;
+  height: fit-content;
+  overflow: hidden;
+}
+
+#aboutBackgroundStyling {
+  position: fixed;
+  z-index: -1;
+  top: 150px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../src/assets/permWP.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+#backgroundStyling {
+  position: fixed;
+  z-index: -1;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../src/assets/testthreemainPageWP.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.titleSubjectTextStyle {
+  margin-top: 60px;
+}
+
+.titleSubjectTextStyle h1 {
+  font-family: "Poppins";
+  color: #6464ff;
+  /*color:#413bb5;*/
+}
+
+.titleSubjectTextStyle div {
+  font-family: "Nunito";
+  font-size: 20px;
+  color: #5a5aff;
+  /*color:#413bb5;*/
+}
+#aboutPageContainer {
+  margin-top: 120px;
+  justify-content: center;
+  box-shadow: none;
+  background: transparent;
+  backdrop-filter: none;
+  min-width: 90vw;
+}
+
+#aboutone {
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+}
+
+#aboutone p {
+  max-width: 430px;
+  text-align: justify;
+}
+
+@media all and (max-width: 960px) {
+  .newCard h3 {
+    font-size: 13pt;
+  }
+
+  #aboutBackgroundStyling {
+    background-size: cover;
+  }
+  #backgroundStyling {
+    background-size: cover;
+  }
+  #abouttextone {
+    flex-wrap: wrap-reverse;
+  }
+  #abouttextthree {
+    flex-wrap: wrap-reverse;
+  }
+  .itemcontainer {
+    width: 80vw;
+  }
+  .flexwrapcard {
+    flex-wrap: wrap;
+  }
+  .titleSubjectTextStyle {
+    margin-top: 10px;
+  }
+
+  .aboutimage {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #aboutone p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mainContainer {
+    width: 80vw;
+  }
+  .titleSubjectTextStyle h1 {
+    text-align: center;
+  }
+  .titleSubjectTextStyle div {
+    text-align: center;
+  }
+  #chemistryContainer {
+    flex-wrap: wrap-reverse;
+  }
+
+  #imageStudent {
+    justify-self: center;
+  }
+
+  #imageToolsMan {
+    justify-self: center;
+  }
+  #imageFeedback {
+    justify-self: center;
+  }
+  #imageDeveloper {
+    justify-self: center;
+  }
+  #homeTextAnimated {
+    font-size: 16pt;
+  }
+  #rotateTitle {
+    position: absolute;
+    margin-top: 50px;
+    margin-left: -10px;
+    width: 80vw;
+  }
+  #titleAnimation {
+    height: 400px;
+  }
+}

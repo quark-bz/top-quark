@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/link-passhref */
 import React from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
@@ -13,11 +14,12 @@ import HomeIcon from "@material-ui/icons/Home";
 import EmojiObjectsIcon from "@material-ui/icons/EmojiObjects";
 import ButtonSideNav from "./buttonLink.js";
 import CodeIcon from "@material-ui/icons/Code";
-import "../App.css";
-import "../css/login.css";
+// import "../css/App.css";
+// import "../css/login.css";
 import { useAuth } from "../contexts/FirebaseAuthContext";
-import { withRouter } from "react-router";
 import { Button } from "react-bootstrap";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 const useStyles = makeStyles({
   list: {
@@ -34,8 +36,9 @@ const colorPaletteSubj = {
   none: [{ color: "#5a5aff" }, { background: "#5a5aff" }],
 };
 
-const Header = ({ history, subj }) => {
+const Header = ({ subj }) => {
   const { currentUser, logout } = useAuth();
+  const router = useRouter();
 
   let currPalette = colorPaletteSubj[subj][0];
   // let currBodyBG = colorPaletteSubj[props.subj][1];
@@ -48,7 +51,7 @@ const Header = ({ history, subj }) => {
   const handleLogout = async () => {
     try {
       await logout();
-      history.push("/");
+      router.push("/");
     } catch {
       alert("failed to logout");
     }
@@ -130,11 +133,11 @@ const Header = ({ history, subj }) => {
       ))}
 
       <h1>
-        <a href="/" style={currPalette}>
+        <Link href="/" style={currPalette}>
           Quark
-        </a>
+        </Link>
       </h1>
-      {currentUser ? (
+      {/* {currentUser ? (
         <>
           <div>{currentUser.email}</div>
           <Button className="loginBtn" onClick={handleLogout}>
@@ -146,14 +149,14 @@ const Header = ({ history, subj }) => {
         <Button
           className="loginBtn"
           onClick={() => {
-            history.push("login");
+            router.push("/login");
           }}
         >
           login
         </Button>
-      )}
+      )} */}
     </div>
   );
 };
 
-export default withRouter(Header);
+export default Header;
