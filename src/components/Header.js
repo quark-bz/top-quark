@@ -137,7 +137,7 @@ const Header = ({ subj }) => {
           Quark
         </Link>
       </h1>
-      {/* {currentUser ? (
+      {currentUser ? (
         <>
           <div>{currentUser.email}</div>
           <Button className="loginBtn" onClick={handleLogout}>
@@ -154,7 +154,7 @@ const Header = ({ subj }) => {
         >
           login
         </Button>
-      )} */}
+      )}
     </div>
   );
 };
