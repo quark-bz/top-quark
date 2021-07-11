@@ -17,7 +17,7 @@ const AboutPage = () => {
         <meta name="description" content="Learn more about Quark!" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Header subj="none" />
+      <Header />
       <div id="aboutBackgroundStyling"></div>
       <Container id="aboutPageContainer">
         <TwoItemSubIcon

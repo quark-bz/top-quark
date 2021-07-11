@@ -26,7 +26,6 @@ import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 //import { Button } from "react-bootstrap";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Button } from "react-bootstrap";
 import colorPaletteSubj from "./colorPalettes.js";
 
 const useStyles = makeStyles({
@@ -41,8 +40,7 @@ const useStyles = makeStyles({
 const Header = ({ subj }) => {
   const { currentUser, logout } = useAuth();
   const router = useRouter();
-
-  let currPalette = colorPaletteSubj[subj][0];
+  let currPalette = subj ? colorPaletteSubj[subj][0] : null;
   // let currBodyBG = colorPaletteSubj[props.subj][1];
 
   const classes = useStyles();
@@ -88,7 +86,7 @@ const Header = ({ subj }) => {
           <>
             <ButtonSideNav
               className="loginBtn"
-              dir="/profile"
+              dir="/dashboard"
               icon={<AccountCircleIcon style={currPalette}></AccountCircleIcon>}
               name={currentUser.displayName}
             ></ButtonSideNav>
@@ -175,24 +173,6 @@ const Header = ({ subj }) => {
           <div style={currPalette}>Quark</div>
         </Link>
       </h1>
-      {currentUser ? (
-        <>
-          <div>{currentUser.email}</div>
-          <Button className="loginBtn" onClick={handleLogout}>
-            logout
-          </Button>
-        </>
-      ) : (
-        // <div />
-        <Button
-          className="loginBtn"
-          onClick={() => {
-            router.push("/login");
-          }}
-        >
-          login
-        </Button>
-      )}
     </div>
   );
 };

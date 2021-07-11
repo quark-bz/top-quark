@@ -40,7 +40,7 @@ const RegisterPage = () => {
         <title>Quark | Register</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Header subj="none" />
+      <Header />
       <div id="aboutBackgroundStyling"></div>
 
       <Container id="registerPageContainer">

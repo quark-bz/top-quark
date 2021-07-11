@@ -11,7 +11,7 @@ const NotFoundPage = () => {
         <title>Quark | Page Not Found</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Header subj="none" />
+      <Header />
       <div id="aboutBackgroundStyling"></div>
       <Container>404 Page Not Found</Container>
       <Footer id="footerAll"></Footer>
