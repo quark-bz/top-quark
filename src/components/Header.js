@@ -27,6 +27,7 @@ import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Button } from "react-bootstrap";
+import colorPaletteSubj from "./colorPalettes.js";
 
 const useStyles = makeStyles({
   list: {
@@ -36,12 +37,6 @@ const useStyles = makeStyles({
     width: "auto",
   },
 });
-
-const colorPaletteSubj = {
-  chemistry: [{ color: "rgb(67,40,102)" }, { background: "rgb(214,198,248)" }],
-  economics: [{ color: "rgb(183,115,53)" }, { background: "rgb(247,230,211" }],
-  none: [{ color: "#5a5aff" }, { background: "#5a5aff" }],
-};
 
 const Header = ({ subj }) => {
   const { currentUser, logout } = useAuth();
