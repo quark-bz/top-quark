@@ -25,7 +25,6 @@ const AboutPage = () => {
           className="aboutpagestuff"
           oneItem={
             <TitleSubjectText
-              id="aboutone"
               subject="For Students, By Students"
               description="💨Rushing your homework while fussing over the 4th online tool you’ve found? You don’t need that kind of stress in your life. Here at Quark we want to give you, the student, an all in one fuss-free educational experience."
               lean="LEFT"
@@ -39,7 +38,7 @@ const AboutPage = () => {
           className="aboutpagestuff"
           twoItem={
             <TitleSubjectText
-              id="aboutone"
+               
               subject="Handy-Dandy Tools"
               description="No more copying, pasting and squinting to create diagrams on tools that weren’t created for you. Tools at Quark were created to help students focus on quality work and to forget about the how-to-get-there🗺."
               lean="LEFT"
@@ -53,7 +52,7 @@ const AboutPage = () => {
           id="abouttextthree"
           oneItem={
             <TitleSubjectText
-              id="aboutone"
+               
               subject="We Can't Do This Alone"
               description={
                 <div>
@@ -75,7 +74,7 @@ const AboutPage = () => {
           className="aboutpagestuff"
           twoItem={
             <TitleSubjectText
-              id="aboutone"
+               
               subject="Develop with Us"
               description={
                 <div>

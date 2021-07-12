@@ -40,7 +40,7 @@ const useStyles = makeStyles({
 const Header = ({ subj }) => {
   const { currentUser, logout } = useAuth();
   const router = useRouter();
-  let currPalette = subj ? colorPaletteSubj[subj][0] : null;
+  let currPalette = subj ? colorPaletteSubj[subj][0] : {color:"#5a5aff"};
   // let currBodyBG = colorPaletteSubj[props.subj][1];
 
   const classes = useStyles();
@@ -168,9 +168,9 @@ const Header = ({ subj }) => {
         </React.Fragment>
       ))}
 
-      <h1>
-        <Link href="/" style={currPalette}>
-          <div style={currPalette}>Quark</div>
+      <h1 style={currPalette}>
+        <Link href="/">
+          Quark
         </Link>
       </h1>
     </div>

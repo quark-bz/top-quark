@@ -429,6 +429,7 @@ hr {
 
 .titleSubjectTextStyle {
   margin-top: 60px;
+  width:30vw;
 }
 
 .titleSubjectTextStyle h1 {
@@ -445,6 +446,9 @@ hr {
 }
 #aboutPageContainer {
   margin-top: 120px;
+  margin-left:auto;
+  margin-right:auto;
+  background:red;
   justify-content: center;
   box-shadow: none;
   background: transparent;
@@ -487,6 +491,7 @@ hr {
   }
   .titleSubjectTextStyle {
     margin-top: 10px;
+    width:80vw;
   }
 
   .aboutimage {
