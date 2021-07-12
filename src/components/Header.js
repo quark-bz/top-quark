@@ -6,7 +6,7 @@ import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 // import DashboardIcon from "@material-ui/icons/Dashboard";
 import FeedbackIcon from "@material-ui/icons/Feedback";
-import Divider from '@material-ui/core/Divider';
+import Divider from "@material-ui/core/Divider";
 //import InboxIcon from '@material-ui/icons/MoveToInbox';
 //import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from "@material-ui/icons/Menu";
@@ -19,13 +19,14 @@ import CodeIcon from "@material-ui/icons/Code";
 // import "../css/login.css";
 import { useAuth } from "../contexts/FirebaseAuthContext";
 //import { withRouter } from "react-router";
-import VpnKeyIcon from '@material-ui/icons/VpnKey';
+import VpnKeyIcon from "@material-ui/icons/VpnKey";
 //import { Button } from "react-bootstrap";
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 //import { Button } from "react-bootstrap";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import colorPaletteSubj from "./colorPalettes.js";
 
 const useStyles = makeStyles({
   list: {
@@ -36,17 +37,10 @@ const useStyles = makeStyles({
   },
 });
 
-const colorPaletteSubj = {
-  chemistry: [{ color: "rgb(67,40,102)" }, { background: "rgb(214,198,248)" }],
-  economics: [{ color: "rgb(183,115,53)" }, { background: "rgb(247,230,211" }],
-  none: [{ color: "#5a5aff" }, { background: "#5a5aff" }],
-};
-
 const Header = ({ subj }) => {
   const { currentUser, logout } = useAuth();
   const router = useRouter();
-
-  let currPalette = colorPaletteSubj[subj][0];
+  let currPalette = subj ? colorPaletteSubj[subj][0] : null;
   // let currBodyBG = colorPaletteSubj[props.subj][1];
 
   const classes = useStyles();
@@ -88,30 +82,30 @@ const Header = ({ subj }) => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List style={currPalette}>
-      {currentUser ? (
-        <>
-          <ButtonSideNav className="loginBtn"
-            dir='/profile'
-            icon={<AccountCircleIcon style={currPalette}></AccountCircleIcon>}
-            name={currentUser.displayName}
-          >
-          </ButtonSideNav>
-        </>
-      ) : (
-        // <div />
-        <ButtonSideNav style={{float:'right', marginTop:'-70px'}}
-          name='Login to Quark'
-          icon={<VpnKeyIcon style={currPalette}></VpnKeyIcon>}
-          className="loginBtn"
-          func={() => {
-            console.log('to login')
-            router.push("/login");
-          }}
-        >
-        </ButtonSideNav>
+        {currentUser ? (
+          <>
+            <ButtonSideNav
+              className="loginBtn"
+              dir="/dashboard"
+              icon={<AccountCircleIcon style={currPalette}></AccountCircleIcon>}
+              name={currentUser.displayName}
+            ></ButtonSideNav>
+          </>
+        ) : (
+          // <div />
+          <ButtonSideNav
+            style={{ float: "right", marginTop: "-70px" }}
+            name="Login to Quark"
+            icon={<VpnKeyIcon style={currPalette}></VpnKeyIcon>}
+            className="loginBtn"
+            func={() => {
+              console.log("to login");
+              router.push("/login");
+            }}
+          ></ButtonSideNav>
         )}
       </List>
-          <Divider/>
+      <Divider />
       <List style={currPalette}>
         <ButtonSideNav
           name="Home"
@@ -133,16 +127,17 @@ const Header = ({ subj }) => {
           dir="/feedback"
           icon={<FeedbackIcon style={currPalette} />}
         />
-      <br></br>
-      <br></br>
-      {currentUser ?(
-        <ButtonSideNav
-        func={handleLogout}
-        icon={<ExitToAppIcon style={currPalette}></ExitToAppIcon>}
-        name='Sign Out'
-        />
-      ):(<></>
-      )}
+        <br></br>
+        <br></br>
+        {currentUser ? (
+          <ButtonSideNav
+            func={handleLogout}
+            icon={<ExitToAppIcon style={currPalette}></ExitToAppIcon>}
+            name="Sign Out"
+          />
+        ) : (
+          <></>
+        )}
       </List>
     </div>
   );
@@ -178,7 +173,6 @@ const Header = ({ subj }) => {
           <div style={currPalette}>Quark</div>
         </Link>
       </h1>
-
     </div>
   );
 };

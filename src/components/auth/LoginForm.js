@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/link-passhref */
 // import "../../css/login.css";
 // import { SignInWithGoogle } from "../firebase";
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useAuth } from "../../contexts/FirebaseAuthContext";
 import { useForm } from "react-hook-form";
 import TextField from "@material-ui/core/TextField";
@@ -10,25 +10,39 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 const LoginForm = ({}) => {
-  const { loginGoogle, loginPassword } = useAuth();
+  const { loginGoogle, loginPassword, currentUser } = useAuth();
   const router = useRouter();
+  const [submit, setSubmit] = useState(false);
+
+  useEffect(() => {
+    if (submit) {
+      if (currentUser) {
+        if (currentUser?.registered) {
+          router.push("/");
+        } else {
+          router.push("/register");
+        }
+      }
+    }
+  }, [currentUser, router, submit]);
+
   const handleLoginGoogle = useCallback(
     async (event) => {
       event.preventDefault();
       try {
         await loginGoogle();
-        router.push("/");
+        setSubmit(true);
       } catch (error) {
         alert(error);
       }
     },
-    [loginGoogle, router]
+    [loginGoogle]
   );
 
   const handleLoginPassword = async (data) => {
     try {
       await loginPassword(data.email, data.password);
-      router.push("/");
+      setSubmit(true);
     } catch (error) {
       alert(error);
     }
@@ -52,18 +66,17 @@ const LoginForm = ({}) => {
                   autoComplete="email"
                   type="email"
                   variant="outlined"
-                  style={{width:'200px'}}
+                  style={{ width: "200px" }}
                   margin="small"
-                  size='small'
+                  size="small"
                   required
                   {...register("email")}
                 />
               </div>
               <div>
                 <TextField
-                  style={{width:'200px'}}
-                  margin="small"
-                  size='small'
+                  style={{ width: "200px" }}
+                  size="small"
                   id="pwdInput"
                   label="Password"
                   autoComplete="password"
@@ -79,7 +92,11 @@ const LoginForm = ({}) => {
                 id="loginSubmitBtn"
                 margin="normal"
                 type="submit"
-                style={{ fontFamily: "Nunito", marginTop: "20px" ,background:'#5a5aff'}}
+                style={{
+                  fontFamily: "Nunito",
+                  marginTop: "20px",
+                  background: "#5a5aff",
+                }}
                 variant="contained"
                 color="primary"
               >
@@ -106,7 +123,7 @@ const LoginForm = ({}) => {
             </div>
 
             <div className="divTextWrap" id="skipText">
-              <Link id="homeAref" href="/home">
+              <Link id="homeAref" href="/">
                 <i className="fas fa-home"></i>
               </Link>
             </div>

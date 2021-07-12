@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/link-passhref */
 // import "../../css/login.css";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useAuth } from "../../contexts/FirebaseAuthContext";
 import { useCallback } from "react";
 import { useForm } from "react-hook-form";
@@ -8,28 +8,43 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { db } from "../../firebase";
 
 const SignupForm = ({}) => {
-  const { loginGoogle, signup, loginPassword } = useAuth();
+  const { loginGoogle, signup, loginPassword, currentUser } = useAuth();
   const router = useRouter();
+  const [submit, setSubmit] = useState(false);
+
+  useEffect(() => {
+    if (submit) {
+      if (currentUser) {
+        if (currentUser?.registered) {
+          router.push("/");
+        } else {
+          router.push("/register");
+        }
+      }
+    }
+  }, [currentUser, router, submit]);
+
   const handleLoginGoogle = useCallback(
     async (event) => {
       event.preventDefault();
       try {
         await loginGoogle();
-        router.push("/");
+        setSubmit(true);
       } catch (error) {
         alert(error);
       }
     },
-    [loginGoogle, router]
+    [loginGoogle]
   );
 
   const handleSignup = async (data) => {
     try {
       await signup(data.email, data.password);
       await loginPassword(data.email, data.password);
-      router.push("/");
+      setSubmit(true);
     } catch (error) {
       alert(error);
     }
@@ -60,11 +75,10 @@ const SignupForm = ({}) => {
                   autoComplete="email"
                   type="email"
                   variant="outlined"
-                  margin="normal"
                   required
-                  style={{width:'200px', marginTop:'10px'}}
+                  style={{ width: "200px", marginTop: "10px" }}
                   margin="small"
-                  size='small'
+                  size="small"
                   {...register("email")}
                 />
               </div>
@@ -86,11 +100,10 @@ const SignupForm = ({}) => {
                   autoComplete="password"
                   type="password"
                   variant="outlined"
-                  margin="normal"
                   required
-                  style={{width:'200px',marginTop:'20px'}}
+                  style={{ width: "200px", marginTop: "20px" }}
                   margin="small"
-                  size='small'
+                  size="small"
                   {...register("password", {
                     required: "You must specify a password",
                     minLength: {
@@ -112,11 +125,10 @@ const SignupForm = ({}) => {
                   autoComplete="password"
                   type="password"
                   variant="outlined"
-                  margin="normal"
                   required
-                  style={{width:'200px', marginTop:'20px'}}
+                  style={{ width: "200px", marginTop: "20px" }}
                   margin="small"
-                  size='small'
+                  size="small"
                   {...register("cfmpassword", {
                     validate: (value) =>
                       value === password.current ||
@@ -133,7 +145,11 @@ const SignupForm = ({}) => {
                 id="loginSubmitBtn"
                 margin="normal"
                 type="submit"
-                style={{ fontFamily: "Nunito", marginTop: "30px" ,background:'#5a5aff'}}
+                style={{
+                  fontFamily: "Nunito",
+                  marginTop: "30px",
+                  background: "#5a5aff",
+                }}
                 variant="contained"
                 color="primary"
               >
@@ -160,7 +176,7 @@ const SignupForm = ({}) => {
             </div>
 
             <div className="divTextWrap" id="skipText">
-              <Link id="homeAref" href="/home">
+              <Link id="homeAref" href="/">
                 <i className="fas fa-home"></i>
               </Link>
             </div>

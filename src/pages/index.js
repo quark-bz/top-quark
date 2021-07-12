@@ -22,7 +22,7 @@ const HomePage = () => {
           />
         </Head>
       </div>
-      <Header subj="none" />
+      <Header />
       <div id="backgroundStyling"></div>
       <Container id="titleAnimation">
         <div id="animationHolder">

@@ -10,7 +10,10 @@ class MyDocument extends Document {
           <meta name="theme-color" content="#000000" />
           <meta name="google" content="notranslate" />
           <meta name="author" content="Joen Tan & Lim Shao En" />
-
+          <meta
+            name="description"
+            content="Create, edit & export diagrams, graphs for Economics & Chemistry homework. "
+          />
           <link rel="apple-touch-icon" href="./FAVICON-QUARK.png" />
 
           <link rel="manifest" href="./manifest.json" />
