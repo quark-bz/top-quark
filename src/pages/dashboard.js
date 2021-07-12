@@ -6,10 +6,13 @@ import Head from "next/head";
 import { useAuth } from "../contexts/FirebaseAuthContext";
 import { useRouter } from "next/router";
 import { db } from "../firebase";
+import SessionCard from "../components/session/SessionCard";
 
 const DashboardPage = () => {
   const router = useRouter();
   const { currentUser } = useAuth();
+  const [sessions, setSessions] = useState([]);
+
   if (!currentUser) {
     router.push("/");
   }
@@ -17,15 +20,28 @@ const DashboardPage = () => {
   useEffect(() => {
     const loadSessions = async () => {
       if (currentUser) {
-        const qs = await db
-          .collection("users")
-          .doc(currentUser.uid)
-          .collection("sessions")
-          .get();
-        const sessions = qs.docs.map((doc) => {
-          return doc.data();
-        });
-        console.log(sessions);
+        const qs = await db.collection("users").doc(currentUser.uid).get();
+        const data = qs.data().sessions;
+        const sessions = await Promise.all(
+          data.map(async (sess) => {
+            const session = (await sess.get()).data();
+            const tool = (await session.tool.get()).data();
+            return {
+              id: sess.id,
+              tool: tool,
+              data: session.data,
+              title: session.title,
+            };
+          })
+        );
+        // const sessions = await Promise.all(
+        //   qs.docs.map(async (doc) => {
+        //     const data = doc.data();
+        //     const tool = await data.tool.get();
+        //     return { tool: tool.data(), data: data.data };
+        //   })
+        // );
+        setSessions(sessions);
       }
     };
     loadSessions();
@@ -40,7 +56,11 @@ const DashboardPage = () => {
       <Header />
       <div id="aboutBackgroundStyling"></div>
 
-      <Container id="dashboardPageContainer"></Container>
+      <Container id="dashboardPageContainer">
+        {sessions.map((sesh, i) => {
+          return <SessionCard key={i} session={sesh} />;
+        })}
+      </Container>
       <Footer id="footerAll"></Footer>
     </>
   );
