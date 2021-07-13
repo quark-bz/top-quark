@@ -1,0 +1,45 @@
+.dbcardholder{
+    position: relative;
+    width:200px;
+    height:200px;
+    border-radius:15px;
+    background:white;
+    margin:10px;
+}
+
+.dbcardholder i{
+    position:fixed;
+    z-index:5;
+    margin-left:15px;
+    margin-top:15px;
+    color:#5a5aff;
+}
+
+.bottomhalf h1{
+    color:#5a5aff;
+    font-size: 10pt;
+    font-family:'nunito'
+}
+
+.bottomhalf i{
+    margin-top:10px;
+    margin-left:45px;
+    color:rgb(211, 211, 211);
+}
+
+.bottomhalf{
+    display:flex;
+    flex-wrap:nowrap;
+    flex-direction: row;
+    margin-top:5px;
+    margin-left:10px
+}
+
+.tophalfcard{
+    position: relative;
+    right:0px;
+    background:lightgray;
+    width:100%;
+    border-radius: 15px 15px 0px 0px;
+    height:150px;
+}

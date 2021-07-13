@@ -3,6 +3,7 @@ import "../css/App.css";
 import "../css/login.css";
 import "../css/Footer.css";
 import "../css/ToolsPage.css";
+import "../css/dbcard.css"
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css"; // Import the CSS
 config.autoAddCss = false;

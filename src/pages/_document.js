@@ -6,7 +6,7 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <meta charSet="utf-8" />
-          <link rel="icon" href="./FAVICON-QUARK.png" />
+          <link rel="icon" href="/FAVICON-QUARK.png" />
           <meta name="theme-color" content="#000000" />
           <meta name="google" content="notranslate" />
           <meta name="author" content="Joen Tan & Lim Shao En" />
@@ -14,9 +14,9 @@ class MyDocument extends Document {
             name="description"
             content="Create, edit & export diagrams, graphs for Economics & Chemistry homework. "
           />
-          <link rel="apple-touch-icon" href="./FAVICON-QUARK.png" />
+          <link rel="apple-touch-icon" href="/FAVICON-QUARK.png" />
 
-          <link rel="manifest" href="./manifest.json" />
+          <link rel="manifest" href="/manifest.json" />
           <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
