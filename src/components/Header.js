@@ -51,7 +51,7 @@ const Header = ({ subj }) => {
   const handleLogout = async () => {
     try {
       await logout();
-      router.push("/");
+      router.push("/login");
     } catch {
       alert("failed to logout");
     }

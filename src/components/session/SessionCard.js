@@ -6,14 +6,15 @@ const SessionCard = ({ session }) => {
     router.push(`/t/${session.tool.name}/${session.id}`);
   };
   const iconForCard = colorPaletteSubj['icons'][session.tool.subject]
+  const colorForCardBG = colorPaletteSubj[session.tool.subject][1]
   return (
     <>
         <div class='dbcardholder' onClick={redirect}>
           <i class={iconForCard}></i>
-          <div class='tophalfcard'></div>
+          <div class='tophalfcard' style={colorForCardBG}></div>
           <div class='bottomhalf'>
             <div><h1>{session.title}</h1></div>
-            <div><i class='fa fa-ellipsis-h'></i></div>
+            {/*<div><i class='fa fa-ellipsis-h'></i></div>*/}
           </div>
         </div>
 

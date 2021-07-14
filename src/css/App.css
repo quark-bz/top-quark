@@ -265,6 +265,12 @@ i.fa {
   border-radius: 20px;
   padding: 20px;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.13), 0 5px 7px 0 rgba(0, 0, 0, 0.14);
+
+}
+
+#dashboardPageContainer{
+  display: flex;
+  flex-wrap:wrap;
 }
 
 #imageStudent {
