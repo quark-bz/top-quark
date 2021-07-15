@@ -49,7 +49,7 @@ export const triggerSaveData = () => {
   let iframeEl = document.getElementById("iframeFit");
   iframeEl.contentWindow.postMessage(
     JSON.parse(JSON.stringify({ fn: "qrk_save_data" })),
-    iframeEl.src
+    "*"
   );
 };
 

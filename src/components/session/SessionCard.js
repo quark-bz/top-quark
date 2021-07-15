@@ -8,8 +8,9 @@ const SessionCard = ({ session }) => {
   return (
     <>
       <div onClick={redirect}>
-        <div>{session.tool.name}</div>
-        <div>{session.title}</div>
+        <div>
+          {session.tool.name}: {session.title}
+        </div>
       </div>
     </>
   );
