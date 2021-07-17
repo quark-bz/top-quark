@@ -9,7 +9,7 @@ const SessionCard = ({ session }) => {
   const colorForCardBG = colorPaletteSubj[session.tool.subject][1]
   return (
     <>
-        <div class='dbcardholder' onClick={redirect}>
+        <div class='dbcardholder' onDoubleClick={redirect}>
           <i class={iconForCard}></i>
           <div class='tophalfcard' style={colorForCardBG}></div>
           <div class='bottomhalf'>
@@ -20,8 +20,9 @@ const SessionCard = ({ session }) => {
 
     {/*
       <div onClick={redirect}>
-        <div>{session.tool.name}</div>
-        <div>{session.title}</div>
+        <div>
+          {session.tool.name}: {session.title}
+        </div>
       </div>
     */}
     </>

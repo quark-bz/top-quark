@@ -24,3 +24,4 @@ export const auth = app.auth();
 const analytics = () => firebase.analytics();
 
 export const db = firebase.firestore();
+export const firestore = firebase.firestore;

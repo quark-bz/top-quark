@@ -15,7 +15,7 @@
 }
 
 .dbcardholder i{
-    position:fixed;
+    position: absolute;
     z-index:5;
     margin-left:15px;
     margin-top:15px;

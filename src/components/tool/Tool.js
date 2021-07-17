@@ -86,6 +86,8 @@ const Tool = ({ tool, sessionId }) => {
 
   useEffect(() => {
     if (sessError) {
+      console.log(sessError);
+      setSession(null);
       router.push(`/t/${tool.name}`);
     }
   }, [sessError]);
@@ -114,7 +116,7 @@ const Tool = ({ tool, sessionId }) => {
                   <button style={currPalette} onClick={openFull}>
                     <FullscreenIcon></FullscreenIcon>
                   </button>
-                  {currentUser ? (
+                  {session ? (
                     <button style={currPalette} onClick={triggerSaveData}>
                       <SaveIcon />
                     </button>
