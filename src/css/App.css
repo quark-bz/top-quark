@@ -313,12 +313,12 @@ i.fa {
 }
 
 #imageToolsMan {
-  margin-top: 90px;
-  margin-right: 50px;
+  margin-top: 0px;
+  margin-right: 150px;
   width: 100%;
-  height: 180px;
-  background-image: url("../../src/assets/about2.png");
-  background-size: contain;
+  height: 400px;
+  background-image: url("../../src/assets/Group14.svg");
+  background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 #imageFeedback {
@@ -475,6 +475,12 @@ hr {
   /*color:#413bb5;*/
 }
 
+
+#idabouttwotext{
+  margin-left:40px;
+}
+
+
 .titleSubjectTextStyle div {
   font-family: "Nunito";
   font-size: 20px;
@@ -490,7 +496,7 @@ hr {
   box-shadow: none;
   background: transparent;
   backdrop-filter: none;
-  min-width: 90vw;
+  min-width: 95vw;
 }
 
 #aboutone {
@@ -582,4 +588,8 @@ hr {
   #titleAnimation {
     height: 400px;
   }
+
+#idabouttwotext{
+  margin-left:0px;
+}
 }

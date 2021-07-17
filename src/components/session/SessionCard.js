@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import colorPaletteSubj from "../colorPalettes"
+import CardOptionMenu from './CardOptions'
 const SessionCard = ({ session }) => {
   const router = useRouter();
   const redirect = () => {
@@ -14,7 +15,7 @@ const SessionCard = ({ session }) => {
           <div class='tophalfcard' style={colorForCardBG}></div>
           <div class='bottomhalf'>
             <div><h1>{session.title}</h1></div>
-            {/*<div><i class='fa fa-ellipsis-h'></i></div>*/}
+            <CardOptionMenu></CardOptionMenu>
           </div>
         </div>
 

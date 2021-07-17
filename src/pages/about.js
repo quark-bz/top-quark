@@ -38,9 +38,9 @@ const AboutPage = () => {
           className="aboutpagestuff"
           twoItem={
             <TitleSubjectText
-               
+               id='idabouttwotext'
               subject="Handy-Dandy Tools"
-              description="No more copying, pasting and squinting to create diagrams on tools that weren’t created for you. Tools at Quark were created to help students focus on quality work and to forget about the how-to-get-there🗺."
+              description="Tools at Quark were created to help students focus on quality work and to forget about the how-to-get-there."
               lean="LEFT"
             />
           }
