@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import colorPaletteSubj from "../colorPalettes"
 import CardOptionMenu from './CardOptions'
-const SessionCard = ({ session }) => {
+const SessionCard = ({ session, uid }) => {
   const router = useRouter();
   const redirect = () => {
     router.push(`/t/${session.tool.name}/${session.id}`);
@@ -15,7 +15,10 @@ const SessionCard = ({ session }) => {
           <div class='tophalfcard' style={colorForCardBG}></div>
           <div class='bottomhalf'>
             <div><h1>{session.title}</h1></div>
-            <CardOptionMenu></CardOptionMenu>
+            <CardOptionMenu 
+              uid = {uid} 
+              obj = {session}
+            ></CardOptionMenu>
           </div>
         </div>
 

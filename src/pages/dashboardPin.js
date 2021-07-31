@@ -36,7 +36,9 @@ export default function ChipHolder(props) {
           dashboardPin.map(async (pin)=>{
             return{
               name:pin.name,
-              dir:pin.dir
+              dir:pin.dir,
+              subject:pin.subject,
+              tool:pin.tool
             }
           })
         );
@@ -49,7 +51,7 @@ export default function ChipHolder(props) {
       
      {
        pins.map((currentPin)=>{
-        return <PinChip pinData = {currentPin}/>
+        return <PinChip pinData = {currentPin} uid={uid}/>
        })
      }
     </div>

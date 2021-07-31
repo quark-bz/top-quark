@@ -7,10 +7,21 @@ import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
 import MoreHorizOutlinedIcon from '@material-ui/icons/MoreHorizOutlined';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
 import DashboardIcon from '@material-ui/icons/Dashboard';
+import {db, firestore} from '../../firebase'
 
-export default function CardOptionMenu() {
+export default function CardOptionMenu(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
-const thisDefaultStyle = {fontFamily:"nunito",color:"#5a5aff",fontSize:"10pt",width:"180px",height:"45px"}
+  const thisDefaultStyle = {fontFamily:"nunito",color:"#5a5aff",fontSize:"10pt",width:"180px",height:"45px"}
+  const uid = props.uid
+  const obj = props.obj
+
+  const thisPinObj = {
+    name:obj.title,
+    subject:obj.tool.subject,
+    tool:obj.tool.name,
+    dir:obj.id,
+  }
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -19,6 +30,14 @@ const thisDefaultStyle = {fontFamily:"nunito",color:"#5a5aff",fontSize:"10pt",wi
     setAnchorEl(null);
   };
 
+  const createPin = async()=>{
+    handleClose()
+    let dashboardPinList = await db.collection('users').doc(uid)
+    await dashboardPinList.update({
+      dashboardPin: firestore.FieldValue.arrayUnion(thisPinObj)
+    })
+    
+  }
   return (
     <div>
       <IconButton aria-controls="simple-menu" aria-haspopup="true" style={{bottom:'4px'}} onClick={handleClick}>
@@ -33,7 +52,7 @@ const thisDefaultStyle = {fontFamily:"nunito",color:"#5a5aff",fontSize:"10pt",wi
         
       >
         <MenuItem onClick={handleClose}style={thisDefaultStyle}><FileCopyIcon className="material-icons md-18"/>&nbsp;Make a copy</MenuItem>
-        <MenuItem onClick={handleClose}style={thisDefaultStyle}><DashboardIcon/>&nbsp;Pin to Dashboard</MenuItem>
+        <MenuItem onClick={createPin}style={thisDefaultStyle}><DashboardIcon/>&nbsp;Pin to Dashboard</MenuItem>
         <Divider></Divider>
         <MenuItem onClick={handleClose} style={{fontFamily:"nunito",color:"#ff8880",fontSize:"10pt",width:"180px",height:"45px"}}><DeleteOutlinedIcon></DeleteOutlinedIcon>&nbsp;Delete</MenuItem>
       </Menu>

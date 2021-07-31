@@ -3,8 +3,5 @@
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
   "/dashboard": "pages/dashboard.js",
-  "/": "pages/index.js",
-  "/404": "pages/404.js",
-  "/t/[toolname]/[sessionId]": "pages/t/[toolname]/[sessionId].js",
-  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js"
+  "/t/[toolname]/[sessionId]": "pages/t/[toolname]/[sessionId].js"
 }

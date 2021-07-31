@@ -154,7 +154,7 @@ const DashboardPage = () => {
 
         {sessions.map((sesh, i) => {
 
-          return <SessionCard key={i} session={sesh} />;
+          return <SessionCard uid={currentUser.uid} key={i} session={sesh} />;
         })}
       </div>
       </Container>
