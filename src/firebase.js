@@ -25,3 +25,4 @@ const analytics = () => firebase.analytics();
 
 export const db = firebase.firestore();
 export const firestore = firebase.firestore;
+

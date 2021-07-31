@@ -1,4 +1,4 @@
-import { db } from "../firebase";
+import { db, firestore } from "../firebase";
 
 export const API_downloadPNG = (e) => {
   e.preventDefault();
@@ -41,8 +41,11 @@ export const loadData = (session) => {
   );
 };
 
-export const saveData = (data, sessionId, title) => {
+export const saveData = (data, sessionId, title, currentUser) => {
   db.collection("sessions").doc(sessionId).update({ data: data, title: title });
+  db.collection("users").doc(currentUser.uid).update({
+    dashboardPin:{name:title}
+  })
 };
 
 export const triggerSaveData = () => {

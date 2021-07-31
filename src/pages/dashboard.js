@@ -49,7 +49,7 @@ const DashboardPage = () => {
       sessions: firestore.FieldValue.arrayUnion(sessionDoc),
     });
     handleClose()
-    router.push(`/t/${tool.name}/${sessionDoc.id}`);
+    //router.push(`/t/${tool.name}/${sessionDoc.id}`);
   };
 
   useEffect(() => {

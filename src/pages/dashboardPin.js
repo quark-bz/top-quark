@@ -8,6 +8,7 @@ import DoneIcon from '@material-ui/icons/Done';
 import {useState, useEffect} from "react";
 import {db} from '../firebase'
 import PinChip from './PinChip';
+import {useRouter} from 'next/router'
 
 
 
@@ -24,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ChipHolder(props) {
-    //const router = useRouter();
+    const router = useRouter();
     const uid = props.uid
     const [pins, setPins] = useState([])
      useEffect(()=>{
@@ -33,19 +34,15 @@ export default function ChipHolder(props) {
         let thisDoc = await db.collection("users").doc(uid).get()
         let dashboardPin = await thisDoc.data().dashboardPin
         let thisPin = await Promise.all(
-          dashboardPin.map(async (pin)=>{
-            return{
-              name:pin.name,
-              dir:pin.dir,
-              subject:pin.subject,
-              tool:pin.tool
-            }
+          Object.keys(dashboardPin).map(async (pin)=>{
+            console.log(pin)
+            return dashboardPin[pin]
           })
         );
         setPins(thisPin);
     }
     loadPinChips(uid)
-    },[pins])
+    },[uid])
   return (
     <div id='dashboardChipHolder'>
       

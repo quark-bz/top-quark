@@ -58,7 +58,7 @@ const Tool = ({ tool, sessionId }) => {
       "message",
       (event) => {
         if (event.data.fn == "qrk_save_data") {
-          saveData(event.data.payload, sessionId, titleRef.current);
+          saveData(event.data.payload, sessionId, titleRef.current, currentUser);
         }
       },
       false

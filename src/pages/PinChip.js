@@ -24,9 +24,10 @@ export default function PinChip(props){
     const handleDelete = async() =>{
         let userCollection = await db.collection('users').doc(uid)
         await userCollection.update({
-            dashboardPin: firestore.FieldValue.arrayRemove(pinObj)
+            [`dashboardPin.${pinObj.dir}`]:firestore.FieldValue.delete()
         })
         console.log('deleted')
+        router.push('/dashboard')
         handleCloseMenu()
     }
     const handleClick = (event) =>{

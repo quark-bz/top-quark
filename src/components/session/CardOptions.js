@@ -8,9 +8,13 @@ import MoreHorizOutlinedIcon from '@material-ui/icons/MoreHorizOutlined';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import {db, firestore} from '../../firebase'
+import {useRouter} from 'next/router'
+
+
 
 export default function CardOptionMenu(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const router = useRouter()
   const thisDefaultStyle = {fontFamily:"nunito",color:"#5a5aff",fontSize:"10pt",width:"180px",height:"45px"}
   const uid = props.uid
   const obj = props.obj
@@ -31,11 +35,13 @@ export default function CardOptionMenu(props) {
   };
 
   const createPin = async()=>{
+    
     handleClose()
     let dashboardPinList = await db.collection('users').doc(uid)
-    await dashboardPinList.update({
-      dashboardPin: firestore.FieldValue.arrayUnion(thisPinObj)
-    })
+    await dashboardPinList.set({
+      dashboardPin: {[obj.id]:thisPinObj}
+    },{merge:true})
+    //router.reload('/dashboard')
     
   }
   return (
