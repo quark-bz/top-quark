@@ -14,6 +14,10 @@ import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import colorPaletteSubj from "../components/colorPalettes.js";
+import Tooltip from '@material-ui/core/Tooltip';
+import Divider from '@material-ui/core/Divider';
+//import PinChip from "./PinChip"
+import ChipHolder from "./dashboardPin"
 
 const DashboardPage = () => {
   const router = useRouter();
@@ -74,13 +78,7 @@ const DashboardPage = () => {
             };
           })
         );
-        // const sessions = await Promise.all(
-        //   qs.docs.map(async (doc) => {
-        //     const data = doc.data();
-        //     const tool = await data.tool.get();
-        //     return { tool: tool.data(), data: data.data };
-        //   })
-        // );
+
         setSessions(sessions);
       }
     };
@@ -99,17 +97,27 @@ const DashboardPage = () => {
       <Container id="dashboardPageContainer">
       <div id='dbtext'>
         <h1>Your Dashboard</h1>
+      <ChipHolder
+      uid={currentUser.uid}
+      />
       </div>
       <div id='totaldbholder'>
+
+
+      </div>
+      </Container>
+      <Container id='dbcardcontainer'>
       <div id='dbbuttonholder'>
+        <h1 style={{fontFamily:'nunito',color:'#5a5aff'}}>Sessions</h1>
+        <Tooltip title="Add Session">
       <IconButton aria-controls="simple-menu" aria-haspopup="true" 
       
-        style={{fontFamily:'Nunito',background:'#5a5aff',opacity:'0.8'}} 
+        style={{fontFamily:'Nunito',background:'#5a5aff',width:"30px",height:'30px',marginLeft:'14px',marginTop:'28px'}} 
         onClick={handleClick}>
       
         <AddIcon style={{color:'white'}}></AddIcon>
       </IconButton>
-      
+      </Tooltip>
       <div>
       <Menu
         id="simple-menu"
@@ -136,17 +144,19 @@ const DashboardPage = () => {
         
       </Menu>
       </div>
-    </div>
       </div>
-      </Container>
-      <Container id='dbcardcontainer'>
-
+        <Divider
+        style={{
+          margin:'20px'
+        }}
+        />
       <div id='cardholdercenter'>
+
         {sessions.map((sesh, i) => {
+
           return <SessionCard key={i} session={sesh} />;
         })}
       </div>
-
       </Container>
       <Footer id="footerAll"></Footer>
 
