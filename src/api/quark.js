@@ -44,7 +44,7 @@ export const loadData = (session) => {
 export const saveData = (data, sessionId, title, currentUser) => {
   db.collection("sessions").doc(sessionId).update({ data: data, title: title });
   db.collection("users").doc(currentUser.uid).update({
-    dashboardPin:{name:title}
+    [`dashboardPin.${sessionId}.name`]:title
   })
 };
 

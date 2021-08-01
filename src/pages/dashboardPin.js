@@ -31,8 +31,10 @@ export default function ChipHolder(props) {
      useEffect(()=>{
       
       const loadPinChips = async(uid)=>{
-        let thisDoc = await db.collection("users").doc(uid).get()
+        let thisDoc = await db.collection("users").doc(uid).get(()=>{
+          console.log('reading?')})
         let dashboardPin = await thisDoc.data().dashboardPin
+        console.log(dashboardPin)
         let thisPin = await Promise.all(
           Object.keys(dashboardPin).map(async (pin)=>{
             console.log(pin)
