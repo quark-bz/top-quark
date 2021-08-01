@@ -24,13 +24,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 export default function ChipHolder(props) {
-    const router = useRouter();
     const uid = props.uid
-    const [pins, setPins] = useState([])
+    const [pins, setPins] = useState([])    
      useEffect(()=>{
       
       const loadPinChips = async(uid)=>{
+        console.log('loading pin chips')
         let thisDoc = await db.collection("users").doc(uid).get()
         let dashboardPin = await thisDoc.data().dashboardPin
         console.log(dashboardPin)
@@ -41,13 +42,29 @@ export default function ChipHolder(props) {
           })
         );
         setPins(thisPin);
+
     }
     loadPinChips(uid)
+    }
+    ,[uid])
+    
+    useEffect(()=>{
+      db.collection("users").doc(uid).onSnapshot(async (doc) => {
+        let thisDoc = doc.data().dashboardPin;
+        let thisPin = await Promise.all(
+          Object.keys(thisDoc).map(async (pin)=>{
+            console.log(pin)
+            return thisDoc[pin]
+          })
+        )
+        setPins(thisPin)
+    });
     },[uid])
   return (
     <div id='dashboardChipHolder'>
-      
+
      {
+
        pins.map((currentPin)=>{
         return <PinChip pinData = {currentPin} uid={uid}/>
        })

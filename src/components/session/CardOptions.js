@@ -9,7 +9,7 @@ import FileCopyIcon from '@material-ui/icons/FileCopy';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import {db, firestore} from '../../firebase'
 import {useRouter} from 'next/router'
-
+import ChipHolder from '../../pages/dashboardPin'
 
 
 export default function CardOptionMenu(props) {
@@ -37,6 +37,7 @@ export default function CardOptionMenu(props) {
   const createPin = async()=>{
     
     handleClose()
+    console.log('pinning...')
     let dashboardPinList = await db.collection('users').doc(uid)
     await dashboardPinList.set({
       dashboardPin: {[obj.id]:thisPinObj}
