@@ -41,11 +41,16 @@ export const loadData = (session) => {
   );
 };
 
-export const saveData = (data, sessionId, title, currentUser) => {
+export const saveData = async (data, sessionId, title, currentUser) => {
   db.collection("sessions").doc(sessionId).update({ data: data, title: title });
-  db.collection("users").doc(currentUser.uid).update({
-    [`dashboardPin.${sessionId}.name`]:title
-  })
+  let dashpin = await db.collection("users").doc(currentUser.uid).get()
+  let currObj = dashpin.data().dashboardPin
+  console.log(currObj)
+  if(sessionId in currObj){
+    console.log('updated')
+    db.collection('users').doc(currentUser.uid).update({
+      [`dashboardPin.${sessionId}.name`]:title
+    })}
 };
 
 export const triggerSaveData = () => {
