@@ -18,6 +18,10 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Divider from '@material-ui/core/Divider';
 //import PinChip from "./PinChip"
 import ChipHolder from "./dashboardPin"
+import FeaturedPlayListIcon from '@material-ui/icons/FeaturedPlayList';
+import SettingsIcon from '@material-ui/icons/Settings';
+import FormDialog from './selectDialog'
+
 
 const DashboardPage = () => {
   const router = useRouter();
@@ -49,7 +53,7 @@ const DashboardPage = () => {
       sessions: firestore.FieldValue.arrayUnion(sessionDoc),
     });
     handleClose()
-    //router.push(`/t/${tool.name}/${sessionDoc.id}`);
+    router.push(`/t/${tool.name}/${sessionDoc.id}`);
   };
 
   useEffect(() => {
@@ -60,12 +64,13 @@ const DashboardPage = () => {
       });
       setTools(ts);
     };
+    
     const loadSessions = async () => {
       if (currentUser) {
         const qs = await db.collection("users").doc(currentUser.uid).get();
-        console.log(qs)
+        //console.log(qs)
         const data = qs.data().sessions;
-        console.log(data)
+        //console.log(data)
         const sessions = await Promise.all(
           data.map(async (sess) => {
             const session = (await sess.get()).data();
@@ -97,6 +102,8 @@ const DashboardPage = () => {
       <Container id="dashboardPageContainer">
       <div id='dbtext'>
         <h1>Your Dashboard</h1>
+      <Divider/>
+      
       <ChipHolder
       uid={currentUser.uid}
       />
@@ -125,6 +132,7 @@ const DashboardPage = () => {
         keepMounted
         open={Boolean(anchorEl)}
         onClose={handleClose}
+        onClick={handleClose}
       >
           {tools.map((tool, i) => {
           return (
@@ -141,7 +149,11 @@ const DashboardPage = () => {
               /*key={i}*/
           );
         })}
+        <Divider></Divider>
+        <FormDialog
         
+        uid = {currentUser.uid}
+      />
       </Menu>
       </div>
       </div>

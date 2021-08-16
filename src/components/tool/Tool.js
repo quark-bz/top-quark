@@ -12,6 +12,7 @@ import {
   openFull,
   triggerSaveData,
   saveData,
+  saveTitle,
   loadData,
   getSession,
 } from "../../api/quark";
@@ -31,6 +32,12 @@ const Tool = ({ tool, sessionId }) => {
   let currPalette = colorPaletteSubj[tool.subject][0];
   //   let currBodyBG = colorPaletteSubj[props.subj][1];
   let currIcon = colorPaletteSubj["icons"][tool.subject];
+
+  const onSaveClick = ()=>{
+    triggerSaveData()
+    saveTitle(title, sessionId, currentUser)
+  }
+
 
   useEffect(() => {
     // window.onbeforeunload = function () {
@@ -58,6 +65,7 @@ const Tool = ({ tool, sessionId }) => {
       "message",
       (event) => {
         if (event.data.fn == "qrk_save_data") {
+          console.log("saving data")
           saveData(event.data.payload, sessionId, titleRef.current, currentUser);
         }
       },

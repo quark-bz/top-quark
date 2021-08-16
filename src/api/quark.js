@@ -53,7 +53,19 @@ export const saveData = async (data, sessionId, title, currentUser) => {
     })}
 };
 
+export const saveTitle = async(title, sessionId, currentUser)=>{
+  db.collection("sessions").doc(sessionId).update({title: title });
+  let dashpin = await db.collection("users").doc(currentUser.uid).get()
+  let currObj = dashpin.data().dashboardPin
+  if(sessionId in currObj){
+    console.log('updated')
+    db.collection('users').doc(currentUser.uid).update({
+      [`dashboardPin.${sessionId}.name`]:title
+    })}
+}
+
 export const triggerSaveData = () => {
+  
   let iframeEl = document.getElementById("iframeFit");
   iframeEl.contentWindow.postMessage(
     JSON.parse(JSON.stringify({ fn: "qrk_save_data" })),

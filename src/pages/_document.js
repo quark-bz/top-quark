@@ -14,6 +14,7 @@ class MyDocument extends Document {
             name="description"
             content="Create, edit & export diagrams, graphs for Economics & Chemistry homework. "
           />
+          
           <link rel="apple-touch-icon" href="/FAVICON-QUARK.png" />
 
           <link rel="manifest" href="/manifest.json" />

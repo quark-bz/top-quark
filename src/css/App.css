@@ -483,6 +483,13 @@ hr {
   margin-left:40px;
 }
 
+#subtextdbpin p{
+  font-family: "Nunito";
+  font-size: 10pt;
+  display: flex;
+  flex-direction: row;
+  color:rgba(180,180,180,0.6)
+}
 
 .titleSubjectTextStyle div {
   font-family: "Nunito";

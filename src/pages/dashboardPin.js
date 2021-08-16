@@ -9,7 +9,7 @@ import {useState, useEffect} from "react";
 import {db} from '../firebase'
 import PinChip from './PinChip';
 import {useRouter} from 'next/router'
-
+import Divider from 'material-ui/Divider'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -24,6 +24,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const getKeysInOrder = (dictionary)=>{
+  let returnList = []
+  for(let item in dictionary){
+    returnList.push(item)
+  }
+  return returnList.sort()
+}
 
 export default function ChipHolder(props) {
     const uid = props.uid
@@ -36,8 +43,8 @@ export default function ChipHolder(props) {
         let dashboardPin = await thisDoc.data().dashboardPin
         console.log(dashboardPin)
         let thisPin = await Promise.all(
-          Object.keys(dashboardPin).map(async (pin)=>{
-            console.log(pin)
+          getKeysInOrder(dashboardPin).map(async (pin)=>{
+            //console.log(pin)
             return dashboardPin[pin]
           })
         );
@@ -52,8 +59,7 @@ export default function ChipHolder(props) {
       db.collection("users").doc(uid).onSnapshot(async (doc) => {
         let thisDoc = doc.data().dashboardPin;
         let thisPin = await Promise.all(
-          Object.keys(thisDoc).map(async (pin)=>{
-            console.log(pin)
+          getKeysInOrder(thisDoc).map(async (pin)=>{
             return thisDoc[pin]
           })
         )
@@ -61,15 +67,21 @@ export default function ChipHolder(props) {
     });
     },[uid])
   return (
+    /*<div>
+    <div id="subtextdbpin"><p>Pinned Sessions</p></div>
+      <Divider/>*/
     <div id='dashboardChipHolder'>
-
      {
-
+       pins.length?(
        pins.map((currentPin)=>{
         return <PinChip pinData = {currentPin} uid={uid}/>
-       })
+       })):(
+         <div id="subtextdbpin"><p><i class="fa fa-thumb-tack" aria-hidden="true"></i>&#10240;Your Pins</p>
+         </div>
+       )
      }
     </div>
+    //</div>
   );
 }
 

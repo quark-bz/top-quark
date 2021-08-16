@@ -50,6 +50,7 @@ export default function PinChip(props){
     return(
 
         <div className='chipbox'>
+        <p></p>
         <Chip
         aria-haspopup="true"
         aria-controls="simple-menu" 
