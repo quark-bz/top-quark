@@ -1,15 +1,15 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 //import {useRouter} from 'next/useRouter'
-import Avatar from '@material-ui/core/Avatar';
+/*import Avatar from '@material-ui/core/Avatar';
 import Chip from '@material-ui/core/Chip';
 import FaceIcon from '@material-ui/icons/Face';
-import DoneIcon from '@material-ui/icons/Done';
+import DoneIcon from '@material-ui/icons/Done';*/
 import {useState, useEffect} from "react";
 import {db} from '../firebase'
 import PinChip from './PinChip';
-import {useRouter} from 'next/router'
-import Divider from 'material-ui/Divider'
+//import {useRouter} from 'next/router'
+//import Divider from 'material-ui/Divider'
 
 
 const useStyles = makeStyles((theme) => ({

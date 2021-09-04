@@ -18,8 +18,8 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Divider from '@material-ui/core/Divider';
 //import PinChip from "./PinChip"
 import ChipHolder from "./dashboardPin"
-import FeaturedPlayListIcon from '@material-ui/icons/FeaturedPlayList';
-import SettingsIcon from '@material-ui/icons/Settings';
+//import FeaturedPlayListIcon from '@material-ui/icons/FeaturedPlayList';
+//import SettingsIcon from '@material-ui/icons/Settings';
 import FormDialog from './selectDialog'
 
 

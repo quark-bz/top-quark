@@ -99,22 +99,23 @@ export default function FormDialog(props) {
     <div>
       <MenuItem
         onClick={handleClickOpen}
-        style={{fontFamily:'Nunito',color:'#b8b8ff',width:'180px',height:'45px'}}
+        style={{fontFamily:'Nunito',color:'#5a5aff',width:'180px',height:'45px'}}
         >
-        <AddIcon/>
+        <AddIcon />
         &nbsp;
         Manage Tools
         </MenuItem>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" >
-        <DialogTitle id="form-dialog-title" >Manage Tools</DialogTitle>
+        <DialogTitle id="form-dialog-title"><p style={{fontFamily:"nunito", marginBottom:"-20px", color:"#3a3aab"}}>Manage Tools</p></DialogTitle>
         <DialogContent>
-          <DialogContentText>
-            Manage Tools shown on dashboard menu.
+          <DialogContentText >
+            <p style={{fontFamily:"nunito"}}>Manage Tools shown on dashboard menu.</p>
           </DialogContentText>
             <FormGroup>
               {allTools.map((tool)=>{
               
                 return (<FormControlLabel
+                
                 label={tool}
                 control={<Checkbox
                     style={{color:"#5a5aff"}}
@@ -133,10 +134,12 @@ export default function FormDialog(props) {
           <Button onClick={()=>{
             handleClose()
             writeToAddedTools()
-          }} color="primary">
+          }} color="primary"
+          style={{fontFamily:"nunito", color:"#5a5aff"}}
+          >
             Update
           </Button>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={handleClose} color="primary" style={{fontFamily:"nunito", color:"#5a5aff"}}>
             Cancel
           </Button>
         </DialogActions>
