@@ -51,9 +51,7 @@ export default function CardOptionMenu(props) {
   };
 
   const deletingSession = async()=>{
-    console.log(uid)
     console.log(`deleting..."${obj.title}"`)
-    console.log(obj.id)
     
     let userSessionArray = await db.collection('users').doc(uid)
     userSessionArray.update({
@@ -61,7 +59,11 @@ export default function CardOptionMenu(props) {
     })
     //console.log((await userSessionArray.get()).data()['sessions'])
     await db.collection('sessions').doc(obj.id).delete()
-    console.log(userSessionArray)    
+    let userCollection = await db.collection('users').doc(uid)
+        await userCollection.update({
+            [`dashboardPin.${obj.id}`]:firestore.FieldValue.delete()
+        })
+    console.log('deleted')    
     handleCloseDelete()
   }
 

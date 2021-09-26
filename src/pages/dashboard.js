@@ -56,6 +56,29 @@ const DashboardPage = () => {
     router.push(`/t/${tool.name}/${sessionDoc.id}`);
   };
 
+  useEffect(()=>{
+    db.collection("users").doc(currentUser.uid).onSnapshot(async (doc)=>{
+      if (currentUser) {
+        const data = doc.data().sessions;
+        //console.log(data)
+        const sessions = await Promise.all(
+          data.map(async (sess) => {
+            const session = (await sess.get()).data();
+            const tool = (await session.tool.get()).data();
+            return {
+              id: sess.id,
+              tool: tool,
+              data: session.data,
+              title: session.title,
+            };
+          })
+        );
+          
+        setSessions(sessions);
+      }
+    })
+  },[currentUser])
+
   useEffect(() => {
     const getTools = async () => {
       const toolDocs = await db.collection("tools").get();

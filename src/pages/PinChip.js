@@ -27,7 +27,7 @@ export default function PinChip(props){
             [`dashboardPin.${pinObj.dir}`]:firestore.FieldValue.delete()
         })
         console.log('deleted')
-        router.push('/dashboard')
+        //router.push('/dashboard')
         handleCloseMenu()
     }
     const handleClick = (event) =>{
