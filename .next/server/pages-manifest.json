@@ -2,6 +2,6 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/dashboard": "pages/dashboard.js",
-  "/t/[toolname]/[sessionId]": "pages/t/[toolname]/[sessionId].js"
+  "/t/[toolname]/[sessionId]": "pages/t/[toolname]/[sessionId].js",
+  "/dashboard": "pages/dashboard.js"
 }

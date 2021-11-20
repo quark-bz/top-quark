@@ -28,8 +28,9 @@ export const openFull = () => {
   }
 };
 
-export const loadData = (session) => {
+export const loadData = async (session) => {
   let iframeEl = document.getElementById("iframeFit");
+  console.log("loading...")
   iframeEl.contentWindow.postMessage(
     JSON.parse(
       JSON.stringify({

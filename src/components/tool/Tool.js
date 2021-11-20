@@ -75,29 +75,33 @@ const Tool = ({ tool, sessionId }) => {
     );
   }, []);
 
-  useEffect(() => {
-    document.getElementById('iframeFit').onload = ()=>{
-      window.setTimeout(()=>{
-        if (session) {
-          console.log("unloading data")
-          loadData(session);
-        }}
-        ,500
-      )
-    }
-  }, [session]);
+ // useEffect(() => {
+ //   document.getElementById('iframeFit').onload = ()=>{
+ //     console.log('tool loaded')
+ //     window.setTimeout(()=>{
+ //       if (session) {
+ //         console.log("unloading data")
+ //         loadData(session);
+ //       }}
+ //       ,1000
+ //     )
+ //     
+ //   }
+ // }, [session]);
 
   useEffect(() => {
     const loadSession = async () => {
       const { error, session } = await getSession(tool.id, sessionId);
       setSessError(error);
       setSession(session);
+      loadData(session)
       setTitle(session?.title);
     };
     if (currentUser && sessionId) {
       loadSession();
     } else {
     }
+
   }, []);
 
   useEffect(() => {
