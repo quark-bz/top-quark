@@ -21,14 +21,6 @@ const SessionCard = ({ session, uid }) => {
             ></CardOptionMenu>
           </div>
         </div>
-
-    {/*
-      <div onClick={redirect}>
-        <div>
-          {session.tool.name}: {session.title}
-        </div>
-      </div>
-    */}
     </>
   );
 };

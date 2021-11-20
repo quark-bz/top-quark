@@ -37,7 +37,7 @@ export const loadData = (session) => {
         payload: { data: session.data },
       })
     ),
-    iframeEl.src
+    "*"
   );
 };
 

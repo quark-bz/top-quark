@@ -64,6 +64,8 @@ const Tool = ({ tool, sessionId }) => {
     window.addEventListener(
       "message",
       (event) => {
+        console.log("receiving message from tool")
+        console.log(event.data)
         if (event.data.fn == "qrk_save_data") {
           console.log("saving data")
           saveData(event.data.payload, sessionId, titleRef.current, currentUser);
@@ -74,8 +76,14 @@ const Tool = ({ tool, sessionId }) => {
   }, []);
 
   useEffect(() => {
-    if (session) {
-      loadData(session);
+    document.getElementById('iframeFit').onload = ()=>{
+      window.setTimeout(()=>{
+        if (session) {
+          console.log("unloading data")
+          loadData(session);
+        }}
+        ,500
+      )
     }
   }, [session]);
 
